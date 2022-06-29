@@ -237,14 +237,14 @@ return [
             'icon_color' => 'purple ',
             'submenu' => [
                 [
-                    'text' => 'ingresar',
+                    'text' => 'Agregar',
                     'icon_color' => 'green',
-                    'url'  => '#',
+                    'route'  => 'create.ficha',
                 ],
                 [
                     'text' => 'ver',
                     'icon_color' => 'blue',
-                    'url'  => '#',
+                    'route'  => 'index.ficha',
                 ],
             ]
         ],
@@ -355,6 +355,23 @@ return [
     */
 
     'plugins' => [
+
+        'google' => [
+            'active' => true,
+            'files' => [
+              [
+                'type' => 'css',
+                'asset' => false,
+                'location' => 'https://fonts.googleapis.com/css2?family=Material+Icons',
+              ],
+              [
+                'type' => 'css',
+                'asset' => false,
+                'location' => 'https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css',
+              ], 
+            ],
+        ],
+        
         'Datatables' => [
             'active' => false,
             'files' => [
