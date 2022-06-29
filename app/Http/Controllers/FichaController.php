@@ -14,7 +14,8 @@ class FichaController extends Controller
      */
     public function index()
     {
-        //
+        $ficha = Ficha::orderBy('id','desc')->paginate(5);
+        return view('fichas.index', compact('ficha'));
     }
 
     /**
@@ -24,7 +25,7 @@ class FichaController extends Controller
      */
     public function create()
     {
-        //
+        return view('fichas.create');
     }
 
     /**
@@ -35,7 +36,31 @@ class FichaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'ficha' => 'required',
+            'origen' => 'required',
+            'tutor' => 'required',
+            'carrera' => 'required',
+            'estudiante_m' => 'required',
+            'estudiante_h' => 'required',
+            'fecha_i' => 'required',
+            'fecha_s' => 'required',
+        ]);
+
+        $ficha = new Ficha();
+
+        $ficha->ficha = $request->ficha;
+        $ficha->origen = $request->origen;
+        $ficha->tutor = $request->tutor;
+        $ficha->carrera = $request->carrera;
+        $ficha->estudiante_m = $request->estudiante_m;
+        $ficha->estudiante_h = $request->estudiante_h;
+        $ficha->fecha_i = $request->fecha_i;
+        $ficha->fecha_s = $request->fecha_s;
+
+        $ficha->save();
+
+        return redirect()->route('index.ficha');
     }
 
     /**

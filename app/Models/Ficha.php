@@ -10,7 +10,14 @@ class Ficha extends Model
     use HasFactory;
 
     protected $fillable = [
-
+        'ficha',
+        'origen',
+        'tutor',
+        'carrera',
+        'estudiante_m',
+        'estudiante_h',
+        'fecha_i',
+        'fecha_s',
     ];
 
     public function aprendices(){
