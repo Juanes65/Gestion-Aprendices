@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\FichaController;
 use Illuminate\Support\Facades\Route;
 
