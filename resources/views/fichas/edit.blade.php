@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1 style="text-align: center">Ingresar Nueva Ficha</h1>
+    <h1 style="text-align: center">Editar Ficha</h1>
 @stop
 
 @section('content')
@@ -14,30 +14,31 @@
                 <div class="card card-user">
                     <div class="card-body">
 
-                        <form action="{{route('store.ficha')}}" method="POST">
+                        <form action="{{route('update.ficha', $ficha->id)}}" method="POST">
                             @csrf
-                                
+                            @method('PUT')
+
                             <div class="row">
 
                                 <div class="col-lg-6 col-12">
                                         
                                     <div class="mb-4 box">
-                                        <input type="text" name="ficha" required="required">
+                                        <input type="text" name="ficha" value="{{old('ficha',$ficha->ficha)}}" vrequired="required">
                                         <span>Numero de la Ficha</span>
                                     </div>
                                     
                                     <div class="mb-4 box">
-                                        <input type="text" name="origen" required="required">
+                                        <input type="text" name="origen" value="{{old('origen',$ficha->origen)}}" required="required">
                                         <span>Origen</span>
                                     </div>
 
                                     <div class="mb-4 box">
-                                        <input type="text" name="tutor" required="required">
+                                        <input type="text" name="tutor" value="{{old('tutor',$ficha->tutor)}}" required="required">
                                         <span>Tutor Encargado</span>
                                     </div>
 
                                     <div class="mb-4 box2">
-                                        <input type="date" name="fecha_i">
+                                        <input type="date" name="fecha_i" value="{{old('fecha_i',$ficha->fecha_i)}}">
                                         <span>Fecha de Ingreso</span>
                                     </div>
                                 
@@ -46,29 +47,29 @@
                                 <div class="col-lg-6 col-12">
 
                                     <div class="mb-4 box">
-                                        <input type="text" name="estudiante_m" required="reuired">
+                                        <input type="text" name="estudiante_m" value="{{old('estudiante_m',$ficha->estudiante_m)}}" required="reuired">
                                         <span>Numero de Aprendices Femeninos</span>
                                     </div>
                                     
                                     <div class="mb-4 box">
-                                        <input type="text" name="estudiante_h" required="required">
+                                        <input type="text" name="estudiante_h" value="{{old('estudiante_h',$ficha->estudiante_h)}}" required="required">
                                         <span>Numero de Aprendices Masculinos</span>
                                     </div>
 
                                     <div class="mb-4 box">
-                                        <input type="text" name="carrera" required="required">
+                                        <input type="text" name="carrera" value="{{old('carrera',$ficha->carrera)}}" required="required">
                                         <span>Programa</span>
                                     </div>
 
                                     <div class="mb-4 box2">
-                                        <input type="date" name="fecha_s">
+                                        <input type="date" name="fecha_s" value="{{old('fecha_s',$ficha->fecha_s)}}">
                                         <span>Fecha de Salida</span>
                                     </div>
 
                                 </div>
                                     
                                 <div class="d-flex justify-content-end col-12 boton">
-                                    <button type="submit">Registrar</button>
+                                    <button type="submit">Actualizar</button>
                                 </div>
 
                             </div>

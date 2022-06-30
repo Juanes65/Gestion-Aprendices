@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Fichas Registradas</h1>
+    <h1 style="text-align: center">Fichas Registradas</h1>
 @stop
 
 @section('content')
@@ -17,7 +17,7 @@
                             <div class="author table-responsive">
                                 <div class="card-body">
                                     <table class="table table-bordered table-striped" id="cliente">
-                                        <thead class="table-dark">
+                                        <thead class="table-secondary">
                                             <tr style="text-align: center">
                                                 <th scope="col">N° Fichas</th>
                                                 <th scope="col">Origen</th>
@@ -48,11 +48,10 @@
                                                                 <i class="fa-solid fa-bars"></i>
                                                             </a>
                                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                                <a href="#" class="btn btn-warning"><i class="material-icons">list_alt</i></a>
-                                                    
-                                                                <a href="#" class="btn btn-warning"><i class="material-icons">edit</i></a>
+                                                                
+                                                                <a href="{{route('edit.ficha', $info->id)}}" class="btn btn-warning"><i class="material-icons">edit</i></a>
                                                             
-                                                                <form action="#" class="form-eliminar" method="POST" style="display:inline-block">
+                                                                <form action="{{route('destroy.ficha', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
                                                                     @csrf
                                                                     @method('DELETE')
                                                                     <button class="btn btn-danger" type="submit" rel="tooltip">

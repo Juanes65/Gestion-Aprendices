@@ -82,7 +82,7 @@ class FichaController extends Controller
      */
     public function edit(Ficha $ficha)
     {
-        //
+        return view('fichas.edit', compact('ficha'));
     }
 
     /**
@@ -94,7 +94,22 @@ class FichaController extends Controller
      */
     public function update(Request $request, Ficha $ficha)
     {
-        //
+        $request->validate([
+            'ficha' => 'required',
+            'origen' => 'required',
+            'tutor' => 'required',
+            'carrera' => 'required',
+            'estudiante_m' => 'required',
+            'estudiante_h' => 'required',
+            'fecha_i' => 'required',
+            'fecha_s' => 'required',
+        ]);
+
+        $dato = $request->only('ficha','origen','tutor','carrera','estudiante_m','estudiante_h','fecha_i','fecha_s');
+
+        $ficha->update($dato);
+
+        return redirect()->route('index.ficha');
     }
 
     /**
@@ -105,6 +120,8 @@ class FichaController extends Controller
      */
     public function destroy(Ficha $ficha)
     {
-        //
+        $ficha->delete();
+
+        return redirect()->back();
     }
 }
