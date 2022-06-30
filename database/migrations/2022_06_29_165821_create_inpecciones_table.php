@@ -15,11 +15,14 @@ return new class extends Migration
     {
         Schema::create('inpecciones', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 10);
+            $table->string('nombre');
             $table->string('apellido', 15);
             $table->string('cargo', 45);
+            $table->string('tipo');
             $table->string('descripcion');
+            $table->string('area');
             $table->string('foto');
+            $table->date('fecha');
             $table->timestamps();
         });
     }
