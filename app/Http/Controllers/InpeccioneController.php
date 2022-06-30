@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Inpeccione;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class InpeccioneController extends Controller
 {
@@ -14,7 +15,16 @@ class InpeccioneController extends Controller
      */
     public function index()
     {
-        //
+        $reporte=DB::table('inpecciones')
+        ->select('nombre','cargo','apellido','area','tipo','descripcion','fecha')
+        ->orderBy('nombre', 'asc')
+        ->paginate(10);
+
+
+
+
+       return view('Inspeccion.index', compact('reporte'));
+        
     }
 
     /**
@@ -24,7 +34,7 @@ class InpeccioneController extends Controller
      */
     public function create()
     {
-        //
+        return view('Inspeccion.create');
     }
 
     /**
@@ -35,7 +45,21 @@ class InpeccioneController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $request->validate([
+           
+            'foto' => 'required',
+           
+        ]);
+
+
+       
+
+        Inpeccione::create($request->only('nombre','cargo','apellido','area','tipo','descripcion','fecha')+[
+            'foto'
+            
+
+        ]);
     }
 
     /**

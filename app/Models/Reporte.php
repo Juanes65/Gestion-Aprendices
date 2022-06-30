@@ -10,7 +10,7 @@ class Reporte extends Model
     use HasFactory;
 
     protected $fillable = [
-
+        
     ];
 
     public function aprendices(){

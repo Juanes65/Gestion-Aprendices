@@ -305,14 +305,14 @@ return [
             'icon_color' => 'blue',
             'submenu' => [
                 [
-                    'text' => 'Agregar Reporte de Inspeccion',
+                    'text' => 'Agregar Reporte ',
                     'icon_color' => 'plate',
-                    'url'  => '#',
+                    'route'  => 'create.inspeccion',
                 ],
                 [
                     'text' => 'ver',
                     'icon_color' => 'orange',
-                    'url'  => '#',
+                    'route'  => 'index.inspeccion',
                 ],
             ]
         ],
