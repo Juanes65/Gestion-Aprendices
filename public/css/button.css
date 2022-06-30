@@ -1,0 +1,101 @@
+
+.boton button{
+    padding: 10px 30px;
+    border: 2px solid green;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.boton button:hover{
+    letter-spacing: 0.25em;
+    background: rgb(189, 236, 182);
+    color: black;
+}
+
+/* formularios */
+
+.box input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid green;
+    background: #fff;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1em;
+}
+
+.box span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: black;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.box input:valid ~ span,
+.box input:focus ~ span{
+    color: black;
+    transform: translateX(25px) translateY(-9px);
+    font-size: 1.0em;
+    padding: 0 10px;
+    background: #fff;
+    border-left: 1px solid #80F461;
+    border-right: 1px solid #80F461;
+}
+
+.box input:valid ~ span,
+.box input:focus ~ span{
+    background: #80F461;
+}
+
+.box input:valid,
+.box input:focus{
+    border: 1px solid #80F461;
+    color: black;
+}
+
+/* formulario sin animacion */
+
+.box2 input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid green;
+    background: #fff;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1em;
+}
+
+.box2 span{
+    position: absolute;
+    left: 0;
+    transform: translateX(120px);
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: black;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.box2 input ~ span,
+.box2 input ~ span{
+    color: black;
+    transform: translateX(25px) translateY(-9px);
+    font-size: 1.0em;
+    padding: 0 10px;
+    background: #fff;
+    border-left: 1px solid #80F461;
+    border-right: 1px solid #80F461;
+}
+
+.box2 input ~ span,
+.box2 input ~ span{
+    background: #80F461;
+}
