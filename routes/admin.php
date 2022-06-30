@@ -18,6 +18,6 @@ Route::get('/Inspeccion',            [InpeccioneController::class,  'index'])->n
 Route::get('/Inspeccion/agregar',    [InpeccioneController::class, 'create'])->name('create.inspeccion');
 Route::post('/Inspeccion/guardar',   [InpeccioneController::class, 'store'])->name('store.inspeccion');
 
-Route::get('/ficha/editar/{ficha}', [FichaController::class, 'edit'])->name('edit.ficha');
-Route::put('/ficha/{ficha}', [FichaController::class, 'update'])->name('update.ficha');
-Route::delete('/ficha/{ficha}', [FichaController::class, 'destroy'])->name('destroy.ficha');
+Route::get('/ficha/editar/{ficha}',  [FichaController::class, 'edit'])->name('edit.ficha');
+Route::put('/ficha/{ficha}',         [FichaController::class, 'update'])->name('update.ficha');
+Route::delete('/ficha/{ficha}',      [FichaController::class, 'destroy'])->name('destroy.ficha');
