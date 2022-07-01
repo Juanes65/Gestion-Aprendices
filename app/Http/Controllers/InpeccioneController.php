@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Inpeccione;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class InpeccioneController extends Controller
 {
@@ -16,7 +17,7 @@ class InpeccioneController extends Controller
     public function index()
     {
         $reporte=DB::table('inpecciones')
-        ->select('nombre','cargo','apellido','area','tipo','descripcion','fecha')
+        ->select('nombre','cargo','apellido','area','tipo','descripcion','fecha','id')
         ->orderBy('nombre', 'asc')
         ->paginate(10);
 
@@ -46,20 +47,19 @@ class InpeccioneController extends Controller
     public function store(Request $request)
     {
         
-        $request->validate([
-           
-            'foto' => 'required',
-           
-        ]);
+     
 
-
+        $arch = $request->file('img')->store('public/images');
+        $file = Storage::url($arch);
        
 
         Inpeccione::create($request->only('nombre','cargo','apellido','area','tipo','descripcion','fecha')+[
-            'foto'
+            'foto' => $file,
             
 
         ]);
+
+        return redirect()->route('index.inspeccion');
     }
 
     /**
@@ -70,7 +70,29 @@ class InpeccioneController extends Controller
      */
     public function show(Inpeccione $inpeccione)
     {
-        //
+        
+
+
+        
+        $reporte=DB::table('inpecciones')
+        ->select('descripcion')
+        ->orderBy('nombre', 'asc')
+        ->paginate(10);
+
+       return view('Inspeccion.descripcion', compact('reporte','inpeccione'));
+    }
+    public function show2(Inpeccione $inpeccione)
+    {
+        
+
+
+        
+        $reporte=DB::table('inpecciones')
+        ->select('foto')
+        ->orderBy('nombre', 'asc')
+        ->paginate(10);
+
+       return view('Inspeccion.imagen', compact('reporte','inpeccione'));
     }
 
     /**
@@ -104,6 +126,11 @@ class InpeccioneController extends Controller
      */
     public function destroy(Inpeccione $inpeccione)
     {
-        //
+        $file = str_replace('storage', 'public', $inpeccione->file);
+        Storage::delete($file);
+
+        $inpeccione->delete();
+
+        return redirect()->back();
     }
 }

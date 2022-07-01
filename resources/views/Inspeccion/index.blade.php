@@ -25,7 +25,7 @@
                                                 <th scope="col">Area</th>
                                                 <th scope="col">Tipo</th>
                                                 <th scope="col">fecha</th>
-                                                <th scope="col">descripcion</th>
+                                                <th scope="col">Anexos</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
@@ -38,23 +38,28 @@
                                                 <td>{{$reportes->area}}</td>
                                                 <td>{{$reportes->tipo}}</td>
                                                 <td>{{$reportes->fecha}}</td>
-                                                <th> <a  class="btn btn-outline-dark"><i class="material-icons">visibility</i></a>
-                                             
-                                                <td class="td-actions text-center">
-                                                    
+                                                <th>
                                                     <div class="dropdown">
                                                         <a class="btn btn-sm btn-icon-only text-dark" style="font-size: 20px" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             <i class="fa-solid fa-bars"></i>
+                                                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                                                <a   href="{{route('show.inspeccion', $reportes->id)}}"class="btn btn-outline-primary"><i class="material-icons">visibility</i></a>
+                                                    
+                                                                <a href="{{route('show2.inspeccion', $reportes->id)}}"class="btn btn-outline-success"><i class="material-icons">image</i></a>
+                                                            </div>
                                                         </a>
-                                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                            <a href="#" class="btn btn-warning"><i class="material-icons">list_alt</i></a>
+                                                   
+                                                    </div>    
+                                                <td class="td-actions text-center">
+                                                    
                                                 
-                                                            <a href="#" class="btn btn-warning"><i class="material-icons">edit</i></a>
+                                                        <div >
+                                                    
                                                         
-                                                            <form action="#" class="form-eliminar" method="POST" style="display:inline-block">
+                                                            <form  action="{{route('destroy.inspeccion', $reportes->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
                                                                 @csrf
                                                                 @method('DELETE')
-                                                                <button class="btn btn-danger" type="submit" rel="tooltip">
+                                                                <button class="btn btn-success" type="submit" rel="tooltip">
                                                                     <i class="material-icons">
                                                                         delete
                                                                     </i>
@@ -62,7 +67,7 @@
                                                             </form> 
                                                             
                                                         </div> 
-                                                    </div>
+                                                  
                                         
                                                 </td>
                                             </tr>
