@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('dormitorios', function (Blueprint $table) {
             $table->id();
-            $table->string('capacidad', 3);
-            $table->string('habitaciones', 3);
+            $table->string('nombre_dor', 20);
+            $table->string('camas', 3);
+            $table->string('ubicacion', 20);
+            $table->string('genero',20);
             $table->timestamps();
         });
     }

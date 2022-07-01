@@ -30,6 +30,7 @@
 .box span{
     position: absolute;
     left: 0;
+    transform: translateX(10px);
     padding: 10px;
     pointer-events: none;
     font-size: 1em;
@@ -97,5 +98,45 @@
 
 .box2 input ~ span,
 .box2 input ~ span{
+    background: #80F461;
+}
+
+/* selecion */
+
+.box3 select{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid green;
+    background: #fff;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1em;
+}
+
+.box3 span{
+    position: absolute;
+    left: 0;
+    transform: translateX(10px);
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: black;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.box3 select:valid ~ span,
+.box3 select:focus ~ span{
+    color: black;
+    transform: translateX(25px) translateY(-9px);
+    font-size: 1.0em;
+    padding: 0 10px;
+    background: #fff;
+    border-left: 1px solid #80F461;
+    border-right: 1px solid #80F461;
+}
+
+.box3 select:valid ~ span,
+.box3 select:focus ~ span{
     background: #80F461;
 }

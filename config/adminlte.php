@@ -237,7 +237,7 @@ return [
             'icon_color' => 'purple ',
             'submenu' => [
                 [
-                    'text' => 'Agregar',
+                    'text' => 'Agregar Ficha',
                     'icon_color' => 'green',
                     'route'  => 'create.ficha',
                 ],
@@ -251,17 +251,17 @@ return [
         [
             'text'    => 'Dormitorios',
             'icon'    => 'fas fa-fw fa-bed',
-            'icon_color' => 'green',
+            'icon_color' => 'red',
             'submenu' => [
                 [
-                    'text' => 'Agregar',
+                    'text' => 'Agregar Dormitorio',
                     'icon_color' => 'yellow',
-                    'url'  => '#',
+                    'route'  => 'create.dormitorio',
                 ],
                 [
                     'text' => 'Disponibilidad',
                     'icon_color' => 'purple',
-                    'url'  => '#',
+                    'route'  => 'index.dormitorio',
                 ],
             ]
         ],

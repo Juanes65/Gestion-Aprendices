@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Fichas')
+@section('title', 'Dormitorios')
 
 @section('content_header')
-    <h1 style="text-align: center">Fichas Registradas</h1>
+    <h1 style="text-align: center">Dormitorios Registrados</h1>
 @stop
 
 @section('content')
@@ -19,28 +19,20 @@
                                     <table class="table table-bordered table-striped" id="cliente">
                                         <thead class="table-secondary">
                                             <tr style="text-align: center">
-                                                <th scope="col">N° Fichas</th>
-                                                <th scope="col">Origen</th>
-                                                <th scope="col">Tutor</th>
-                                                <th scope="col">Carrera</th>
-                                                <th scope="col">Aprendices Femeninos</th>
-                                                <th scope="col">Aprendices Masculinos</th>
-                                                <th scope="col">Fecha de Entrada</th>
-                                                <th scope="col">Fecha de Salida</th>
+                                                <th scope="col">Nombre de la Habitacion</th>
+                                                <th scope="col">Capacidad</th>
+                                                <th scope="col">Ubicacion</th>
+                                                <th scope="col">Genero</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($ficha as $info)
+                                            @foreach ($dormitorio as $info)
                                                 <tr style="text-align: center">
-                                                    <td>{{$info->ficha}}</td>
-                                                    <td>{{$info->origen}}</td>
-                                                    <td>{{$info->tutor}}</td>
-                                                    <td>{{$info->carrera}}</td>
-                                                    <td>{{$info->estudiante_m}}</td>
-                                                    <td>{{$info->estudiante_h}}</td>
-                                                    <td>{{$info->fecha_i}}</td>
-                                                    <td>{{$info->fecha_s}}</td>
+                                                    <td>{{$info->nombre_dor}}</td>
+                                                    <td>{{$info->camas}}</td>
+                                                    <td>{{$info->ubicacion}}</td>
+                                                    <td>{{$info->genero}}</td>
                                                     <td class="td-actions text-center">
                                                         
                                                         <div class="dropdown">
@@ -49,9 +41,9 @@
                                                             </a>
                                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                                 
-                                                                <a href="{{route('edit.ficha', $info->id)}}" class="btn btn-warning"><i class="material-icons">edit</i></a>
+                                                                <a href="{{route('edit.dormitorio', $info->id)}}" class="btn btn-warning"><i class="material-icons">edit</i></a>
                                                             
-                                                                <form action="{{route('destroy.ficha', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
+                                                                <form action="{{route('destroy.dormitorio', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
                                                                     @csrf
                                                                     @method('DELETE')
                                                                     <button class="btn btn-success" type="submit" rel="tooltip">

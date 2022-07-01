@@ -10,7 +10,10 @@ class Dormitorio extends Model
     use HasFactory;
 
     protected $fillable = [
-
+        'nombre_dor',
+        'camas',
+        'ubicacion',
+        'genero'
     ];
 
     public function cupos(){
