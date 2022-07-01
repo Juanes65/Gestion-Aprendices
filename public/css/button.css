@@ -140,3 +140,65 @@
 .box3 select:focus ~ span{
     background: #80F461;
 }
+
+/* textarea */
+
+.box4 textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid green;
+    background: #fff;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1em;
+}
+
+.box4 span{
+    position: absolute;
+    left: 0;
+    transform: translateX(15px) translateY(40px);
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: black;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.box4 textarea:valid ~ span,
+.box4 textarea:focus ~ span{
+    color: black;
+    transform: translateX(25px) translateY(-9px);
+    font-size: 1.0em;
+    padding: 0 10px;
+    background: #fff;
+    border-left: 1px solid #80F461;
+    border-right: 1px solid #80F461;
+}
+
+.box4 textarea:valid ~ span,
+.box4 textarea:focus ~ span{
+    background: #80F461;
+}
+
+.box4 textarea:valid,
+.box4 textarea:focus{
+    border: 1px solid #80F461;
+    color: black;
+}
+
+/* solo letra */
+
+.box5 span{
+    color: black;
+    transform: translateX(25px) translateY(-9px);
+    font-size: 1.0em;
+    padding: 0 10px;
+    background: #fff;
+    border-left: 1px solid #80F461;
+    border-right: 1px solid #80F461;
+}
+
+.box5 span{
+    background: #80F461;
+}
