@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('apellido', 15);
             $table->string('cargo', 45);
             $table->string('tipo');
-            $table->string('descripcion');
+            $table->longtext('descripcion');
             $table->string('area');
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->date('fecha');
             $table->timestamps();
         });

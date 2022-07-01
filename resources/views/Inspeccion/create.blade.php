@@ -26,7 +26,7 @@
                     <div class="card card-user">
                         <div class="card-body">
     
-                            <form  action="{{route('store.inspeccion')}}" method="POST">
+                            <form  action="{{route('store.inspeccion')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                     
                                 <div class="row mb-3">
@@ -85,7 +85,7 @@
                                                 
                                             <p>
                                                  FOTO:
-                                                 <input type="file" name="foto">
+                                                 <input type="file" name="img">
                                             </p>     
                 
                                         </div>
