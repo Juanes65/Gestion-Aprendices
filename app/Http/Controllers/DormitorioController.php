@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dormitorio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DormitorioController extends Controller
 {
@@ -14,7 +15,12 @@ class DormitorioController extends Controller
      */
     public function index()
     {
-        //
+        $dormitorio=DB::table('dormitorios')
+        ->select('nombre_dor','camas','ubicacion','genero','id')
+        ->orderBy('camas', 'desc')
+        ->paginate(5);
+
+        return view('dormitorios.index', compact('dormitorio'));
     }
 
     /**
@@ -24,7 +30,7 @@ class DormitorioController extends Controller
      */
     public function create()
     {
-        //
+        return view('dormitorios.create');
     }
 
     /**
@@ -35,7 +41,16 @@ class DormitorioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre_dor' => 'required',
+            'camas' => 'required',
+            'ubicacion' => 'required',
+            'genero' => 'required',
+        ]);
+        
+        Dormitorio::create($request->only('nombre_dor', 'camas', 'ubicacion', 'genero'));
+
+        return redirect()->route('index.dormitorio');
     }
 
     /**
@@ -57,7 +72,7 @@ class DormitorioController extends Controller
      */
     public function edit(Dormitorio $dormitorio)
     {
-        //
+        return view('dormitorios.edit', compact('dormitorio'));
     }
 
     /**
@@ -69,7 +84,18 @@ class DormitorioController extends Controller
      */
     public function update(Request $request, Dormitorio $dormitorio)
     {
-        //
+        $request->validate([
+            'nombre_dor' => 'required',
+            'camas' => 'required',
+            'ubicacion' => 'required',
+            'genero' => 'required',
+        ]);
+
+        $dato = $request->only('nombre_dor','camas','ubicacion','genero');
+
+        $dormitorio->update($dato);
+
+        return redirect()->route('index.dormitorio');
     }
 
     /**
@@ -80,6 +106,8 @@ class DormitorioController extends Controller
      */
     public function destroy(Dormitorio $dormitorio)
     {
-        //
+        $dormitorio->delete();
+
+        return redirect()->back();
     }
 }
