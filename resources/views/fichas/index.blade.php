@@ -27,6 +27,7 @@
                                                 <th scope="col">Aprendices Masculinos</th>
                                                 <th scope="col">Fecha de Entrada</th>
                                                 <th scope="col">Fecha de Salida</th>
+                                                <th scope="col">Aprendices</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
@@ -41,6 +42,9 @@
                                                     <td>{{$info->estudiante_h}}</td>
                                                     <td>{{$info->fecha_i}}</td>
                                                     <td>{{$info->fecha_s}}</td>
+                                                    <td>
+                                                        <a href="#" class="btn btn-warning">Añadir Aprendices</a>
+                                                    </td>
                                                     <td class="td-actions text-center">
                                                         
                                                         <div class="dropdown">

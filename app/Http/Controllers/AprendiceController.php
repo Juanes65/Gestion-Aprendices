@@ -24,7 +24,7 @@ class AprendiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('aprendiz.index');
     }
 
     /**
