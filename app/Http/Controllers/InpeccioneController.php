@@ -126,8 +126,8 @@ class InpeccioneController extends Controller
      */
     public function destroy(Inpeccione $inpeccione)
     {
-        $file = str_replace('storage', 'public', $inpeccione->file);
-        Storage::delete($file);
+        $img = str_replace('storage', 'public', $inpeccione->foto);
+        Storage::delete($img);
 
         $inpeccione->delete();
 

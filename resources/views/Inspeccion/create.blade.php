@@ -8,7 +8,7 @@
 
 @section('content')
 
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,23 +31,27 @@
                                     
                                 <div class="row mb-3">
                                             
-                                    <div class="col-md-4">
-                                        <label for="" class="form-label">Nombres:</label>
-                                        <input type="text" placeholder="Nombres Completos" class="form-control" id="" name="nombre">
+                                    <div class="col-md-4 mb-4 box">
+                                        <input type="text" name="nombre" required="required">
+                                        <span>Nombres:</span>
                                     </div>
-                                    <div class="col-md-4">
-                                        <label for="" class="form-label">Apellidos:</label>
-                                        <input type="text" class="form-control" placeholder="Apellidos Completos" id="" name="apellido">
+
+                                    <div class="col-md-4 mb-4 box">
+                                        <input type="text" name="apellido" required="required">
+                                        <span>Apellidos:</span>
                                     </div>
-                                    <div class="col-md-4">
-                                        <label for="" class="form-label">cargo:</label>
-                                        <select class="form-select" aria-label="Default select example"  name="cargo">
+
+                                    <div class="col-md-4 mb-4 box3">
+                                        <select id="my-select" name="cargo" required="required">
+
+                                            <option value=""></option>
                                             <option value="Aprendiz">   Aprendiz   </option>
                                             <option value="Instructor"> Instructor </option>
                                             <option value="Operario">   Operario   </option>
                                             <option value="Otro">       Otro       </option>
                                             
-                                        </select>    
+                                        </select>
+                                        <span>cargo:</span>  
                                     </div>
                                 
                                 
@@ -55,43 +59,46 @@
     
                                     <div class="row mb-3">
                                             
-                                        <div class="col-md-8">
-                                            <label for="" class="form-label">Tipo de Informe:</label>
-                                            <input type="text" class="form-control" placeholder="Ej: (Camas en mal estado, Daños en general, Elementos perdidos,etc...)"id="" name="tipo">
+                                        <div class="col-md-8 mb-4 box2">
+                                            <input type="text" placeholder="Ej: (Camas en mal estado, Daños en general, Elementos perdidos,etc...)" name="tipo">
+                                            <span>Tipo de Informe:</span>
                                         </div>
-                                        <div class="col-md-4">
-                                            <label for="" class="form-label">Area:</label>
-                                            <select class="form-select" aria-label="Default select example"  name="area">
+
+                                        <div class="col-md-4 box3">
+
+                                            <select id="my-select" name="area">
+
                                                 <option value="Restaurante">            Restaurante           </option>
                                                 <option value="Dormitorio de Mujeres">  Dormitorio de Mujeres </option>
                                                 <option value="BDormitorio de Hombres"> Dormitorio de Hombres </option>
                                                 
-                                            </select>    
+                                            </select>
+                                            <span>Area:</span>  
                                         </div>
                                     
                                     
                                     </div>
     
-                                    <div class="mb-3">
-                                        <label for="email" class="form-label">Descripcion del Informe:</label>
-                                        <textarea class="form-control" name="descripcion" id="" rows="5"></textarea>
+                                    <div class="mb-3 box4">
+                                        <textarea class="texto" name="descripcion" rows="5" required="required"></textarea>
+                                        <span>Descripcion del Informe:</span>
                                     </div>
                                     
                                     <div class="row mb-3">
     
-                                               <div class="col-md-8" display:inline-block>
+                                            <div class="col-md-8 box5" display:inline-block>
                               
-                                            <label >Anexar Soporte Fotografico:</label>
+                                            <span >Anexar Soporte Fotografico:</span>
                                                 
                                             <p>
-                                                 FOTO:
-                                                 <input type="file" name="img">
+                                                FOTO:
+                                                <input type="file" name="img">
                                             </p>     
                 
                                         </div>
-                                        <div class="col-md-4">
-                                            <label for="" class="form-label">Fecha </label>
-                                            <input type="date" class="form-control" id="" name="fecha">
+                                        <div class="col-md-4 box2">
+                                            <input type="date" name="fecha" required="required">    
+                                            <span>Fecha:</span>
                                         </div>
                                       
                                  
@@ -99,8 +106,8 @@
                                     </div>
                                     
                                
-                                    <div class="d-flex justify-content-end col-12">
-                                        <button type="submit"  class="btn btn-success" >Guardar Reporte</button>
+                                    <div class="d-flex justify-content-end col-12 boton">
+                                        <button type="submit">Guardar Reporte</button>
                                     </div>
     
                                 
@@ -113,6 +120,8 @@
         </div>
     </body>
 
-   
-
 @endsection
+
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/button.css')}}">
+@stop
