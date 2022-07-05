@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    background-image: linear-gradient(175deg, #ffa900 0, #ff981f 10%, #ff852f 20%, #ff713a 30%, #ff5c42 40%, #f94646 50%, #e33049 60%, 
+    #cf1b4b 70%, #bd034d 80%, #ad0050 90%, #9e0054 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.texto{
+    font-size: 50px;
+}
+
+.caja{
+    background: #fff;
+    box-shadow: 15px 20px 2px 1px rgba(0, 0, 0, .20);
+    border: 2px solid green;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.box{
+    position: relative;
+    width: 250px;
+    margin-top: 20px;
+}
+
+.box input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid green;
+    background: #fff;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1em;
+}
+
+.box span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: black;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.box input:valid ~ span,
+.box input:focus ~ span{
+    color: black;
+    transform: translateX(10px) translateY(-9px);
+    font-size: 1.0em;
+    padding: 0 10px;
+    background: #fff;
+    border-left: 1px solid #80F461;
+    border-right: 1px solid #80F461;
+}
+
+.box input:valid ~ span,
+.box input:focus ~ span{
+    background: #80F461;
+}
+
+.box input:valid,
+.box input:focus{
+    border: 1px solid #80F461;
+    color: black;
+}
+
+.boton button{
+    margin-top: 20px;
+    justify-content: center;
+    padding: 10px 30px;
+    border: 2px solid green;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.boton button:hover{
+    letter-spacing: 0.25em;
+    background: rgb(189, 236, 182);
+    color: black;
+}
