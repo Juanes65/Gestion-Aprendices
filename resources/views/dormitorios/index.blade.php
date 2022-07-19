@@ -23,6 +23,7 @@
                                                 <th scope="col">Capacidad</th>
                                                 <th scope="col">Ubicacion</th>
                                                 <th scope="col">Genero</th>
+                                                <th scope="col">Estado</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
@@ -33,6 +34,7 @@
                                                     <td>{{$info->camas}}</td>
                                                     <td>{{$info->ubicacion}}</td>
                                                     <td>{{$info->genero}}</td>
+                                                    <td>{{$info->estado}}</td>
                                                     <td class="td-actions text-center">
                                                         
                                                         <div class="dropdown">

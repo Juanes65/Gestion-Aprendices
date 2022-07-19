@@ -16,7 +16,7 @@ class DormitorioController extends Controller
     public function index()
     {
         $dormitorio=DB::table('dormitorios')
-        ->select('nombre_dor','camas','ubicacion','genero','id')
+        ->select('nombre_dor','camas','ubicacion','genero','id','estado')
         ->orderBy('camas', 'desc')
         ->paginate(5);
 
@@ -48,7 +48,7 @@ class DormitorioController extends Controller
             'genero' => 'required',
         ]);
         
-        Dormitorio::create($request->only('nombre_dor', 'camas', 'ubicacion', 'genero'));
+        Dormitorio::create($request->only('nombre_dor', 'camas', 'ubicacion', 'genero','estado'));
 
         return redirect()->route('index.dormitorio');
     }
@@ -91,7 +91,7 @@ class DormitorioController extends Controller
             'genero' => 'required',
         ]);
 
-        $dato = $request->only('nombre_dor','camas','ubicacion','genero');
+        $dato = $request->only('nombre_dor','camas','ubicacion','genero','estado');
 
         $dormitorio->update($dato);
 

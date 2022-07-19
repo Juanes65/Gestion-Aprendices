@@ -32,6 +32,11 @@
                                         <span>Capacidad del Dormitorio</span>
                                     </div>
 
+                                    <div class="mb-4 box">
+                                        <input type="text" name="estado" value="{{old('camas',$dormitorio->estado)}}" required="required">
+                                        <span>Estado del Dormitorio</span>
+                                    </div>
+
                                 </div>
 
                                 <div class="col-lg-6 col-12">

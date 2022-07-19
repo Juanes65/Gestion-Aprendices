@@ -25,10 +25,6 @@ class Ficha extends Model
     }
 
     public function cupos(){
-        return $this->hasMany('App\Models\Cupo', 'total_cupos_h', 'id');
-    }
-
-    public function m_cupos(){
-        return $this->hasMany('App\Models\M_Cupo', 'total_cupos_m', 'id');
+        return $this->hasMany('App\Models\Cupo', 'total_cupos', 'id');
     }
 }

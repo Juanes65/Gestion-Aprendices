@@ -13,10 +13,11 @@ class Dormitorio extends Model
         'nombre_dor',
         'camas',
         'ubicacion',
-        'genero'
+        'genero',
+        'estado'
     ];
 
     public function cupos(){
-        return $this->hasMany('App\Models\Cupo', 'total_habitaciones_h', 'id');
+        return $this->hasMany('App\Models\Cupo', 'total_habitaciones', 'id');
     }
 }

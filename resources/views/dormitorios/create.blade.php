@@ -30,6 +30,11 @@
                                         <input type="number" name="camas" required="required">
                                         <span>Capacidad del Dormitorio</span>
                                     </div>
+
+                                    <div class="mb-4 box">
+                                        <input type="text" name="estado" required="required">
+                                        <span>Estado del Dormitorio</span>
+                                    </div>
                                     
                                 </div>
 

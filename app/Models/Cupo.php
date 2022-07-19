@@ -14,6 +14,6 @@ class Cupo extends Model
     ];
 
     public function dormitorios(){
-        return $this->belongsTo('App\Models\Dormitorio', 'total_habitaciones_h', 'id');
+        return $this->belongsTo('App\Models\Dormitorio', 'total_habitaciones', 'id');
     }
 }

@@ -16,4 +16,8 @@ class Reporte extends Model
     public function aprendices(){
         return $this->belongsTo('App\Models\Aprendice', 'comida_aprendiz', 'id');
     }
+
+    public function novedades(){
+        return $this->belongsTo('App\Models\Novedad', 'novedad_aprendiz', 'id');
+    }
 }

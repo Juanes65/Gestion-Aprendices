@@ -15,11 +15,15 @@ return new class extends Migration
     {
         Schema::create('aprendices', function (Blueprint $table) {
             $table->id();
+            $table->string('cc',15);
             $table->string('nombre', 30);
             $table->string('apellido', 30);
             $table->string('edad', 3);
-            $table->string('tipo_sangre', 3);
             $table->string('genero', 11);
+            $table->string('desayuno', 3);
+            $table->string('almuerzo', 3);
+            $table->string('cena', 3);
+            $table->string('observaciones', 120);
             $table->date('fecha:ingreso');
             $table->date('fecha_salida');
             $table->unsignedBigInteger('aprendiz_fiha');

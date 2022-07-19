@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('cupos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('total_cupos_h');
-            $table->unsignedBigInteger('total_habitaciones_h');
+            $table->unsignedBigInteger('total_cupos');
+            $table->unsignedBigInteger('total_habitaciones');
 
-            $table->foreign('total_cupos_h')->references('id')->on('fichas')->onDelete('cascade');
-            $table->foreign('total_habitaciones_h')->references('id')->on('dormitorios')->onDelete('cascade');
+            $table->foreign('total_cupos')->references('id')->on('fichas')->onDelete('cascade');
+            $table->foreign('total_habitaciones')->references('id')->on('dormitorios')->onDelete('cascade');
             $table->timestamps();
         });
     }
