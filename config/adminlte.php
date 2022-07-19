@@ -235,6 +235,7 @@ return [
             'text'    => 'Fichas',
             'icon'    => 'fas fa-fw fa-folder',
             'icon_color' => 'purple ',
+            'can' => 'admin',
             'submenu' => [
                 [
                     'text' => 'Agregar Ficha',
