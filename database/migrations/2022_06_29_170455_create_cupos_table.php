@@ -22,6 +22,7 @@ return new class extends Migration
             $table->foreign('total_habitaciones_h')->references('id')->on('dormitorios')->onDelete('cascade');
             $table->timestamps();
         });
+        
     }
 
     /**
