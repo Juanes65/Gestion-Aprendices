@@ -21,7 +21,7 @@ class Ficha extends Model
     ];
 
     public function aprendices(){
-        return $this->hasMany('App\Models\Aprendice', 'aprendiz_fiha', 'id');
+        return $this->hasMany('App\Models\Aprendice', 'aprendiz_ficha', 'id');
     }
 
     public function cupos(){

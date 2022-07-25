@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('reportes', function (Blueprint $table) {
             $table->id();
-            $table->string('desayuno', 50);
-            $table->string('almuerzo', 50);
-            $table->string('cena', 50);
+            $table->string('desayuno', 50)->nullable();
+            $table->string('almuerzo', 50)->nullable();
+            $table->string('cena', 50)->nullable();
             $table->date('fecha');
-            $table->unsignedBigInteger('comida_aprendiz');
-            $table->unsignedBigInteger('novedad_aprendiz');
+            $table->unsignedBigInteger('comida_aprendiz')->nullable();
+            $table->unsignedBigInteger('novedad_aprendiz')->nullable();
 
             $table->foreign('comida_aprendiz')->references('id')->on('aprendices')->onDelete('cascade');
             $table->foreign('novedad_aprendiz')->references('id')->on('novedades')->onDelete('cascade');

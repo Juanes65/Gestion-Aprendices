@@ -25,11 +25,6 @@
                                         <input type="text" name="ficha" required="required">
                                         <span>Numero de la Ficha</span>
                                     </div>
-                                    
-                                    <div class="mb-4 box">
-                                        <input type="text" name="origen" required="required">
-                                        <span>Origen</span>
-                                    </div>
 
                                     <div class="mb-4 box">
                                         <input type="text" name="tutor" required="required">
@@ -46,13 +41,8 @@
                                 <div class="col-lg-6 col-12">
 
                                     <div class="mb-4 box">
-                                        <input type="text" name="estudiante_m" required="reuired">
-                                        <span>Numero de Aprendices Femeninos</span>
-                                    </div>
-                                    
-                                    <div class="mb-4 box">
-                                        <input type="text" name="estudiante_h" required="required">
-                                        <span>Numero de Aprendices Masculinos</span>
+                                        <input type="text" name="origen" required="required">
+                                        <span>Origen</span>
                                     </div>
 
                                     <div class="mb-4 box">

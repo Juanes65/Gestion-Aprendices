@@ -10,7 +10,19 @@ class Aprendice extends Model
     use HasFactory;
 
     protected $fillable = [
-
+        'id',
+        'cc',
+        'nombre',
+        'apellido',
+        'edad',
+        'genero',
+        'desayuno',
+        'almuerzo',
+        'cena',
+        'observaciones',
+        'fecha_ingreso',
+        'fecha_salida',
+        'aprendiz_ficha'
     ];
 
     public function fichas(){

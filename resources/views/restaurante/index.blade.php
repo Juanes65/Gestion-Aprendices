@@ -3,7 +3,7 @@
 @section('title', 'Fichas')
 
 @section('content_header')
-    <h1 style="text-align: center">Fichas Registradas</h1>
+    <h1 style="text-align: center">Reporte de Alimentacion </h1>
 @stop
 
 @section('content')
@@ -19,28 +19,20 @@
                                     <table class="table table-bordered table-striped" id="cliente">
                                         <thead class="table-secondary">
                                             <tr style="text-align: center">
-                                                <th scope="col">N° Fichas</th>
-                                                <th scope="col">Origen</th>
-                                                <th scope="col">Tutor</th>
-                                                <th scope="col">Carrera</th>
-                                                <th scope="col">Aprendices Femeninos</th>
-                                                <th scope="col">Aprendices Masculinos</th>
-                                                <th scope="col">Fecha de Entrada</th>
-                                                <th scope="col">Fecha de Salida</th>
+                                                <th scope="col">N° Desayunos</th>
+                                                <th scope="col">N° Almuerzos</th>
+                                                <th scope="col">N° Cenas</th>
+                                                <th scope="col">Fecha </th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($ficha as $info)
+                                            @foreach ($reporte as $info)
                                                 <tr style="text-align: center">
-                                                    <td>{{$info->ficha}}</td>
-                                                    <td>{{$info->origen}}</td>
-                                                    <td>{{$info->tutor}}</td>
-                                                    <td>{{$info->carrera}}</td>
-                                                    <td>{{$info->estudiante_m}}</td>
-                                                    <td>{{$info->estudiante_h}}</td>
-                                                    <td>{{$info->fecha_i}}</td>
-                                                    <td>{{$info->fecha_s}}</td>
+                                                    <td>{{$info->desayuno}}</td>
+                                                    <td>{{$info->almuerzo}}</td>
+                                                    <td>{{$info->cena}}</td>
+                                                    <td>{{$info->fecha}}</td>
                                                     <td class="td-actions text-center">
                                                         
                                                         <div class="dropdown">
@@ -48,13 +40,9 @@
                                                                 <i class="fa-solid fa-bars"></i>
                                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                                 
-                                                                    <a href="{{route('edit.ficha', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">edit</i></a>
+                                                                    <a href="{{route('edit.cocina', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">edit</i></a>
 
-                                                                    <a href="{{route('create.aprendiz', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">group_add</i></a>
-
-                                                                    <a href="{{route('index.aprendiz', $info->id)}}" class="btn btn-outline-success"><i class="material-icons">boy</i></a>
-                                                                
-                                                                    <form action="{{route('destroy.ficha', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
+                                                                    <form action="{{route('destroy.cocina', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
                                                                         @csrf
                                                                         @method('DELETE')
                                                                         <button class="btn btn-success" type="submit" rel="tooltip">

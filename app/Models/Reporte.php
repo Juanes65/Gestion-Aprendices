@@ -10,7 +10,10 @@ class Reporte extends Model
     use HasFactory;
 
     protected $fillable = [
-        
+        'desayuno',
+        'almuerzo',
+        'cena',
+        'fecha'
     ];
 
     public function aprendices(){

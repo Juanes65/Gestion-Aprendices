@@ -291,12 +291,12 @@ return [
                 [
                     'text' => 'Agregar reporte',
                     'icon_color' => 'blue',
-                    'url'  => '#',
+                    'route'  => 'create.cocina',
                 ],
                 [
                     'text' => 'ver',
                     'icon_color' => 'red',
-                    'url'  => '#',
+                    'route'  => 'index.cocina',
                 ],
             ]
         ],
