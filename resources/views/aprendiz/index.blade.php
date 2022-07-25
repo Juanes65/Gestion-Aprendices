@@ -1,9 +1,11 @@
 @extends('adminlte::page')
 
-@section('title', 'Fichas')
+@section('title', 'Aprendices')
 
 @section('content_header')
-    <h1 style="text-align: center">Fichas Registradas</h1>
+    @foreach($ficha as $item)
+        <h1 style="text-align: center">Aprendices De La Ficha {{$item->ficha}}</h1>
+    @endforeach
 @stop
 
 @section('content')
@@ -19,28 +21,34 @@
                                     <table class="table table-bordered table-striped" id="cliente">
                                         <thead class="table-secondary">
                                             <tr style="text-align: center">
-                                                <th scope="col">N° Fichas</th>
-                                                <th scope="col">Origen</th>
-                                                <th scope="col">Tutor</th>
-                                                <th scope="col">Carrera</th>
-                                                <th scope="col">Aprendices Femeninos</th>
-                                                <th scope="col">Aprendices Masculinos</th>
+                                                <th scope="col">Cedula</th>
+                                                <th scope="col">Nombre</th>
+                                                <th scope="col">Apellidos</th>
+                                                <th scope="col">Edad</th>
+                                                <th scope="col">Genero</th>
+                                                <th scope="col">Desayuno</th>
+                                                <th scope="col">Almuerzo</th>
+                                                <th scope="col">Cena</th>
+                                                <th scope="col">Observaciones</th>
                                                 <th scope="col">Fecha de Entrada</th>
                                                 <th scope="col">Fecha de Salida</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($ficha as $info)
+                                            @foreach ($aprendiz as $info)
                                                 <tr style="text-align: center">
-                                                    <td>{{$info->ficha}}</td>
-                                                    <td>{{$info->origen}}</td>
-                                                    <td>{{$info->tutor}}</td>
-                                                    <td>{{$info->carrera}}</td>
-                                                    <td>{{$info->estudiante_m}}</td>
-                                                    <td>{{$info->estudiante_h}}</td>
-                                                    <td>{{$info->fecha_i}}</td>
-                                                    <td>{{$info->fecha_s}}</td>
+                                                    <td>{{$info->cc}}</td>
+                                                    <td>{{$info->nombre}}</td>
+                                                    <td>{{$info->apellido}}</td>
+                                                    <td>{{$info->edad}}</td>
+                                                    <td>{{$info->genero}}</td>
+                                                    <td>{{$info->desayuno}}</td>
+                                                    <td>{{$info->almuerzo}}</td>
+                                                    <td>{{$info->cena}}</td>
+                                                    <td>{{$info->observaciones}}</td>
+                                                    <td>{{$info->fecha_ingreso}}</td>
+                                                    <td>{{$info->fecha_salida}}</td>
                                                     <td class="td-actions text-center">
                                                         
                                                         <div class="dropdown">
@@ -48,13 +56,9 @@
                                                                 <i class="fa-solid fa-bars"></i>
                                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                                 
-                                                                    <a href="{{route('edit.ficha', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">edit</i></a>
-
-                                                                    <a href="{{route('create.aprendiz', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">group_add</i></a>
-
-                                                                    <a href="{{route('index.aprendiz', $info->id)}}" class="btn btn-outline-success"><i class="material-icons">boy</i></a>
+                                                                    <a href="{{route('edit.aprendiz', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">edit</i></a>
                                                                 
-                                                                    <form action="{{route('destroy.ficha', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
+                                                                    <form action="{{route('destroy.aprendiz', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
                                                                         @csrf
                                                                         @method('DELETE')
                                                                         <button class="btn btn-success" type="submit" rel="tooltip">

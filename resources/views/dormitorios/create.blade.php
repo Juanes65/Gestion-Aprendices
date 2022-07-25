@@ -46,7 +46,7 @@
                                     </div>
 
                                     <div class="mb-4 box3">
-                                        <select name="genero" id="my-select" required="reuired">                                                    
+                                        <select name="genero" id="my-select" required="required">                                                    
 
                                             <option value=""></option>
                                             <option value="Maculino">Masculino</option>

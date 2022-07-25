@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Aprendice;
 use App\Models\Ficha;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FichaController extends Controller
 {
@@ -28,6 +30,14 @@ class FichaController extends Controller
         return view('fichas.create');
     }
 
+    public function create2($id)
+    {
+        $nose = DB::select('select * from fichas where id = ?', [$id]);
+        $data = array('lista_fichas' => $nose);
+
+        return view('aprendiz.create', $data);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -41,8 +51,6 @@ class FichaController extends Controller
             'origen' => 'required',
             'tutor' => 'required',
             'carrera' => 'required',
-            'estudiante_m' => 'required',
-            'estudiante_h' => 'required',
             'fecha_i' => 'required',
             'fecha_s' => 'required',
         ]);
@@ -59,6 +67,26 @@ class FichaController extends Controller
         $ficha->fecha_s = $request->fecha_s;
 
         $ficha->save();
+
+        return redirect()->route('index.ficha');
+    }
+
+    public function store2(Request $request)
+    {
+        DB::table('aprendices')->insert([
+            'cc' => $request->cc,
+            'nombre' => $request->nombre,
+            'apellido' => $request->apellido,
+            'edad' => $request->edad,
+            'genero' => $request->genero,
+            'desayuno' => $request->desayuno,
+            'almuerzo' => $request->almuerzo,
+            'cena' => $request->cena,
+            'observaciones' => $request->observaciones,
+            'fecha_ingreso' => $request->fecha_ingreso,
+            'fecha_salida' => $request->fecha_salida,
+            'aprendiz_ficha' => $request->aprendiz_ficha,
+        ]);
 
         return redirect()->route('index.ficha');
     }
@@ -92,22 +120,34 @@ class FichaController extends Controller
      * @param  \App\Models\Ficha  $ficha
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ficha $ficha)
+    public function update(Request $request, $id)
     {
+        $ficha = Ficha::find($id);
+
         $request->validate([
             'ficha' => 'required',
             'origen' => 'required',
             'tutor' => 'required',
             'carrera' => 'required',
-            'estudiante_m' => 'required',
-            'estudiante_h' => 'required',
             'fecha_i' => 'required',
             'fecha_s' => 'required',
         ]);
 
-        $dato = $request->only('ficha','origen','tutor','carrera','estudiante_m','estudiante_h','fecha_i','fecha_s');
+        $contador_h = Aprendice::where('genero','Masculino')
+                                ->where('aprendiz_ficha',[$id])->count();
+        $contador_m = Aprendice::where('genero','Femenino')
+                                ->where('aprendiz_ficha',[$id])->count();
 
-        $ficha->update($dato);
+        $dato = $ficha->update([
+            'ficha' => $request->ficha,
+            'origen' => $request->origen,
+            'tutor' => $request->tutor,
+            'carrera' => $request->carrera,
+            'estudiante_m' => $contador_m,
+            'estudiante_h' => $contador_h,
+            'fecha_i' => $request->fecha_i,
+            'fecha_s' => $request->fecha_s,
+        ]);
 
         return redirect()->route('index.ficha');
     }

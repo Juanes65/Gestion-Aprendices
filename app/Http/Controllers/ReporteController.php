@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Aprendice;
 use App\Models\Reporte;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use SebastianBergmann\CodeCoverage\Report\Xml\Report;
 
 class ReporteController extends Controller
 {
@@ -14,7 +17,9 @@ class ReporteController extends Controller
      */
     public function index()
     {
-        //
+        $reporte=Reporte::all();
+
+        return view('restaurante.index', compact('reporte'));
     }
 
     /**
@@ -24,7 +29,7 @@ class ReporteController extends Controller
      */
     public function create()
     {
-        //
+        return view('restaurante.create');
     }
 
     /**
@@ -35,7 +40,18 @@ class ReporteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $desayuno= Aprendice::where('desayuno','si')->count();
+        $almuerzo= Aprendice::where('almuerzo','si')->count();
+        $cena    = Aprendice::where('cena','si')->count();
+
+        DB::table('reportes')->insert([
+            'desayuno'=> $desayuno, 
+            'almuerzo'=>$almuerzo,
+            'cena'=>$cena,
+            'fecha'=>$request->fecha,
+        ]);
+
+        return redirect()->route('index.cocina');
     }
 
     /**
@@ -57,7 +73,7 @@ class ReporteController extends Controller
      */
     public function edit(Reporte $reporte)
     {
-        //
+        return view('restaurante.edit', compact('reporte'));
     }
 
     /**
@@ -69,7 +85,20 @@ class ReporteController extends Controller
      */
     public function update(Request $request, Reporte $reporte)
     {
-        //
+        $desayuno= Aprendice::where('desayuno','si')->count();
+        $almuerzo= Aprendice::where('almuerzo','si')->count();
+        $cena    = Aprendice::where('cena','si')->count();
+
+        $reporte->update([
+
+            'desayuno'=> $desayuno, 
+            'almuerzo'=>$almuerzo,
+            'cena'=>$cena,
+            'fecha'=>$request->fecha,
+
+        ]);
+
+        return redirect()->route('index.cocina');
     }
 
     /**
@@ -80,6 +109,8 @@ class ReporteController extends Controller
      */
     public function destroy(Reporte $reporte)
     {
-        //
+        $reporte->delete();
+
+        return redirect()->back();
     }
 }

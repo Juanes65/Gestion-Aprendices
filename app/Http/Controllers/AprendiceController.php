@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Aprendice;
+use App\Models\Ficha;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AprendiceController extends Controller
 {
@@ -12,9 +14,13 @@ class AprendiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $aprendiz = DB::select('select * from aprendices where aprendiz_ficha = ?', [$id]);
+
+        $ficha = DB::select('select * from fichas where id = ?', [$id]);
+
+        return view('aprendiz.index', compact('aprendiz', 'ficha'));
     }
 
     /**
@@ -24,7 +30,7 @@ class AprendiceController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -35,7 +41,7 @@ class AprendiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -57,7 +63,7 @@ class AprendiceController extends Controller
      */
     public function edit(Aprendice $aprendice)
     {
-        //
+        return view('aprendiz.edit', compact('aprendice'));
     }
 
     /**
@@ -69,7 +75,21 @@ class AprendiceController extends Controller
      */
     public function update(Request $request, Aprendice $aprendice)
     {
-        //
+        $aprendice->update([
+            'cc' => $request->cc,
+            'nombre' => $request->nombre,
+            'apellido' => $request->apellido,
+            'edad' => $request->edad,
+            'genero' => $request->genero,
+            'desayuno' => $request->desayuno,
+            'almuerzo' => $request->almuerzo,
+            'cena' => $request->cena,
+            'observaciones' => $request->observaciones,
+            'fecha_ingreso' => $request->fecha_ingreso,
+            'fecha_salida' => $request->fecha_salida,
+        ]);
+
+        return redirect()->route('index.ficha');
     }
 
     /**
@@ -80,6 +100,8 @@ class AprendiceController extends Controller
      */
     public function destroy(Aprendice $aprendice)
     {
-        //
+        $aprendice->delete();
+
+        return redirect()->back();
     }
 }

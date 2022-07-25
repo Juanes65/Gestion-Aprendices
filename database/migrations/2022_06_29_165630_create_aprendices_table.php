@@ -15,20 +15,20 @@ return new class extends Migration
     {
         Schema::create('aprendices', function (Blueprint $table) {
             $table->id();
-            $table->string('cc',15);
+            $table->string('cc',15)->unique();
             $table->string('nombre', 30);
             $table->string('apellido', 30);
             $table->string('edad', 3);
             $table->string('genero', 11);
-            $table->string('desayuno', 3);
-            $table->string('almuerzo', 3);
-            $table->string('cena', 3);
+            $table->string('desayuno', 3)->nullable();
+            $table->string('almuerzo', 3)->nullable();
+            $table->string('cena', 3)->nullable();
             $table->string('observaciones', 120);
-            $table->date('fecha:ingreso');
+            $table->date('fecha_ingreso');
             $table->date('fecha_salida');
-            $table->unsignedBigInteger('aprendiz_fiha');
+            $table->unsignedBigInteger('aprendiz_ficha');
 
-            $table->foreign('aprendiz_fiha')->references('id')->on('fichas')->onDelete('cascade');
+            $table->foreign('aprendiz_ficha')->references('id')->on('fichas')->onDelete('cascade');
             $table->timestamps();
         });
     }

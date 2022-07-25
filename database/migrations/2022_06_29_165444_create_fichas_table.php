@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('origen', 50);
             $table->string('tutor', 50);
             $table->string('carrera', 150);
-            $table->string('estudiante_m', 150);
-            $table->string('estudiante_h', 150);
+            $table->string('estudiante_m', 150)->nullable();
+            $table->string('estudiante_h', 150)->nullable();
             $table->date('fecha_i');
             $table->date('fecha_s');
             $table->timestamps();
