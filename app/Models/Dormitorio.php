@@ -14,6 +14,7 @@ class Dormitorio extends Model
         'camas',
         'ubicacion',
         'genero',
+        'espacio',
         'estado'
     ];
 

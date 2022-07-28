@@ -16,7 +16,7 @@ class DormitorioController extends Controller
     public function index()
     {
         $dormitorio=DB::table('dormitorios')
-        ->select('nombre_dor','camas','ubicacion','genero','id','estado')
+        ->select('nombre_dor','camas','ubicacion','genero','id','estado','espacio')
         ->orderBy('camas', 'desc')
         ->paginate(5);
 
@@ -48,9 +48,30 @@ class DormitorioController extends Controller
             'genero' => 'required',
         ]);
         
-        Dormitorio::create($request->only('nombre_dor', 'camas', 'ubicacion', 'genero','estado'));
+        $input = $request->camas;
+
+        if($input == "0"){
+            DB::table('dormitorios')->insert([
+                'nombre_dor' => $request->nombre_dor,
+                'camas' => $request->camas,
+                'ubicacion' => $request->ubicacion,
+                'genero' => $request->genero,
+                'espacio' => $request->espacio,
+                'estado' => "Ocupado",
+            ]);
+        }else{
+            DB::table('dormitorios')->insert([
+                'nombre_dor' => $request->nombre_dor,
+                'camas' => $request->camas,
+                'ubicacion' => $request->ubicacion,
+                'genero' => $request->genero,
+                'espacio' => $request->espacio,
+                'estado' => "Disponible",
+            ]);    
+        }
 
         return redirect()->route('index.dormitorio');
+
     }
 
     /**
@@ -82,6 +103,13 @@ class DormitorioController extends Controller
      * @param  \App\Models\Dormitorio  $dormitorio
      * @return \Illuminate\Http\Response
      */
+    public function validarcapacidad($cama)
+    {
+        $dormitorio = Dormitorio::select("*")->where('cama',0);
+
+        return $dormitorio == null ? true : false;
+    }
+
     public function update(Request $request, Dormitorio $dormitorio)
     {
         $request->validate([
@@ -91,9 +119,27 @@ class DormitorioController extends Controller
             'genero' => 'required',
         ]);
 
-        $dato = $request->only('nombre_dor','camas','ubicacion','genero','estado');
+        $input = $request->camas;
 
-        $dormitorio->update($dato);
+        if($input == "0"){
+            $dormitorio->update([
+                'nombre_dor' => $request->nombre_dor,
+                'camas' => $request->camas,
+                'ubicacion' => $request->ubicacion,
+                'genero' => $request->genero,
+                'espacio' => $request->espacio,
+                'estado' => "Ocupado",
+            ]);
+        }else{
+            $dormitorio->update([
+                'nombre_dor' => $request->nombre_dor,
+                'camas' => $request->camas,
+                'ubicacion' => $request->ubicacion,
+                'genero' => $request->genero,
+                'espacio' => $request->espacio,
+                'estado' => "Disponible",
+            ]);    
+        }
 
         return redirect()->route('index.dormitorio');
     }

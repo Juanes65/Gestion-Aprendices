@@ -45,11 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b style:"text-align:center">
-                  BIENESTAR<br/>
-                  AL<br/>
-                  APRENDIZ  
-                </b>',
+    'logo' => '<b style:"text-align:center">BIENESTAR</b>',
 
     'logo_img' => 'vendor/adminlte/dist/img/9010.jpg',
     'logo_img_class' => 'brand-image img-circle elevation-3',
@@ -274,12 +270,12 @@ return [
                 [
                     'text' => 'Agregar',
                     'icon_color' => 'green',
-                    'url'  => '#',
+                    'route'  => 'create.novedad',
                 ],
                 [
                     'text' => 'ver',
                     'icon_color' => 'cyan',
-                    'url'  => '#',
+                    'route'  => 'index.novedad',
                 ],
             ]
         ],

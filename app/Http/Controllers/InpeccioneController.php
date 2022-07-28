@@ -20,11 +20,8 @@ class InpeccioneController extends Controller
         ->select('nombre','cargo','apellido','area','tipo','descripcion','fecha','id')
         ->orderBy('nombre', 'asc')
         ->paginate(10);
-
-
-
-
-       return view('Inspeccion.index', compact('reporte'));
+        
+        return view('Inspeccion.index', compact('reporte'));
         
     }
 
@@ -46,9 +43,6 @@ class InpeccioneController extends Controller
      */
     public function store(Request $request)
     {
-        
-     
-
         $arch = $request->file('img')->store('public/images');
         $file = Storage::url($arch);
        
@@ -70,10 +64,7 @@ class InpeccioneController extends Controller
      */
     public function show(Inpeccione $inpeccione)
     {
-        
 
-
-        
         $reporte=DB::table('inpecciones')
         ->select('descripcion')
         ->orderBy('nombre', 'asc')
@@ -83,10 +74,7 @@ class InpeccioneController extends Controller
     }
     public function show2(Inpeccione $inpeccione)
     {
-        
 
-
-        
         $reporte=DB::table('inpecciones')
         ->select('foto')
         ->orderBy('nombre', 'asc')

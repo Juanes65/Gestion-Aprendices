@@ -31,8 +31,14 @@
                                         <span>Capacidad del Dormitorio</span>
                                     </div>
 
-                                    <div class="mb-4 box">
-                                        <input type="text" name="estado" required="required">
+                                    <div class="mb-4 box3">
+                                        <select name="espacio" id="my-select" required="required">                                                    
+
+                                            <option value=""></option>
+                                            <option value="Ordenado">Ordenado</option>
+                                            <option value="Por Ordenar">Por Ordenar</option>
+
+                                        </select>
                                         <span>Estado del Dormitorio</span>
                                     </div>
                                     
