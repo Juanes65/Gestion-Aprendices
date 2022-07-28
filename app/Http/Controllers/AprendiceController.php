@@ -75,6 +75,7 @@ class AprendiceController extends Controller
      */
     public function update(Request $request, Aprendice $aprendice)
     {
+        
         $aprendice->update([
             'cc' => $request->cc,
             'nombre' => $request->nombre,

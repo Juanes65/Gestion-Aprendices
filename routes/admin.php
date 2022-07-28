@@ -4,6 +4,7 @@ use App\Http\Controllers\AprendiceController;
 use App\Http\Controllers\DormitorioController;
 use App\Http\Controllers\FichaController;
 use App\Http\Controllers\InpeccioneController;
+use App\Http\Controllers\NovedadeController;
 use App\Http\Controllers\ReporteController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,12 +29,22 @@ Route::put('/Dormitorio/{dormitorio}',          [DormitorioController::class, 'u
 Route::delete('/Dormitorio/{dormitorio}',       [DormitorioController::class, 'destroy'])->name('destroy.dormitorio');
 
 //Rutas de los apprendices
+
 Route::get('/fichas/aprendiz/{id}',                   [AprendiceController::class, 'index'])->name('index.aprendiz');
 Route::get('/fichas/aprendiz/{id}/agregar',           [FichaController::class, 'create2'])->name('create.aprendiz');
 Route::post('/fichas/aprendiz/almacenar',        [FichaController::class, 'store2']) ->name('store.aprendiz');
 Route::get('/ficha/aprendiz/editar/{aprendice}',     [AprendiceController::class, 'edit'])->name('edit.aprendiz');
 Route::put('/ficha/aprendiz/{aprendice}',            [AprendiceController::class, 'update'])->name('update.aprendiz');
 Route::delete('/ficha/aprendiz/{aprendice}',         [AprendiceController::class, 'destroy'])->name('destroy.aprendiz');
+
+//Rutas de las novedades
+
+Route::get('/Novedades',                   [NovedadeController::class, 'index'])->name('index.novedad');
+Route::get('/Novedades/agregar',           [NovedadeController::class, 'create'])->name('create.novedad');
+Route::post('/Novedades/almacenar',        [NovedadeController::class, 'store']) ->name('store.novedad');
+Route::get('Novedades/editar/{novedade}',     [NovedadeController::class, 'edit'])->name('edit.novedad');
+Route::put('Novedades/{novedade}',            [NovedadeController::class, 'update'])->name('update.novedad');
+Route::delete('Novedades/{novedade}',         [NovedadeController::class, 'destroy'])->name('destroy.novedad');
 
 //rutas de la cocina
 

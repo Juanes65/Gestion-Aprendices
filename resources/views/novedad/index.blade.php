@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Dormitorios')
+@section('title', 'Novedad')
 
 @section('content_header')
-    <h1 style="text-align: center">Dormitorios Registrados</h1>
+    <h1 style="text-align: center">Todas Las Novedades</h1>
 @stop
 
 @section('content')
@@ -19,24 +19,26 @@
                                     <table class="table table-bordered table-striped" id="cliente">
                                         <thead class="table-secondary">
                                             <tr style="text-align: center">
-                                                <th scope="col">Nombre de la Habitacion</th>
-                                                <th scope="col">Capacidad</th>
-                                                <th scope="col">Ubicacion</th>
-                                                <th scope="col">Genero</th>
-                                                <th scope="col">Espacio</th>
-                                                <th scope="col">Estado</th>
+                                                <th scope="col">Tipo de Novedad</th>
+                                                <th scope="col">Descripcion</th>
+                                                <th scope="col">Nombres y Apellidos</th>
+                                                <th scope="col">Desayuno</th>
+                                                <th scope="col">Almuerzo</th>
+                                                <th scope="col">Cena</th>
+                                                <th scope="col">Fecha de la Novedad</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($dormitorio as $info)
+                                            @foreach ($novedad as $info)
                                                 <tr style="text-align: center">
-                                                    <td>{{$info->nombre_dor}}</td>
-                                                    <td>{{$info->camas}}</td>
-                                                    <td>{{$info->ubicacion}}</td>
-                                                    <td>{{$info->genero}}</td>
-                                                    <td>{{$info->espacio}}</td>
-                                                    <td>{{$info->estado}}</td>
+                                                    <td>{{$info->tipo_novedad}}</td>
+                                                    <td>{{$info->descripcion_P}}</td>
+                                                    <td>{{$info->nombre}}</td>
+                                                    <td>{{$info->desayuno}}</td>
+                                                    <td>{{$info->almuerzo}}</td>
+                                                    <td>{{$info->cena}}</td>
+                                                    <td>{{$info->fecha_Info}}</td>
                                                     <td class="td-actions text-center">
                                                         
                                                         <div class="dropdown">
@@ -44,9 +46,9 @@
                                                                 <i class="fa-solid fa-bars"></i>
                                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                                 
-                                                                    <a href="{{route('edit.dormitorio', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">edit</i></a>
+                                                                    <a href="{{route('edit.novedad', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">edit</i></a>
                                                                 
-                                                                    <form action="{{route('destroy.dormitorio', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
+                                                                    <form action="{{route('destroy.novedad', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
                                                                         @csrf
                                                                         @method('DELETE')
                                                                         <button class="btn btn-success" type="submit" rel="tooltip">

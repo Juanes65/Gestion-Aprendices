@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('camas', 3);
             $table->string('ubicacion', 20);
             $table->string('genero',20);
+            $table->string('espacio',10);
             $table->string('estado',10);
             $table->timestamps();
         });

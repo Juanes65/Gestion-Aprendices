@@ -22,22 +22,28 @@
                                 <div class="col-lg-6 col-12">
                                         
                                     <div class="mb-4 box">
-                                        <input type="text" name="cc" required="required">
+                                        <input type="text" name="cc" required="required" value="{{old('cc')}}">
                                         <span>Cedula</span>
+                                        @if ($errors->has('cc'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('cc')}}</span>
+                                        @endif
                                     </div>
                                     
                                     <div class="mb-4 box">
-                                        <input type="text" name="nombre" required="required">
+                                        <input type="text" name="nombre" required="required" value="{{old('nombre')}}">
                                         <span>Nombre</span>
+                                        @if ($errors->has('nombre'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('nombre')}}</span>
+                                        @endif
                                     </div>
 
                                     <div class="mb-4 box">
-                                        <input type="text" name="apellido" required="required">
+                                        <input type="text" name="apellido" required="required" value="{{old('apellido')}}">
                                         <span>Apellido</span>
                                     </div>
 
                                     <div class="mb-4 box">
-                                        <input type="text" name="edad" required="required">
+                                        <input type="text" name="edad" required="required" value="{{old('edad')}}">
                                         <span>edad</span>
                                     </div>
 
@@ -46,7 +52,7 @@
                                         <select name="genero" id="my-select" required="required">                                                    
 
                                             <option value=""></option>
-                                            <option value="Maculino">Masculino</option>
+                                            <option value="Masculino">Masculino</option>
                                             <option value="Femenino">Femenino</option>
 
                                         </select>
@@ -55,7 +61,7 @@
                                     </div>
 
                                     <div class="mb-4 box2">
-                                        <input type="date" name="fecha_ingreso">
+                                        <input type="date" name="fecha_ingreso" value="{{old('fecha_ingreso')}}">
                                         <span>Fecha de Ingreso</span>
                                     </div>
                                 
@@ -63,23 +69,47 @@
 
                                 <div class="col-lg-6 col-12">
 
-                                    <div class="mb-4 box">
-                                        <input type="text" name="desayuno" required="reuired">
+                                    <div class="mb-4 box3">
+
+                                        <select name="desayuno" id="my-select" required="required">                                                    
+
+                                            <option value=""></option>
+                                            <option value="Si">Si Desayuna</option>
+                                            <option value="No">No Desayuna</option>
+
+                                        </select>
                                         <span>Desayuno</span>
+
                                     </div>
                                     
-                                    <div class="mb-4 box">
-                                        <input type="text" name="almuerzo" required="required">
+                                    <div class="mb-4 box3">
+
+                                        <select name="almuerzo" id="my-select" required="required">                                                    
+
+                                            <option value=""></option>
+                                            <option value="Si">Si Almuerza</option>
+                                            <option value="No">No Almuerza</option>
+
+                                        </select>
                                         <span>Almuerzo</span>
+
                                     </div>
 
-                                    <div class="mb-4 box">
-                                        <input type="text" name="cena" required="required">
+                                    <div class="mb-4 box3">
+
+                                        <select name="cena" id="my-select" required="required" value="{{old('cena')}}">                                                    
+
+                                            <option value=""></option>
+                                            <option value="Si">Si Cena</option>
+                                            <option value="No">No Cena</option>
+
+                                        </select>
                                         <span>Cena</span>
+
                                     </div>
 
                                     <div class="mb-4 box">
-                                        <input type="text" name="observaciones" required="required">
+                                        <input type="text" name="observaciones" required="required" value="{{old('observaciones')}}">
                                         <span>Observaciones</span>
                                     </div>
 
@@ -94,7 +124,7 @@
                                     </div>
 
                                     <div class="mb-4 box2">
-                                        <input type="date" name="fecha_salida">
+                                        <input type="date" name="fecha_salida" value="{{old('fecha_salida')}}">
                                         <span>Fecha de Salida</span>
                                     </div>
 

@@ -73,6 +73,11 @@ class FichaController extends Controller
 
     public function store2(Request $request)
     {
+        $request->validate([
+            'cc' => 'unique:aprendices',
+            'nombre' => 'required',
+        ]);
+
         DB::table('aprendices')->insert([
             'cc' => $request->cc,
             'nombre' => $request->nombre,

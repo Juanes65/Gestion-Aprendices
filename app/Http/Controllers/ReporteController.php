@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Aprendice;
+use App\Models\Novedade;
 use App\Models\Reporte;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -40,9 +41,17 @@ class ReporteController extends Controller
      */
     public function store(Request $request)
     {
-        $desayuno= Aprendice::where('desayuno','si')->count();
-        $almuerzo= Aprendice::where('almuerzo','si')->count();
-        $cena    = Aprendice::where('cena','si')->count();
+        $desayuno_aprendiz = Aprendice::where('desayuno','Si')->count();
+        $almuerzo_aprendiz = Aprendice::where('almuerzo','Si')->count();
+        $cena_aprendiz     = Aprendice::where('cena','Si')->count();
+
+        $desayuno_novedad = Novedade::where('desayuno','Si')->count();
+        $almuerzo_novedad = Novedade::where('almuerzo','Si')->count();
+        $cena_novedad     = Novedade::where('cena','Si')->count();
+
+        $desayuno = $desayuno_aprendiz + $desayuno_novedad;
+        $almuerzo = $almuerzo_aprendiz + $almuerzo_novedad;
+        $cena = $cena_aprendiz + $cena_novedad;
 
         DB::table('reportes')->insert([
             'desayuno'=> $desayuno, 
@@ -85,9 +94,17 @@ class ReporteController extends Controller
      */
     public function update(Request $request, Reporte $reporte)
     {
-        $desayuno= Aprendice::where('desayuno','si')->count();
-        $almuerzo= Aprendice::where('almuerzo','si')->count();
-        $cena    = Aprendice::where('cena','si')->count();
+        $desayuno_aprendiz = Aprendice::where('desayuno','Si')->count();
+        $almuerzo_aprendiz = Aprendice::where('almuerzo','Si')->count();
+        $cena_aprendiz     = Aprendice::where('cena','Si')->count();
+
+        $desayuno_novedad = Novedade::where('desayuno','Si')->count();
+        $almuerzo_novedad = Novedade::where('almuerzo','Si')->count();
+        $cena_novedad     = Novedade::where('cena','Si')->count();
+
+        $desayuno = $desayuno_aprendiz + $desayuno_novedad;
+        $almuerzo = $almuerzo_aprendiz + $almuerzo_novedad;
+        $cena = $cena_aprendiz + $cena_novedad;
 
         $reporte->update([
 

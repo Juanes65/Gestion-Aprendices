@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Novedade;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class NovedadeController extends Controller
 {
@@ -14,7 +15,9 @@ class NovedadeController extends Controller
      */
     public function index()
     {
-        //
+        $novedad = Novedade::all();
+
+        return view('novedad.index', compact('novedad'));
     }
 
     /**
@@ -24,7 +27,7 @@ class NovedadeController extends Controller
      */
     public function create()
     {
-        //
+        return view('novedad.create');
     }
 
     /**
@@ -35,7 +38,17 @@ class NovedadeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('novedades')->insert([
+            'tipo_novedad' => $request->tipo_novedad,
+            'descripcion_P' => $request->descripcion_P,
+            'nombre' => $request->nombre,
+            'fecha_Info' => $request->fecha_Info,
+            'desayuno' => $request->desayuno,
+            'almuerzo' => $request->almuerzo,
+            'cena' => $request->cena,
+        ]);
+
+        return redirect()->route('index.novedad');
     }
 
     /**
@@ -57,7 +70,7 @@ class NovedadeController extends Controller
      */
     public function edit(Novedade $novedade)
     {
-        //
+        return view('novedad.edit', compact('novedade'));
     }
 
     /**
@@ -69,7 +82,17 @@ class NovedadeController extends Controller
      */
     public function update(Request $request, Novedade $novedade)
     {
-        //
+        $novedade->update([
+            'tipo_novedad' => $request->tipo_novedad,
+            'descripcion_P' => $request->descripcion_P,
+            'nombre' => $request->nombre,
+            'fecha_Info' => $request->fecha_Info,
+            'desayuno' => $request->desayuno,
+            'almuerzo' => $request->almuerzo,
+            'cena' => $request->cena,
+        ]);
+
+        return redirect()->route('index.novedad');
     }
 
     /**
@@ -80,6 +103,8 @@ class NovedadeController extends Controller
      */
     public function destroy(Novedade $novedade)
     {
-        //
+        $novedade->delete();
+
+        return redirect()->back();
     }
 }
