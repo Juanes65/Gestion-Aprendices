@@ -56,7 +56,7 @@
                                     </div>
 
                                     <div class="mb-4 box2">
-                                        <input type="date" name="fecha_ingreso" value="{{old('fecha_ingreso',$aprendice->fecha_ingreso)}}">
+                                        <input type="date" name="fecha_inicial" value="{{old('fecha_inicial',$aprendice->fecha_inicial)}}">
                                         <span>Fecha de Ingreso</span>
                                     </div>
                                 
@@ -85,7 +85,7 @@
                                     </div>
 
                                     <div class="mb-4 box2">
-                                        <input type="date" name="fecha_salida" value="{{old('fecha_salida',$aprendice->fecha_salida)}}">
+                                        <input type="date" name="fecha_final" value="{{old('fecha_final',$aprendice->fecha_final)}}">
                                         <span>Fecha de Salida</span>
                                     </div>
 

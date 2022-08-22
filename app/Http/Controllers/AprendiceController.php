@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Aprendice;
+use App\Models\Consumo;
 use App\Models\Ficha;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -52,7 +53,7 @@ class AprendiceController extends Controller
      */
     public function show(Aprendice $aprendice)
     {
-        //
+        
     }
 
     /**
@@ -86,8 +87,8 @@ class AprendiceController extends Controller
             'almuerzo' => $request->almuerzo,
             'cena' => $request->cena,
             'observaciones' => $request->observaciones,
-            'fecha_ingreso' => $request->fecha_ingreso,
-            'fecha_salida' => $request->fecha_salida,
+            'fecha_inicial' => $request->fecha_inicial,
+            'fecha_final' => $request->fecha_final,
         ]);
 
         return redirect()->route('index.ficha');

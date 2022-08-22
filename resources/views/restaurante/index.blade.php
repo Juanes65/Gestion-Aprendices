@@ -19,27 +19,27 @@
                                     <table class="table table-bordered table-striped" id="cliente">
                                         <thead class="table-secondary">
                                             <tr style="text-align: center">
-                                                <th scope="col">N° Desayunos</th>
-                                                <th scope="col">N° Almuerzos</th>
-                                                <th scope="col">N° Cenas</th>
-                                                <th scope="col">Fecha </th>
+                                                <th scope="col">Total Desayunos</th>
+                                                <th scope="col">Total Almuerzos</th>
+                                                <th scope="col">Total Cenas</th>
+                                                <th scope="col">Ficha</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($reporte as $info)
+                                            @foreach ($restaurante as $info)
                                                 <tr style="text-align: center">
-                                                    <td>{{$info->desayuno}}</td>
-                                                    <td>{{$info->almuerzo}}</td>
-                                                    <td>{{$info->cena}}</td>
-                                                    <td>{{$info->fecha}}</td>
+                                                    <td>{{$info->total_desayunos}}</td>
+                                                    <td>{{$info->total_almuerzos}}</td>
+                                                    <td>{{$info->total_cenas}}</td>
+                                                    <td>{{$info->fichas->ficha}}</td>
                                                     <td class="td-actions text-center">
                                                         
                                                         <div class="dropdown">
                                                             <a class="btn btn-sm btn-icon-only text-dark" style="font-size: 20px" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                                 <i class="fa-solid fa-bars"></i>
                                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                                
+                                                                    
                                                                     <a href="{{route('edit.cocina', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">edit</i></a>
 
                                                                     <form action="{{route('destroy.cocina', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">

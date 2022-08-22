@@ -19,7 +19,7 @@ class Novedade extends Model
         'cena',
     ];
 
-    public function reportes(){
-        return $this->hasMany('App\Models\Reporte', 'novedad_aprendiz', 'id');
+    public function aprendices(){
+        return $this->belongsTo('App\Models\Aprendiz', 'aprendiz', 'id');
     }
 }

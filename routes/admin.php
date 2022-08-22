@@ -1,11 +1,14 @@
 <?php
 
 use App\Http\Controllers\AprendiceController;
+use App\Http\Controllers\ConsumoController;
+use App\Http\Controllers\CupoController;
 use App\Http\Controllers\DormitorioController;
 use App\Http\Controllers\FichaController;
 use App\Http\Controllers\InpeccioneController;
 use App\Http\Controllers\NovedadeController;
 use App\Http\Controllers\ReporteController;
+use App\Http\Controllers\RestauranteController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -30,9 +33,9 @@ Route::delete('/Dormitorio/{dormitorio}',       [DormitorioController::class, 'd
 
 //Rutas de los apprendices
 
-Route::get('/fichas/aprendiz/{id}',                   [AprendiceController::class, 'index'])->name('index.aprendiz');
-Route::get('/fichas/aprendiz/{id}/agregar',           [FichaController::class, 'create2'])->name('create.aprendiz');
-Route::post('/fichas/aprendiz/almacenar',        [FichaController::class, 'store2']) ->name('store.aprendiz');
+Route::get('/fichas/aprendiz/{id}',                  [AprendiceController::class, 'index'])->name('index.aprendiz');
+Route::get('/fichas/aprendiz/{id}/agregar',          [FichaController::class, 'create2'])->name('create.aprendiz');
+Route::post('/fichas/aprendiz/almacenar',            [FichaController::class, 'store2']) ->name('store.aprendiz');
 Route::get('/ficha/aprendiz/editar/{aprendice}',     [AprendiceController::class, 'edit'])->name('edit.aprendiz');
 Route::put('/ficha/aprendiz/{aprendice}',            [AprendiceController::class, 'update'])->name('update.aprendiz');
 Route::delete('/ficha/aprendiz/{aprendice}',         [AprendiceController::class, 'destroy'])->name('destroy.aprendiz');
@@ -48,12 +51,25 @@ Route::delete('Novedades/{novedade}',         [NovedadeController::class, 'destr
 
 //rutas de la cocina
 
-Route::get('/Cocina',                       [ReporteController::class, 'index']) ->name('index.cocina');
-Route::get('/Cocina/agregar',               [ReporteController::class, 'create'])->name('create.cocina');
-Route::post('/Cocina/almacenar',            [ReporteController::class, 'store']) ->name('store.cocina');
-Route::get('/Cocina/editar/{reporte}',      [ReporteController::class, 'edit'])->name('edit.cocina');
-Route::put('/Cocina/{reporte}',             [ReporteController::class, 'update'])->name('update.cocina');
-Route::delete('/Cocina/{reporte}',          [ReporteController::class, 'destroy'])->name('destroy.cocina');
+Route::get('/Cocina',                       [RestauranteController::class, 'index']) ->name('index.cocina');
+Route::get('/Cocina/agregar',               [RestauranteController::class, 'create'])->name('create.cocina');
+Route::post('/Cocina/almacenar',            [RestauranteController::class, 'store']) ->name('store.cocina');
+Route::get('/Cocina/editar/{restaurante}',      [RestauranteController::class, 'edit'])->name('edit.cocina');
+Route::put('/Cocina/{restaurante}',             [RestauranteController::class, 'update'])->name('update.cocina');
+Route::delete('/Cocina/{restaurante}',          [RestauranteController::class, 'destroy'])->name('destroy.cocina');
+
+//Rutas asignacion de habitaciones a estudiantes
+
+// Route::get('/Cupos',                       [CupoController::class, 'index']) ->name('index.cupo');
+Route::get('/Cupos/agregar',               [CupoController::class, 'create'])->name('create.cupo');
+Route::post('/Cupos/almacenar',            [CupoController::class, 'store']) ->name('store.cupo');
+Route::get('/Cupos/editar/{reporte}',      [CupoController::class, 'edit'])->name('edit.cupo');
+Route::put('/Cupos/{reporte}',             [CupoController::class, 'update'])->name('update.cupo');
+Route::delete('/Cupos/{reporte}',          [CupoController::class, 'destroy'])->name('destroy.cupo');
+
+//Rutas de los consumos
+Route::get('/Consumos/{id}',                    [ConsumoController::class, 'index']) ->name('index.consumos');
+
 
 //Rutas de la Inspecccion **poner esta seccion al final de las rutas**
 

@@ -13,12 +13,12 @@ return [
     |
     */
 
-    'btn_close' => 'Schließen',
-    'btn_close_active' => 'Aktive schließen',
-    'btn_close_all' => 'Alle schließen',
-    'btn_close_all_other' => 'Alle anderen schließen',
-    'tab_empty' => 'Kein Tab ausgewählt!',
-    'tab_home' => 'Home',
-    'tab_loading' => 'Tab wird geladen',
+    'btn_close' => 'Cerrar',
+    'btn_close_active' => 'Cerrar Activa',
+    'btn_close_all' => 'Cerrar Todas',
+    'btn_close_all_other' => 'Cerrar Las Demás',
+    'tab_empty' => 'Ninguna pestaña seleccionada!',
+    'tab_home' => 'Inicio',
+    'tab_loading' => 'Cargando pestaña',
 
 ];

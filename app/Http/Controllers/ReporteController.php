@@ -18,9 +18,7 @@ class ReporteController extends Controller
      */
     public function index()
     {
-        $reporte=Reporte::all();
-
-        return view('restaurante.index', compact('reporte'));
+        
     }
 
     /**
@@ -30,7 +28,7 @@ class ReporteController extends Controller
      */
     public function create()
     {
-        return view('restaurante.create');
+        
     }
 
     /**
@@ -41,26 +39,7 @@ class ReporteController extends Controller
      */
     public function store(Request $request)
     {
-        $desayuno_aprendiz = Aprendice::where('desayuno','Si')->count();
-        $almuerzo_aprendiz = Aprendice::where('almuerzo','Si')->count();
-        $cena_aprendiz     = Aprendice::where('cena','Si')->count();
-
-        $desayuno_novedad = Novedade::where('desayuno','Si')->count();
-        $almuerzo_novedad = Novedade::where('almuerzo','Si')->count();
-        $cena_novedad     = Novedade::where('cena','Si')->count();
-
-        $desayuno = $desayuno_aprendiz + $desayuno_novedad;
-        $almuerzo = $almuerzo_aprendiz + $almuerzo_novedad;
-        $cena = $cena_aprendiz + $cena_novedad;
-
-        DB::table('reportes')->insert([
-            'desayuno'=> $desayuno, 
-            'almuerzo'=>$almuerzo,
-            'cena'=>$cena,
-            'fecha'=>$request->fecha,
-        ]);
-
-        return redirect()->route('index.cocina');
+        
     }
 
     /**
@@ -82,7 +61,7 @@ class ReporteController extends Controller
      */
     public function edit(Reporte $reporte)
     {
-        return view('restaurante.edit', compact('reporte'));
+       
     }
 
     /**
@@ -94,28 +73,7 @@ class ReporteController extends Controller
      */
     public function update(Request $request, Reporte $reporte)
     {
-        $desayuno_aprendiz = Aprendice::where('desayuno','Si')->count();
-        $almuerzo_aprendiz = Aprendice::where('almuerzo','Si')->count();
-        $cena_aprendiz     = Aprendice::where('cena','Si')->count();
-
-        $desayuno_novedad = Novedade::where('desayuno','Si')->count();
-        $almuerzo_novedad = Novedade::where('almuerzo','Si')->count();
-        $cena_novedad     = Novedade::where('cena','Si')->count();
-
-        $desayuno = $desayuno_aprendiz + $desayuno_novedad;
-        $almuerzo = $almuerzo_aprendiz + $almuerzo_novedad;
-        $cena = $cena_aprendiz + $cena_novedad;
-
-        $reporte->update([
-
-            'desayuno'=> $desayuno, 
-            'almuerzo'=>$almuerzo,
-            'cena'=>$cena,
-            'fecha'=>$request->fecha,
-
-        ]);
-
-        return redirect()->route('index.cocina');
+        
     }
 
     /**
@@ -126,8 +84,6 @@ class ReporteController extends Controller
      */
     public function destroy(Reporte $reporte)
     {
-        $reporte->delete();
-
-        return redirect()->back();
+        
     }
 }

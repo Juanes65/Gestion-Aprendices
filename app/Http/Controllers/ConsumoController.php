@@ -2,19 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cupo;
+use App\Models\Consumo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class CupoController extends Controller
+class ConsumoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $consumo = DB::select('select * from consumos where aprendiz_consumos = ?', [$id]);
+
+        return view('consumos.index', compact('consumo'));
     }
 
     /**
@@ -24,7 +27,7 @@ class CupoController extends Controller
      */
     public function create()
     {
-        return view('cupos.create');
+        //
     }
 
     /**
@@ -41,10 +44,10 @@ class CupoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Cupo  $cupo
+     * @param  \App\Models\Consumo  $consumo
      * @return \Illuminate\Http\Response
      */
-    public function show(Cupo $cupo)
+    public function show(Consumo $consumo)
     {
         //
     }
@@ -52,10 +55,10 @@ class CupoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Cupo  $cupo
+     * @param  \App\Models\Consumo  $consumo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cupo $cupo)
+    public function edit(Consumo $consumo)
     {
         //
     }
@@ -64,10 +67,10 @@ class CupoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Cupo  $cupo
+     * @param  \App\Models\Consumo  $consumo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cupo $cupo)
+    public function update(Request $request, Consumo $consumo)
     {
         //
     }
@@ -75,10 +78,10 @@ class CupoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Cupo  $cupo
+     * @param  \App\Models\Consumo  $consumo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cupo $cupo)
+    public function destroy(Consumo $consumo)
     {
         //
     }

@@ -26,9 +26,9 @@
                                                 <th scope="col">Apellidos</th>
                                                 <th scope="col">Edad</th>
                                                 <th scope="col">Genero</th>
-                                                <th scope="col">Desayuno</th>
+                                                {{-- <th scope="col">Desayuno</th>
                                                 <th scope="col">Almuerzo</th>
-                                                <th scope="col">Cena</th>
+                                                <th scope="col">Cena</th> --}}
                                                 <th scope="col">Observaciones</th>
                                                 <th scope="col">Fecha de Entrada</th>
                                                 <th scope="col">Fecha de Salida</th>
@@ -43,12 +43,12 @@
                                                     <td>{{$info->apellido}}</td>
                                                     <td>{{$info->edad}}</td>
                                                     <td>{{$info->genero}}</td>
-                                                    <td>{{$info->desayuno}}</td>
+                                                    {{-- <td>{{$info->desayuno}}</td>
                                                     <td>{{$info->almuerzo}}</td>
-                                                    <td>{{$info->cena}}</td>
+                                                    <td>{{$info->cena}}</td> --}}
                                                     <td>{{$info->observaciones}}</td>
-                                                    <td>{{$info->fecha_ingreso}}</td>
-                                                    <td>{{$info->fecha_salida}}</td>
+                                                    <td>{{$info->fecha_inicial}}</td>
+                                                    <td>{{$info->fecha_final}}</td>
                                                     <td class="td-actions text-center">
                                                         
                                                         <div class="dropdown">
@@ -57,6 +57,8 @@
                                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                                 
                                                                     <a href="{{route('edit.aprendiz', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">edit</i></a>
+
+                                                                    <a href="{{route('index.consumos', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">restaurant</i></a>
                                                                 
                                                                     <form action="{{route('destroy.aprendiz', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
                                                                         @csrf
