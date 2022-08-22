@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Reporte extends Model
+class Consumo extends Model
 {
     use HasFactory;
 
-    public function restaurantes(){
-        return $this->belongsTo('App\Models\Restaurante', 'restaurante', 'id');
+    public function aprendices(){
+        return $this->belongsTo('App\Models\Aprendice', 'aprendiz_consumos', 'id');
     }
 }

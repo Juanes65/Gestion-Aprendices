@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\AprendicesImport;
 use App\Models\Aprendice;
 use App\Models\Ficha;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class FichaController extends Controller
 {
@@ -73,25 +75,9 @@ class FichaController extends Controller
 
     public function store2(Request $request)
     {
-        $request->validate([
-            'cc' => 'unique:aprendices',
-            'nombre' => 'required',
-        ]);
+        $file = $request->file('import');
 
-        DB::table('aprendices')->insert([
-            'cc' => $request->cc,
-            'nombre' => $request->nombre,
-            'apellido' => $request->apellido,
-            'edad' => $request->edad,
-            'genero' => $request->genero,
-            'desayuno' => $request->desayuno,
-            'almuerzo' => $request->almuerzo,
-            'cena' => $request->cena,
-            'observaciones' => $request->observaciones,
-            'fecha_ingreso' => $request->fecha_ingreso,
-            'fecha_salida' => $request->fecha_salida,
-            'aprendiz_ficha' => $request->aprendiz_ficha,
-        ]);
+        Excel::import(new AprendicesImport, $file);
 
         return redirect()->route('index.ficha');
     }

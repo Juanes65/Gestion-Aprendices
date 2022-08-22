@@ -24,6 +24,10 @@ class Ficha extends Model
         return $this->hasMany('App\Models\Aprendice', 'aprendiz_ficha', 'id');
     }
 
+    public function restaurantes(){
+        return $this->hasMany('App\Models\Restaurante', 'ficha_restaurante', 'id');
+    }
+
     public function cupos(){
         return $this->hasMany('App\Models\Cupo', 'total_cupos', 'id');
     }

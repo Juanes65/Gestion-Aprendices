@@ -24,6 +24,9 @@
                                     <div class="mb-4 box">
                                         <input type="text" name="ficha" required="required">
                                         <span>Numero de la Ficha</span>
+                                        @if ($errors->has('ficha'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('ficha')}}</span>
+                                        @endif
                                     </div>
 
                                     <div class="mb-4 box">
