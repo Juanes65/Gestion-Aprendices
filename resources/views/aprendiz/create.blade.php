@@ -22,13 +22,13 @@
                                 <div class="col-lg-6 col-12">
                                         
                                     <input type="file" name="import">
-
+                                    
                                 </div>
 
                                 <div class="col-lg-6 col-12">
                                         
                                     <div class="d-flex justify-content-end boton">
-                                        <button type="submit">Exportar</button>
+                                        <button type="submit">Importar</button>
                                     </div>
 
                                 </div>

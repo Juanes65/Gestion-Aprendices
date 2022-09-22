@@ -16,6 +16,8 @@ class Ficha extends Model
         'carrera',
         'estudiante_m',
         'estudiante_h',
+        'hora_e',
+        'hora_s',
         'fecha_i',
         'fecha_s',
     ];
@@ -26,9 +28,5 @@ class Ficha extends Model
 
     public function restaurantes(){
         return $this->hasMany('App\Models\Restaurante', 'ficha_restaurante', 'id');
-    }
-
-    public function cupos(){
-        return $this->hasMany('App\Models\Cupo', 'total_cupos', 'id');
     }
 }

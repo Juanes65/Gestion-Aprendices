@@ -43,17 +43,25 @@ class InpeccioneController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nombre' => 'required',
+            'cargo' => 'required',
+            'apellido' => 'required',
+            'area' => 'required',
+            'tipo' => 'required',
+            'descripcion' => 'required',
+            'fecha' => 'required',
+        ]);
+
         $arch = $request->file('img')->store('public/images');
         $file = Storage::url($arch);
        
 
         Inpeccione::create($request->only('nombre','cargo','apellido','area','tipo','descripcion','fecha')+[
             'foto' => $file,
-            
-
         ]);
 
-        return redirect()->route('index.inspeccion');
+        return redirect()->route('index.inspeccion')->with('crear','ok');
     }
 
     /**
@@ -119,6 +127,6 @@ class InpeccioneController extends Controller
 
         $inpeccione->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('eliminar','ok');
     }
 }

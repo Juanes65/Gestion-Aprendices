@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('tipo_novedad');
             $table->string('descripcion_P');
-            $table->string('nombre');
             $table->date('fecha_Info');
             $table->string('desayuno');
             $table->string('almuerzo');

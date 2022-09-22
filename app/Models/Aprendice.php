@@ -20,8 +20,10 @@ class Aprendice extends Model
         'almuerzo',
         'cena',
         'observaciones',
+        'estado',
         'fecha_inicial',
         'fecha_final',
+        'habitacion',
         'aprendiz_ficha'
     ];
 
@@ -35,5 +37,9 @@ class Aprendice extends Model
 
     public function consumos(){
         return $this->hasMany('App\Models\Consumo', 'aprendiz_consumos', 'id');
+    }
+
+    public function cupos(){
+        return $this->hasMany('App\Models\Cupo', 'fk_estudiantes', 'id');
     }
 }

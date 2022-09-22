@@ -25,68 +25,85 @@
                                     <div class="mb-4 box">
                                         <input type="text" name="cc" value="{{old('cc',$aprendice->cc)}}" required="required">
                                         <span>Cedula</span>
+                                        @if ($errors->has('cc'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('cc')}}</span>
+                                        @endif
                                     </div>
                                     
                                     <div class="mb-4 box">
                                         <input type="text" name="nombre" value="{{old('nombre',$aprendice->nombre)}}" required="required">
                                         <span>Nombre</span>
-                                    </div>
-
-                                    <div class="mb-4 box">
-                                        <input type="text" name="apellido" value="{{old('apellido',$aprendice->apellido)}}" required="required">
-                                        <span>Apellido</span>
-                                    </div>
-
-                                    <div class="mb-4 box">
-                                        <input type="text" name="edad" value="{{old('edad',$aprendice->edad)}}" required="required">
-                                        <span>edad</span>
+                                        @if ($errors->has('nombre'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('nombre')}}</span>
+                                        @endif
                                     </div>
 
                                     <div class="mb-4 box3">
                                         
-                                        <select name="genero" id="my-select" required="required">                                                    
+                                        <select name="estado" id="my-select" required="required">                                                    
 
                                             <option value=""></option>
-                                            <option value="Masculino">Masculino</option>
-                                            <option value="Femenino">Femenino</option>
+                                            <option @if (old('estado',$aprendice->estado)=="Activo")
+                                                @selected(true)
+                                            @endif  value="Ativo">Activo</option>
+                                            <option @if (old('estado',$aprendice->estado)=="Inactivo")
+                                                @selected(true)
+                                            @endif value="Inactivo">Inactivo</option>
+                                            <option @if (old('estado',$aprendice->estado)=="Retirado")
+                                                @selected(true)
+                                            @endif value="Retirado">Retirado</option>
 
                                         </select>
-                                        <span>Selecione el Genero del Aprendiz</span>
+                                        <span>Selecione el Estado del Aprendiz</span>
+                                        @if ($errors->has('estado'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('estado')}}</span>
+                                        @endif
 
                                     </div>
 
                                     <div class="mb-4 box2">
                                         <input type="date" name="fecha_inicial" value="{{old('fecha_inicial',$aprendice->fecha_inicial)}}">
                                         <span>Fecha de Ingreso</span>
+                                        @if ($errors->has('fecha_inicial'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('fecha_inicial')}}</span>
+                                        @endif
                                     </div>
+                                    
                                 
                                 </div>
 
                                 <div class="col-lg-6 col-12">
 
                                     <div class="mb-4 box">
-                                        <input type="text" name="desayuno" value="{{old('desayuno',$aprendice->desayuno)}}" required="reuired">
-                                        <span>Desayuno</span>
-                                    </div>
-                                    
-                                    <div class="mb-4 box">
-                                        <input type="text" name="almuerzo" value="{{old('almuerzo',$aprendice->almuerzo)}}" required="required">
-                                        <span>Almuerzo</span>
+                                        <input type="text" name="edad" value="{{old('edad',$aprendice->edad)}}" required="required">
+                                        <span>edad</span>
+                                        @if ($errors->has('edad'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('edad')}}</span>
+                                        @endif
                                     </div>
 
                                     <div class="mb-4 box">
-                                        <input type="text" name="cena" value="{{old('cena',$aprendice->cena)}}" required="required">
-                                        <span>Cena</span>
+                                        <input type="text" name="apellido" value="{{old('apellido',$aprendice->apellido)}}" required="required">
+                                        <span>Apellido</span>
+                                        @if ($errors->has('apellido'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('apellido')}}</span>
+                                        @endif
                                     </div>
 
                                     <div class="mb-4 box">
                                         <input type="text" name="observaciones" value="{{old('observaciones',$aprendice->observaciones)}}" required="required">
                                         <span>Observaciones</span>
+                                        @if ($errors->has('observaciones'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('observaciones')}}</span>
+                                        @endif
                                     </div>
 
                                     <div class="mb-4 box2">
                                         <input type="date" name="fecha_final" value="{{old('fecha_final',$aprendice->fecha_final)}}">
                                         <span>Fecha de Salida</span>
+                                        @if ($errors->has('fecha_final'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('fecha_final')}}</span>
+                                        @endif
                                     </div>
 
                                 </div>

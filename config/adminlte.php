@@ -260,6 +260,11 @@ return [
                     'icon_color' => 'purple',
                     'route'  => 'index.dormitorio',
                 ],
+                [
+                    'text' => 'Aprendiz Y Su Dormitorio',
+                    'icon_color' => 'orange',
+                    'route'  => 'indextodo.cupos',
+                ],
             ]
         ],
         [
@@ -267,11 +272,11 @@ return [
             'icon'    => 'fas fa-fw fa-lightbulb',
             'icon_color' => 'yellow',
             'submenu' => [
-                [
-                    'text' => 'Agregar',
-                    'icon_color' => 'green',
-                    'route'  => 'create.novedad',
-                ],
+                // [
+                //     'text' => 'Agregar',
+                //     'icon_color' => 'green',
+                //     'route'  => 'create.novedad',
+                // ],
                 [
                     'text' => 'ver',
                     'icon_color' => 'cyan',
@@ -415,7 +420,7 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
