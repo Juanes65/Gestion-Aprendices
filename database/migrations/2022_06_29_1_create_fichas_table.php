@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('carrera', 150);
             $table->string('estudiante_m', 150)->nullable();
             $table->string('estudiante_h', 150)->nullable();
+            $table->string('hora_e', 10);
+            $table->string('hora_s', 10);
             $table->date('fecha_i');
             $table->date('fecha_s');
             $table->timestamps();

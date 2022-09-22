@@ -34,11 +34,17 @@
                                     <div class="col-md-4 mb-4 box">
                                         <input type="text" name="nombre" required="required">
                                         <span>Nombres:</span>
+                                        @if ($errors->has('nombre'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('nombre')}}</span>
+                                        @endif
                                     </div>
 
                                     <div class="col-md-4 mb-4 box">
                                         <input type="text" name="apellido" required="required">
                                         <span>Apellidos:</span>
+                                        @if ($errors->has('apellido'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('apellido')}}</span>
+                                        @endif
                                     </div>
 
                                     <div class="col-md-4 mb-4 box3">
@@ -51,7 +57,10 @@
                                             <option value="Otro">       Otro       </option>
                                             
                                         </select>
-                                        <span>cargo:</span>  
+                                        <span>cargo:</span>
+                                        @if ($errors->has('cargo'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('cargo')}}</span>
+                                        @endif  
                                     </div>
                                 
                                 
@@ -62,6 +71,9 @@
                                         <div class="col-md-8 mb-4 box2">
                                             <input type="text" placeholder="Ej: (Camas en mal estado, Daños en general, Elementos perdidos,etc...)" name="tipo">
                                             <span>Tipo de Informe:</span>
+                                            @if ($errors->has('tipo'))
+                                                <span class="error text-danger" for="input-name">{{$errors->first('tipo')}}</span>
+                                            @endif
                                         </div>
 
                                         <div class="col-md-4 box3">
@@ -73,7 +85,10 @@
                                                 <option value="BDormitorio de Hombres"> Dormitorio de Hombres </option>
                                                 
                                             </select>
-                                            <span>Area:</span>  
+                                            <span>Area:</span>
+                                            @if ($errors->has('area'))
+                                                <span class="error text-danger" for="input-name">{{$errors->first('area')}}</span>
+                                            @endif  
                                         </div>
                                     
                                     
@@ -82,6 +97,9 @@
                                     <div class="mb-3 box4">
                                         <textarea class="texto" name="descripcion" rows="5" required="required"></textarea>
                                         <span>Descripcion del Informe:</span>
+                                        @if ($errors->has('descripcion'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('descripcion')}}</span>
+                                        @endif
                                     </div>
                                     
                                     <div class="row mb-3">
@@ -99,18 +117,15 @@
                                         <div class="col-md-4 box2">
                                             <input type="date" name="fecha" required="required">    
                                             <span>Fecha:</span>
+                                            @if ($errors->has('fecha'))
+                                                <span class="error text-danger" for="input-name">{{$errors->first('fecha')}}</span>
+                                            @endif
                                         </div>
-                                      
-                                 
-    
                                     </div>
-                                    
-                               
+
                                     <div class="d-flex justify-content-end col-12 boton">
                                         <button type="submit">Guardar Reporte</button>
-                                    </div>
-    
-                                
+                                    </div> 
                             </form>
                             
                         </div>   

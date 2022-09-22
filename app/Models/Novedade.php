@@ -12,11 +12,11 @@ class Novedade extends Model
     protected $fillable = [
         'tipo_novedad',
         'descripcion_P',
-        'nombre',
         'fecha_Info',
         'desayuno',
         'almuerzo',
         'cena',
+        'aprendiz'
     ];
 
     public function aprendices(){

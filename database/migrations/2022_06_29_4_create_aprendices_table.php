@@ -24,8 +24,10 @@ return new class extends Migration
             $table->string('almuerzo', 3)->nullable();
             $table->string('cena', 3)->nullable();
             $table->string('observaciones', 120);
+            $table->string('estado', 20);
             $table->date('fecha_inicial');
             $table->date('fecha_final');
+            $table->string('habitacion', 4)->nulleable();
             $table->unsignedBigInteger('aprendiz_ficha');
 
             $table->foreign('aprendiz_ficha')->references('id')->on('fichas')->onDelete('cascade');

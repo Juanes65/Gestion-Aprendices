@@ -12,6 +12,7 @@ class Dormitorio extends Model
     protected $fillable = [
         'nombre_dor',
         'camas',
+        'disponible',
         'ubicacion',
         'genero',
         'espacio',
@@ -19,6 +20,6 @@ class Dormitorio extends Model
     ];
 
     public function cupos(){
-        return $this->hasMany('App\Models\Cupo', 'total_habitaciones', 'id');
+        return $this->hasMany('App\Models\Cupo', 'fk_dormitorios', 'id');
     }
 }

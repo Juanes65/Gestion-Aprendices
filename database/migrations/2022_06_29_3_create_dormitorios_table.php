@@ -17,10 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('nombre_dor', 20);
             $table->string('camas', 3);
+            $table->string('disponible', 3)->nullable();
             $table->string('ubicacion', 20);
             $table->string('genero',20);
-            $table->string('espacio',10);
-            $table->string('estado',10);
+            $table->string('espacio',20);
+            $table->string('estado',20);
             $table->timestamps();
         });
     }

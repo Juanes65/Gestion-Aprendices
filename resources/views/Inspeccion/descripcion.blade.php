@@ -19,12 +19,9 @@
                                     <table class="table table-bordered table-striped" id="cliente">
                                     
                                         <tr style="text-align: center">
-                                            <td>{{$inpeccione->descripcion}}</td>
-                                          
-                                            
+                                            <td>{{$inpeccione->descripcion}}</td> 
                                         </tr>
-                                  
-                                      
+
                                     </table>
                                 </div>
                             </div>

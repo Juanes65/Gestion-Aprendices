@@ -16,16 +16,11 @@
                         <p class="card-text">
                             <div class="author table-responsive">
                                 <div class="card-body" style="text-align: center">
-                                   
-                                    
-                                      
-                                            <td>  
-                                                 <img src="{{asset($inpeccione->foto)}}" height="200" width="200" >
-                                            </td>
-                                     
-                                  
-                                      
-                                   
+  
+                                    <td>  
+                                        <img src="{{asset($inpeccione->foto)}}" height="200" width="200" >
+                                    </td>
+
                                 </div>
                             </div>
                         </p>

@@ -16,7 +16,7 @@
                         <p class="card-text">
                             <div class="author table-responsive">
                                 <div class="card-body">
-                                    <table class="table table-bordered table-striped" id="cliente">
+                                    <table class="table table-bordered table-striped" id="inspeccion">
                                         <thead class="table-secondary">
                                             <tr style="text-align: center">
                                                 <th scope="col">Nombre</th>
@@ -87,4 +87,100 @@
 
 @section('css')
     <script src="https://kit.fontawesome.com/cf5c5d84ea.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+@stop
+
+@section('js')
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+        $('#inspeccion').DataTable({
+            "language": {
+                "lengthMenu": "Mostrar _MENU_ registros por página",
+                "zeroRecords": "No se encontraron resultados - Discula",
+                "info": "Mostrando la página _PAGE_ de _PAGES_",
+                "infoEmpty": "No records available",
+                "infoFiltered": "(Filtrado de _MAX_ registros totales)",
+                "search": "Buscar : ",
+                "paginate": {
+                    "next": "Siguiente",
+                    "previous": "Anterior", 
+                }
+
+            }
+        });
+    } );
+    </script>
+
+    <script> console.log('Hi!'); </script>
+    @if (session('eliminar')=='ok')
+        <script>
+            Swal.fire(
+                '¡Eliminado!',
+                'La informacion se elimino correctamente.',
+                'success'
+            ) 
+        </script>
+    @endif
+
+    @if (session('actualizar')=='ok')
+        <script>
+            Swal.fire(
+                '¡Actualizado!',
+                'La informacion se actualizo correctamente.',
+                'success'
+            ) 
+        </script>
+    @endif
+
+    @if (session('crear')=='ok')
+        <script>
+            Swal.fire(
+                '¡Agregado!',
+                'La informacion se creo correctamente.',
+                'success'
+            ) 
+        </script>
+    @endif
+        
+    <script>
+        $('.form-eliminar').submit(function(e){
+            e.preventDefault();
+            const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+            })
+            swalWithBootstrapButtons.fire({
+                title: '¿Estas seguro?',
+                text: "¡Esta informacion se eliminara definitivamente!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: '¡Si, eliminar!',
+                cancelButtonText: 'Cancelar',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+
+                    this.submit();
+
+                }else if (
+                    /* Read more about handling dismissals below */
+                    result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire(
+                    'Cancelado',
+                    '¡La informacion no se elimino!',
+                    'error'
+                    )
+                }
+            })
+        })
+    </script>
 @stop

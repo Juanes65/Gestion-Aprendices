@@ -194,6 +194,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        //doomPDF para generar archivos pdf
+        Barryvdh\DomPDF\ServiceProvider::class,
+
 
     ],
 
