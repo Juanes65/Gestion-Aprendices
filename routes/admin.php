@@ -9,6 +9,7 @@ use App\Http\Controllers\InpeccioneController;
 use App\Http\Controllers\NovedadeController;
 use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\RestauranteController;
+use App\Http\Controllers\PlatilloController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -88,6 +89,15 @@ Route::post('/reportes/almacenar',                  [ReporteController::class, '
 Route::get('/reportes/edit/{id}',                   [ReporteController::class, 'edit']) ->name('edit.reporte');
 Route::put('/reportes/{cupo}',                      [ReporteController::class, 'update'])->name('update.reporte');
 Route::delete('/reportes/{cupo}',                   [ReporteController::class, 'destroy'])->name('destroy.reporte');
+
+//Rutas de platillos
+
+Route::get('/platillos',                             [PlatilloController::class, 'index'])->name('index.platillo');
+Route::get('/platillo/agregar',                      [PlatilloController::class, 'create'])->name('create.platillo');
+Route::post('platillo/store',                        [PlatilloController::class, 'store'])->name('store.platillo');
+Route::get('/platillo/edit/{platillo}',              [PlatilloController::class, 'edit'])->name('edit.platillo');
+Route::put('/platillo/{platillo}',                    [PlatilloController::class, 'update'])->name('update.platillo');
+Route::delete('/platillo/{platillo}',                [PlatilloController::class, 'destroy'])->name('destroy.platillo');
 
 
 //Rutas de la Inspecccion **poner esta seccion al final de las rutas**
