@@ -8,7 +8,7 @@
 
 @section('content')
 
-    <div class="card-body">                       
+    <div class="card-body">
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-user">
@@ -17,12 +17,12 @@
                         <form action="{{route('update.cocina', $restaurante->id)}}" method="POST">
                             @csrf
                             @method('PUT')
-                                
+
                             <div class="row">
-                                
+
                                 <div class="col-lg-12">
                                     <div class="mb-4 box3">
-                                        <select name="ficha_restaurante" id="my-select" required="required">                                                    
+                                        <select name="ficha_restaurante" id="my-select" required="required">
                                             @foreach ($lista_fichas as $item)
                                                 <option value="{{$item->id}}">{{$item->ficha}}</option>
                                             @endforeach
@@ -37,8 +37,8 @@
 
                             </div>
                         </form>
-                        
-                    </div>   
+
+                    </div>
                 </div>
             </div>
         </div>

@@ -226,7 +226,7 @@ return [
     */
 
     'menu' => [
-     
+
         [
             'text'    => 'Fichas',
             'icon'    => 'fas fa-fw fa-folder',
@@ -301,6 +301,68 @@ return [
                 ],
             ]
         ],
+        //Solicitud Logo
+        [
+            'text'    => 'Solicitud',
+            'icon'    => 'fas fa-fw fa-joint',
+            'icon_color' => 'white',
+            'submenu' => [
+                [
+                    'text' => 'Traer Informe',
+                    'icon_color' => 'red',
+                    'route'  => 'create.solicitud',
+                ],
+                [
+                    'text' => 'Cantidad de Platillos',
+                    'icon_color' => 'blue',
+                    'route'  => 'index.solicitud',
+                ],
+            ]
+        ],
+
+        //Creacion Bodegas
+
+        [
+            'text'    => 'Bodegas',
+            'icon'    => 'fas fa-fw fa-joint',
+            'icon_color' => 'white',
+            'submenu' => [
+                [
+                    'text' => 'Crear Bodegas',
+                    'icon_color' => 'red',
+                    'route'  => 'create.bodega',
+                ],
+                [
+                    'text' => 'Bodegas Dispónibles',
+                    'icon_color' => 'blue',
+                    'route'  => 'index.bodega',
+                ],
+                [
+                    'text' => 'Ver Productos',
+                    'icon_color' => 'red',
+                    'route'  => 'index.todo',
+                ],
+            ]
+        ],
+
+        [
+            'text'    => 'Platillos',
+            'icon'    => 'fas fa-fw fa-joint',
+            'icon_color' => 'white',
+            'submenu' => [
+                [
+                    'text' => 'Agregar Platillos',
+                    'icon_color' => 'red',
+                    'route'  => 'create.platillo',
+                ],
+                [
+                    'text' => 'Platillos Disponibles',
+                    'icon_color' => 'blue',
+                    'route'  => 'index.platillo',
+                ],
+            ]
+        ],
+
         [
             'text'    => 'Inspeccion',
             'icon'    => 'fas fa-fw fa-eye',
@@ -318,7 +380,7 @@ return [
                 ],
             ]
         ],
-         
+
 
     ],
 
@@ -370,10 +432,10 @@ return [
                 'type' => 'css',
                 'asset' => false,
                 'location' => 'https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css',
-              ], 
+              ],
             ],
         ],
-        
+
         'Datatables' => [
             'active' => false,
             'files' => [

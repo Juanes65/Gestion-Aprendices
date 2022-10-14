@@ -18,8 +18,8 @@
                                 <div class="row mb-3">
                                     <div class="col-lg-6 d-flex justify-content-start">
                                         <a href="{{route('paginadoc.cocina')}}" class="btn btn-success">Filtrar Estuadinate Por Documento</a>
-                                    </div> 
-                                    
+                                    </div>
+
                                     <div class="col-lg-6 d-flex justify-content-end">
                                         <a href="{{route('pagina.cocina')}}" class="btn btn-success">Estuadinates Que Fueron al restaurante</a>
                                     </div>
@@ -47,12 +47,12 @@
                                                     <td>{{$info->fichas->fecha_i}}</td>
                                                     <td>{{$info->fichas->fecha_s}}</td>
                                                     <td class="td-actions text-center">
-                                                        
+
                                                         <div class="dropdown">
                                                             <a class="btn btn-sm btn-icon-only text-dark" style="font-size: 20px" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                                 <i class="fa-solid fa-bars"></i>
                                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                                    
+
                                                                     <a href="{{route('edit.cocina', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">edit</i></a>
 
                                                                     <form action="{{route('destroy.cocina', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
@@ -63,12 +63,12 @@
                                                                                 delete
                                                                             </i>
                                                                         </button>
-                                                                    </form> 
-                                                                    
-                                                                </div> 
+                                                                    </form>
+
+                                                                </div>
                                                             </a>
                                                         </div>
-                                            
+
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -106,14 +106,14 @@
             autowidth: false,
             "language": {
                 "lengthMenu": "Mostrar _MENU_ registros por página",
-                "zeroRecords": "No se encontraron resultados - Discula",
+                "zeroRecords": "No se encontraron resultados - Disculpa",
                 "info": "Mostrando la página _PAGE_ de _PAGES_",
                 "infoEmpty": "No records available",
                 "infoFiltered": "(Filtrado de _MAX_ registros totales)",
                 "search": "Buscar : ",
                 "paginate": {
                     "next": "Siguiente",
-                    "previous": "Anterior", 
+                    "previous": "Anterior",
                 }
 
             }
@@ -127,7 +127,7 @@
                 '¡Eliminado!',
                 'La informacion se elimino correctamente.',
                 'success'
-            ) 
+            )
         </script>
     @endif
 
@@ -137,7 +137,7 @@
                 '¡Actualizado!',
                 'La informacion se actualizo correctamente.',
                 'success'
-            ) 
+            )
         </script>
     @endif
 
@@ -147,10 +147,10 @@
                 '¡Agregado!',
                 'La informacion se creo correctamente.',
                 'success'
-            ) 
+            )
         </script>
     @endif
-        
+
     <script>
         $('.form-eliminar').submit(function(e){
             e.preventDefault();

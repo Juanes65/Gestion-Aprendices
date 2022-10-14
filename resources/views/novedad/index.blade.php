@@ -44,14 +44,14 @@
                                                     <td>{{$info->cena}}</td>
                                                     <td>{{$info->fecha_Info}}</td>
                                                     <td class="td-actions text-center">
-                                                        
+
                                                         <div class="dropdown">
                                                             <a class="btn btn-sm btn-icon-only text-dark" style="font-size: 20px" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                                 <i class="fa-solid fa-bars"></i>
                                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                                
+
                                                                     <a href="{{route('edit.novedad', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">edit</i></a>
-                                                                
+
                                                                     <form action="{{route('destroy.novedad', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
                                                                         @csrf
                                                                         @method('DELETE')
@@ -60,12 +60,12 @@
                                                                                 delete
                                                                             </i>
                                                                         </button>
-                                                                    </form> 
-                                                                    
-                                                                </div> 
+                                                                    </form>
+
+                                                                </div>
                                                             </a>
                                                         </div>
-                                            
+
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -98,14 +98,14 @@
         $('#novedad').DataTable({
             "language": {
                 "lengthMenu": "Mostrar _MENU_ registros por página",
-                "zeroRecords": "No se encontraron resultados - Discula",
+                "zeroRecords": "No se encontraron resultados - Disculpa",
                 "info": "Mostrando la página _PAGE_ de _PAGES_",
                 "infoEmpty": "No records available",
                 "infoFiltered": "(Filtrado de _MAX_ registros totales)",
                 "search": "Buscar : ",
                 "paginate": {
                     "next": "Siguiente",
-                    "previous": "Anterior", 
+                    "previous": "Anterior",
                 }
 
             }
@@ -120,7 +120,7 @@
                 '¡Eliminado!',
                 'La informacion se elimino correctamente.',
                 'success'
-            ) 
+            )
         </script>
     @endif
 
@@ -130,7 +130,7 @@
                 '¡Actualizado!',
                 'La informacion se actualizo correctamente.',
                 'success'
-            ) 
+            )
         </script>
     @endif
 
@@ -140,10 +140,10 @@
                 '¡Agregado!',
                 'La informacion se creo correctamente.',
                 'success'
-            ) 
+            )
         </script>
     @endif
-        
+
     <script>
         $('.form-eliminar').submit(function(e){
             e.preventDefault();

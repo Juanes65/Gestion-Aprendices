@@ -44,18 +44,18 @@
                                                             <i class="fa-solid fa-bars"></i>
                                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                                 <a   href="{{route('show.inspeccion', $reportes->id)}}"class="btn btn-outline-primary"><i class="material-icons">visibility</i></a>
-                                                    
+
                                                                 <a href="{{route('show2.inspeccion', $reportes->id)}}"class="btn btn-outline-success"><i class="material-icons">image</i></a>
                                                             </div>
                                                         </a>
-                                                   
-                                                    </div>    
+
+                                                    </div>
                                                 <td class="td-actions text-center">
-                                                    
-                                                
+
+
                                                         <div >
-                                                    
-                                                        
+
+
                                                             <form  action="{{route('destroy.inspeccion', $reportes->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
                                                                 @csrf
                                                                 @method('DELETE')
@@ -64,11 +64,11 @@
                                                                         delete
                                                                     </i>
                                                                 </button>
-                                                            </form> 
-                                                            
-                                                        </div> 
-                                                  
-                                        
+                                                            </form>
+
+                                                        </div>
+
+
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -101,14 +101,14 @@
         $('#inspeccion').DataTable({
             "language": {
                 "lengthMenu": "Mostrar _MENU_ registros por página",
-                "zeroRecords": "No se encontraron resultados - Discula",
+                "zeroRecords": "No se encontraron resultados - Disculpa",
                 "info": "Mostrando la página _PAGE_ de _PAGES_",
                 "infoEmpty": "No records available",
                 "infoFiltered": "(Filtrado de _MAX_ registros totales)",
                 "search": "Buscar : ",
                 "paginate": {
                     "next": "Siguiente",
-                    "previous": "Anterior", 
+                    "previous": "Anterior",
                 }
 
             }
@@ -123,7 +123,7 @@
                 '¡Eliminado!',
                 'La informacion se elimino correctamente.',
                 'success'
-            ) 
+            )
         </script>
     @endif
 
@@ -133,7 +133,7 @@
                 '¡Actualizado!',
                 'La informacion se actualizo correctamente.',
                 'success'
-            ) 
+            )
         </script>
     @endif
 
@@ -143,10 +143,10 @@
                 '¡Agregado!',
                 'La informacion se creo correctamente.',
                 'success'
-            ) 
+            )
         </script>
     @endif
-        
+
     <script>
         $('.form-eliminar').submit(function(e){
             e.preventDefault();

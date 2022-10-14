@@ -24,7 +24,6 @@
                                                 <th scope="col">Documento</th>
                                                 <th scope="col">Nombre</th>
                                                 <th scope="col">Apellidos</th>
-                                                <th scope="col">Edad</th>
                                                 <th scope="col">Genero</th>
                                                 <th scope="col">Observaciones</th>
                                                 <th scope="col">Estado</th>
@@ -40,7 +39,6 @@
                                                     <td>{{$info->cc}}</td>
                                                     <td>{{$info->nombre}}</td>
                                                     <td>{{$info->apellido}}</td>
-                                                    <td>{{$info->edad}}</td>
                                                     <td>{{$info->genero}}</td>
                                                     <td>{{$info->observaciones}}</td>
                                                     <td>{{$info->estado}}</td>
@@ -108,7 +106,7 @@
         $('#aprendiz').DataTable({
             "language": {
                 "lengthMenu": "Mostrar _MENU_ registros por página",
-                "zeroRecords": "No se encontraron resultados - Discula",
+                "zeroRecords": "No se encontraron resultados - Disculpa",
                 "info": "Mostrando la página _PAGE_ de _PAGES_",
                 "infoEmpty": "No records available",
                 "infoFiltered": "(Filtrado de _MAX_ registros totales)",

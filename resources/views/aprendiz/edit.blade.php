@@ -8,7 +8,7 @@
 
 @section('content')
 
-    <div class="card-body">                       
+    <div class="card-body">
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-user">
@@ -21,7 +21,7 @@
                             <div class="row">
 
                                 <div class="col-lg-6 col-12">
-                                        
+
                                     <div class="mb-4 box">
                                         <input type="text" name="cc" value="{{old('cc',$aprendice->cc)}}" required="required">
                                         <span>Cedula</span>
@@ -29,7 +29,7 @@
                                             <span class="error text-danger" for="input-name">{{$errors->first('cc')}}</span>
                                         @endif
                                     </div>
-                                    
+
                                     <div class="mb-4 box">
                                         <input type="text" name="nombre" value="{{old('nombre',$aprendice->nombre)}}" required="required">
                                         <span>Nombre</span>
@@ -39,8 +39,8 @@
                                     </div>
 
                                     <div class="mb-4 box3">
-                                        
-                                        <select name="estado" id="my-select" required="required">                                                    
+
+                                        <select name="estado" id="my-select" required="required">
 
                                             <option value=""></option>
                                             <option @if (old('estado',$aprendice->estado)=="Activo")
@@ -68,8 +68,8 @@
                                             <span class="error text-danger" for="input-name">{{$errors->first('fecha_inicial')}}</span>
                                         @endif
                                     </div>
-                                    
-                                
+
+
                                 </div>
 
                                 <div class="col-lg-6 col-12">
@@ -107,15 +107,15 @@
                                     </div>
 
                                 </div>
-                                    
+
                                 <div class="d-flex justify-content-end col-12 boton">
                                     <button type="submit">Actualizar</button>
                                 </div>
 
                             </div>
                         </form>
-                        
-                    </div>   
+
+                    </div>
                 </div>
             </div>
         </div>
