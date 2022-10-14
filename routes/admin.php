@@ -9,6 +9,10 @@ use App\Http\Controllers\InpeccioneController;
 use App\Http\Controllers\NovedadeController;
 use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\RestauranteController;
+use App\Http\Controllers\SolicitudeController;
+use App\Http\Controllers\BodegaController;
+use App\Http\Controllers\AreaController;
+use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\PlatilloController;
 use Illuminate\Support\Facades\Route;
 
@@ -90,15 +94,51 @@ Route::get('/reportes/edit/{id}',                   [ReporteController::class, '
 Route::put('/reportes/{cupo}',                      [ReporteController::class, 'update'])->name('update.reporte');
 Route::delete('/reportes/{cupo}',                   [ReporteController::class, 'destroy'])->name('destroy.reporte');
 
+//Rutas de Solicitud
+
+Route::get('/solicitud',                             [SolicitudeController::class, 'index'])->name('index.solicitud');
+Route::get('/solicitud/agregar',                     [SolicitudeController::class, 'create'])->name('create.solicitud');
+Route::post('/solicitud/almacenar',                  [SolicitudeController::class, 'store'])->name('store.solicitud');
+Route::get('/solicitud/edit/{solicitude}',           [SolicitudeController::class, 'edit']) ->name('edit.solicitud');
+Route::put('/solicitud/{solicitude}',                [SolicitudeController::class, 'update'])->name('update.solicitud');
+Route::delete('/solicitud/{solicitude}',             [SolicitudeController::class, 'destroy'])->name('destroy.solicitud');
+
+//Rutas de Bodega
+
+Route::get('/bodega',                                [BodegaController::class, 'index'])->name('index.bodega');
+Route::get('/bodega/agregar',                        [BodegaController::class, 'create'])->name('create.bodega');
+Route::post('bodega/store',                          [BodegaController::class, 'store'])->name('store.bodega');
+Route::get('/bodega/edit/{bodega}',                  [BodegaController::class, 'edit']) ->name('edit.bodega');
+Route::put('/bodega/{bodega}',                       [BodegaController::class, 'update'])->name('update.bodega');
+Route::delete('/bodega/{bodega}',                    [BodegaController::class, 'destroy'])->name('destroy.bodega');
+
+//Rutas de Area
+
+Route::get('/bodega/area/{id}',                      [AreaController::class, 'index'])->name('index.area');
+Route::get('/area/agregar',                          [AreaController::class, 'create'])->name('create.area');
+Route::post('/bodega/area/store',                    [AreaController::class, 'store'])->name('store.area');
+Route::get('/bodega/area/edit/{area}',               [AreaController::class, 'edit']) ->name('edit.area');
+Route::put('/bodega/area/{area}',                    [AreaController::class, 'update'])->name('update.area');
+Route::delete('/bodega/area/{area}',                 [AreaController::class, 'destroy'])->name('destroy.area');
+
+//Rutas de Producto
+
+Route::get('/producto',                              [ProductoController::class, 'todo'])->name('index.todo');
+Route::get('/bodega/area/producto/{id}',             [ProductoController::class, 'index'])->name('index.producto');
+Route::get('/producto/agregar{id}',                  [ProductoController::class, 'create'])->name('create.producto');
+Route::post('producto/store',                        [ProductoController::class, 'store'])->name('store.producto');
+Route::get('/producto/edit/{producto}',              [ProductoController::class, 'edit']) ->name('edit.producto');
+Route::put('/producto/{producto}',                   [ProductoController::class, 'update'])->name('update.producto');
+Route::delete('/producto/{producto}',                [ProductoController::class, 'destroy'])->name('destroy.producto');
+
 //Rutas de platillos
 
 Route::get('/platillos',                             [PlatilloController::class, 'index'])->name('index.platillo');
 Route::get('/platillo/agregar',                      [PlatilloController::class, 'create'])->name('create.platillo');
 Route::post('platillo/store',                        [PlatilloController::class, 'store'])->name('store.platillo');
 Route::get('/platillo/edit/{platillo}',              [PlatilloController::class, 'edit'])->name('edit.platillo');
-Route::put('/platillo/{platillo}',                    [PlatilloController::class, 'update'])->name('update.platillo');
+Route::put('/platillo/{platillo}',                   [PlatilloController::class, 'update'])->name('update.platillo');
 Route::delete('/platillo/{platillo}',                [PlatilloController::class, 'destroy'])->name('destroy.platillo');
-
 
 //Rutas de la Inspecccion **poner esta seccion al final de las rutas**
 
@@ -112,4 +152,6 @@ Route::get('/Inspeccion',                           [InpeccioneController::class
 Route::get('/Inspeccion/agregar',                   [InpeccioneController::class,  'create'])->name('create.inspeccion');
 Route::post('/Inspeccion/guardar',                  [InpeccioneController::class,  'store' ])->name('store.inspeccion');
 Route::delete('delete/{inpeccione}',                [InpeccioneController::class, 'destroy'])->name('destroy.inspeccion');
+
+
 

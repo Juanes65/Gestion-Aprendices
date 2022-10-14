@@ -20,8 +20,11 @@ class Restaurante extends Model
         return $this->hasMany('App\Models\Reporte', 'restaurante', 'id');
     }
 
+    public function solicitudes(){
+        return $this->hasMany('App\Models\Solicitude', 'solicitud', 'id');
+    }
+
     public function fichas(){
         return $this->belongsTo('App\Models\Ficha', 'ficha_restaurante', 'id');
     }
-    
 }

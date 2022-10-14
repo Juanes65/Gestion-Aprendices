@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Dormitorios')
+@section('title', 'Solicitud')
 
 @section('content_header')
-    <h1 style="text-align: center">Dormitorios Registrados</h1>
+    <h1 style="text-align: center">Solicitudes</h1>
 @stop
 
 @section('content')
@@ -16,29 +16,21 @@
                         <p class="card-text">
                             <div class="author table-responsive">
                                 <div class="card-body">
-                                    <table class="table table-bordered table-striped" id="dormitorio">
+                                    <table class="table table-bordered table-striped" id="solicitud">
                                         <thead class="table-secondary">
                                             <tr style="text-align: center">
-                                                <th scope="col">Nombre de la Habitacion</th>
-                                                <th scope="col">Total Camas</th>
-                                                <th scope="col">Disponibilidad</th>
-                                                <th scope="col">Ubicacion</th>
-                                                <th scope="col">Genero</th>
-                                                <th scope="col">Espacio</th>
-                                                <th scope="col">Estado</th>
+                                                <th scope="col">Total Desayunos</th>
+                                                <th scope="col">Total Almuerzos</th>
+                                                <th scope="col">Total Cenas</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($dormitorio as $info)
+                                            @foreach ($solicitud as $info)
                                                 <tr style="text-align: center">
-                                                    <td>{{$info->nombre_dor}}</td>
-                                                    <td>{{$info->camas}}</td>
-                                                    <td>{{$info->disponible}}</td>
-                                                    <td>{{$info->ubicacion}}</td>
-                                                    <td>{{$info->genero}}</td>
-                                                    <td>{{$info->espacio}}</td>
-                                                    <td>{{$info->estado}}</td>
+                                                    <td>{{$info->cantidad_desayuno}}</td>
+                                                    <td>{{$info->cantidad_almuerzo}}</td>
+                                                    <td>{{$info->cantidad_cena}}</td>
                                                     <td class="td-actions text-center">
 
                                                         <div class="dropdown">
@@ -46,11 +38,9 @@
                                                                 <i class="fa-solid fa-bars"></i>
                                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
 
-                                                                    <a href="{{route('edit.dormitorio', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">edit</i></a>
+                                                                    <a href="{{route('edit.solicitud', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">edit</i></a>
 
-                                                                    <a href="{{route('create.cupos',$info->id)}}" class="btn btn-outline-warning"><i class="material-icons">bed</i></a>
-
-                                                                    <form action="{{route('destroy.dormitorio', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
+                                                                    <form action="{{route('destroy.solicitud', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
                                                                         @csrf
                                                                         @method('DELETE')
                                                                         <button class="btn btn-success" type="submit" rel="tooltip">
@@ -59,7 +49,6 @@
                                                                             </i>
                                                                         </button>
                                                                     </form>
-
                                                                 </div>
                                                             </a>
                                                         </div>
@@ -93,7 +82,7 @@
 
     <script>
         $(document).ready(function() {
-        $('#dormitorio').DataTable({
+        $('#solicitud').DataTable({
             "language": {
                 "lengthMenu": "Mostrar _MENU_ registros por página",
                 "zeroRecords": "No se encontraron resultados - Disculpa",

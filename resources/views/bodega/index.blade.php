@@ -1,9 +1,11 @@
 @extends('adminlte::page')
 
-@section('title', 'Dormitorios')
+@section('title', 'Aprendices')
 
 @section('content_header')
-    <h1 style="text-align: center">Dormitorios Registrados</h1>
+
+    <h1 style="text-align: center">Bodegas Disponibles</h1>
+
 @stop
 
 @section('content')
@@ -16,29 +18,21 @@
                         <p class="card-text">
                             <div class="author table-responsive">
                                 <div class="card-body">
-                                    <table class="table table-bordered table-striped" id="dormitorio">
+                                    <table class="table table-bordered table-striped" id="aprendiz">
                                         <thead class="table-secondary">
                                             <tr style="text-align: center">
-                                                <th scope="col">Nombre de la Habitacion</th>
-                                                <th scope="col">Total Camas</th>
-                                                <th scope="col">Disponibilidad</th>
-                                                <th scope="col">Ubicacion</th>
-                                                <th scope="col">Genero</th>
-                                                <th scope="col">Espacio</th>
-                                                <th scope="col">Estado</th>
+                                                <th scope="col">Nombre</th>
+                                                <th scope="col">Descripcion</th>
+                                                <th scope="col">Direccion</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($dormitorio as $info)
+                                            @foreach ($bodega as $info)
                                                 <tr style="text-align: center">
-                                                    <td>{{$info->nombre_dor}}</td>
-                                                    <td>{{$info->camas}}</td>
-                                                    <td>{{$info->disponible}}</td>
-                                                    <td>{{$info->ubicacion}}</td>
-                                                    <td>{{$info->genero}}</td>
-                                                    <td>{{$info->espacio}}</td>
-                                                    <td>{{$info->estado}}</td>
+                                                    <td>{{$info->nombre_bodega}}</td>
+                                                    <td>{{$info->descripcion_bodega}}</td>
+                                                    <td>{{$info->direccion_bodega}}</td>
                                                     <td class="td-actions text-center">
 
                                                         <div class="dropdown">
@@ -46,11 +40,13 @@
                                                                 <i class="fa-solid fa-bars"></i>
                                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
 
-                                                                    <a href="{{route('edit.dormitorio', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">edit</i></a>
+                                                                    <a href="{{route('index.area', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">SHOW</i></a>
 
-                                                                    <a href="{{route('create.cupos',$info->id)}}" class="btn btn-outline-warning"><i class="material-icons">bed</i></a>
+                                                                    <a href="{{route('create.area')}}" class="btn btn-outline-warning"><i class="material-icons">ADD</i></a>
 
-                                                                    <form action="{{route('destroy.dormitorio', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
+                                                                    <a href="{{route('edit.bodega', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">edit</i></a>
+
+                                                                    <form action="{{route('destroy.bodega', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
                                                                         @csrf
                                                                         @method('DELETE')
                                                                         <button class="btn btn-success" type="submit" rel="tooltip">
@@ -93,7 +89,7 @@
 
     <script>
         $(document).ready(function() {
-        $('#dormitorio').DataTable({
+        $('#aprendiz').DataTable({
             "language": {
                 "lengthMenu": "Mostrar _MENU_ registros por página",
                 "zeroRecords": "No se encontraron resultados - Disculpa",
