@@ -80,57 +80,26 @@ class RestauranteController extends Controller
         $restaurante = DB::table('aprendices')->select('*')->where('aprendices.cc','=',$request->cc)->get();
 
         foreach($restaurante as $ver){
+            $id = $ver->id;
             $cc = $ver->cc;
             $nombre = $ver->nombre;
             $apellido = $ver->apellido;
         };
 
-        $datos = Arr::sort([$desayuno,$almuerzo,$cena,$cc,$nombre,$apellido]);
+        $datos = Arr::sort([$desayuno,$almuerzo,$cena,$cc,$nombre,$apellido,$id]);
         
         //Devolvemos la cista con nueva pero con el filtro del los aprendices que fueron al restaurante
-        return view('restaurante.filtroDoc', compact('desayuno','almuerzo','cena','cc','nombre','apellido'));  
+        return view('restaurante.filtroDoc', compact('desayuno','almuerzo','cena','cc','nombre','apellido','id'));  
     }
 
-    // public function filtroPDF(Request $request)
-    // {
-    //     $request->validate([
-    //         'cc' => 'required',
-    //         'date' => 'required',
-    //     ]);
-        
-    //     //realizamos la consulta y la almacenamos en la variable 
-    //     $desayuno = DB::table('consumos')->join('aprendices','aprendices.id','=','consumos.aprendiz_consumos')
-    //                 ->join('fichas','fichas.id','=','aprendices.aprendiz_ficha')
-    //                 ->select('consumos.desayunos')->where('consumos.desayuno','Si')
-    //                 ->where('aprendices.cc',$request->cc)
-    //                 ->where('fecha','<=',$request->date)->count();
-    //     $almuerzo = DB::table('consumos')->join('aprendices','aprendices.id','=','consumos.aprendiz_consumos')
-    //                 ->join('fichas','fichas.id','=','aprendices.aprendiz_ficha')
-    //                 ->select('consumos.desayunos')->where('consumos.almuerzo','Si')
-    //                 ->where('aprendices.cc',$request->cc)
-    //                 ->where('fecha','<=',$request->date)->count();
-    //     $cena = DB::table('consumos')->join('aprendices','aprendices.id','=','consumos.aprendiz_consumos')
-    //                 ->join('fichas','fichas.id','=','aprendices.aprendiz_ficha')
-    //                 ->select('consumos.desayunos')->where('consumos.cena','Si')
-    //                 ->where('aprendices.cc',$request->cc)
-    //                 ->where('fecha','<=',$request->date)->count();
-        
-    //     $restaurante = DB::table('aprendices')->select('*')->where('aprendices.cc','=',$request->cc)->get();
+    public function filtroPDF($id)
+    {
+        $aprendiz = DB::select('select * from vista where id = ?', [$id]);
 
-    //     foreach($restaurante as $ver){
-    //         $cc = $ver->cc;
-    //         $nombre = $ver->nombre;
-    //         $apellido = $ver->apellido;
-    //     };
+        $pdf = PDF::loadView('restaurante.dowload', ['datos' => $aprendiz]);
 
-    //     $datos = Arr::sort([$desayuno,$almuerzo,$cena,$cc,$nombre,$apellido]);
-
-    //     view()->share('restaurante.dowload',$datos);
-
-    //     $pdf = PDF::loadView('restaurante.dowload', ['datos' => $datos]);
-
-    //     return $pdf->download('Reporte Del Restaurante Con El Aprendiz.pdf');
-    // }
+        return $pdf->download('Reporte Del Restaurante Con El Aprendiz.pdf');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -162,22 +131,28 @@ class RestauranteController extends Controller
         //$desayuno almacena la suma de los aprendices que van a desayunar durante el periodo de estancia
         $desayuno = DB::table('consumos')->join('aprendices','aprendices.id','=','consumos.aprendiz_consumos')
                         ->select('consumos.desayuno, consumos.almuerzo, consumos.cena, fecha')
-                        ->where('consumos.desayuno','Si')->where('aprendiz_ficha',[$inpu['ficha_restaurante']])->count();
+                        ->where('consumos.desayuno','Si')->where('aprendiz_ficha',[$inpu['ficha_restaurante']])
+                        ->where('aprendices.estado','Activo')
+                        ->where('consumos.fecha','>=',$request->date)->count();
         //$almuerzo almacena la suma de los aprendices que van a almuerzan durante el periodo de estancia
         $almuerzo = DB::table('consumos')->join('aprendices','aprendices.id','=','consumos.aprendiz_consumos')
                         ->select('consumos.desayuno, consumos.almuerzo, consumos.cena, fecha')
-                        ->where('consumos.almuerzo','Si')->where('aprendiz_ficha',[$inpu['ficha_restaurante']])->count();
+                        ->where('consumos.almuerzo','Si')->where('aprendiz_ficha',[$inpu['ficha_restaurante']])
+                        ->where('aprendices.estado','Activo')
+                        ->where('consumos.fecha','>=',$request->date)->count();
         //$cena almacena la suma de los aprendices que van a cenar durante el periodo de estancia
         $cena    = DB::table('consumos')->join('aprendices','aprendices.id','=','consumos.aprendiz_consumos')
                         ->select('consumos.desayuno, consumos.almuerzo, consumos.cena, fecha')
-                        ->where('consumos.cena','Si')->where('aprendiz_ficha',[$inpu['ficha_restaurante']])->count();
+                        ->where('consumos.cena','Si')->where('aprendiz_ficha',[$inpu['ficha_restaurante']])
+                        ->where('aprendices.estado','Activo')
+                        ->where('consumos.fecha','>=',$request->date)->count();
 
         //accede a la base de datos a la tabla restaurantes y almacena los diferentes resultados de las variables
         DB::table('restaurantes')->insert([
             'total_desayunos'=> $desayuno, 
-            'total_almuerzos'=>$almuerzo,
-            'total_cenas'=>$cena,
-            'ficha_restaurante'=>$request->ficha_restaurante,
+            'total_almuerzos'=> $almuerzo,
+            'total_cenas'=> $cena,
+            'ficha_restaurante'=> $request->ficha_restaurante,
         ]);
         //nos redirige a la ruta que le asignemos
         return redirect()->route('index.cocina')->with('crear','ok');
@@ -226,14 +201,17 @@ class RestauranteController extends Controller
         //$desayuno almacena la suma de los aprendices que van a desayunar durante el periodo de estancia
         $desayuno = DB::table('consumos')->join('aprendices','aprendices.id','=','consumos.aprendiz_consumos')
                         ->select('consumos.desayuno, consumos.almuerzo, consumos.cena, fecha')
+                        ->where('aprendices.estado','Activo')
                         ->where('consumos.desayuno','Si')->where('aprendiz_ficha',[$inpu['ficha_restaurante']])->count();
         //$almuerzo almacena la suma de los aprendices que van a almuerzan durante el periodo de estancia
         $almuerzo = DB::table('consumos')->join('aprendices','aprendices.id','=','consumos.aprendiz_consumos')
                         ->select('consumos.desayuno, consumos.almuerzo, consumos.cena, fecha')
+                        ->where('aprendices.estado','Activo')
                         ->where('consumos.almuerzo','Si')->where('aprendiz_ficha',[$inpu['ficha_restaurante']])->count();
         //$cena almacena la suma de los aprendices que van a cenar durante el periodo de estancia
         $cena    = DB::table('consumos')->join('aprendices','aprendices.id','=','consumos.aprendiz_consumos')
                         ->select('consumos.desayuno, consumos.almuerzo, consumos.cena, fecha')
+                        ->where('aprendices.estado','Activo')
                         ->where('consumos.cena','Si')->where('aprendiz_ficha',[$inpu['ficha_restaurante']])->count();
         //accede a la base de datos a la tabla restaurantes y actualiza la informacion en los diferentes resultados de las variables
         $restaurante->update([

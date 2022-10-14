@@ -185,6 +185,6 @@ class FichaController extends Controller
         //accede la tabla de fichas y la funcion delete elimina la informacion seleccionada
         $ficha->delete();
         //nos redirige a la ruta que le asignemos
-        return redirect()->back();
+        return redirect()->back()->with('eliminar','ok');
     }
 }

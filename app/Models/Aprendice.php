@@ -14,7 +14,6 @@ class Aprendice extends Model
         'cc',
         'nombre',
         'apellido',
-        'edad',
         'genero',
         'desayuno',
         'almuerzo',

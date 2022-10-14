@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('cc',15)->unique();
             $table->string('nombre', 30);
             $table->string('apellido', 30);
-            $table->string('edad', 3);
             $table->string('genero', 11);
             $table->string('desayuno', 3)->nullable();
             $table->string('almuerzo', 3)->nullable();

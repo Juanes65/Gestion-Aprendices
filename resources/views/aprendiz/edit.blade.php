@@ -3,7 +3,7 @@
 @section('title', 'Fichas')
 
 @section('content_header')
-    <h1 style="text-align: center">Editar Ficha</h1>
+    <h1 style="text-align: center">Editar Aprendiz</h1>
 @stop
 
 @section('content')
@@ -38,29 +38,6 @@
                                         @endif
                                     </div>
 
-                                    <div class="mb-4 box3">
-
-                                        <select name="estado" id="my-select" required="required">
-
-                                            <option value=""></option>
-                                            <option @if (old('estado',$aprendice->estado)=="Activo")
-                                                @selected(true)
-                                            @endif  value="Ativo">Activo</option>
-                                            <option @if (old('estado',$aprendice->estado)=="Inactivo")
-                                                @selected(true)
-                                            @endif value="Inactivo">Inactivo</option>
-                                            <option @if (old('estado',$aprendice->estado)=="Retirado")
-                                                @selected(true)
-                                            @endif value="Retirado">Retirado</option>
-
-                                        </select>
-                                        <span>Selecione el Estado del Aprendiz</span>
-                                        @if ($errors->has('estado'))
-                                            <span class="error text-danger" for="input-name">{{$errors->first('estado')}}</span>
-                                        @endif
-
-                                    </div>
-
                                     <div class="mb-4 box2">
                                         <input type="date" name="fecha_inicial" value="{{old('fecha_inicial',$aprendice->fecha_inicial)}}">
                                         <span>Fecha de Ingreso</span>
@@ -73,14 +50,6 @@
                                 </div>
 
                                 <div class="col-lg-6 col-12">
-
-                                    <div class="mb-4 box">
-                                        <input type="text" name="edad" value="{{old('edad',$aprendice->edad)}}" required="required">
-                                        <span>edad</span>
-                                        @if ($errors->has('edad'))
-                                            <span class="error text-danger" for="input-name">{{$errors->first('edad')}}</span>
-                                        @endif
-                                    </div>
 
                                     <div class="mb-4 box">
                                         <input type="text" name="apellido" value="{{old('apellido',$aprendice->apellido)}}" required="required">
@@ -104,6 +73,33 @@
                                         @if ($errors->has('fecha_final'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('fecha_final')}}</span>
                                         @endif
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-12">
+
+                                    <div class="mb-4 box3">
+                                        
+                                        <select name="estado" id="my-select" required="required">                                                    
+
+                                            <option value=""></option>
+                                            <option @if (old('estado',$aprendice->estado)=="Activo")
+                                                @selected(true)
+                                            @endif  value="Ativo">Activo</option>
+                                            <option @if (old('estado',$aprendice->estado)=="Inactivo")
+                                                @selected(true)
+                                            @endif value="Inactivo">Inactivo</option>
+                                            <option @if (old('estado',$aprendice->estado)=="Retirado")
+                                                @selected(true)
+                                            @endif value="Retirado">Retirado</option>
+
+                                        </select>
+                                        <span>Selecione el Estado del Aprendiz</span>
+                                        @if ($errors->has('estado'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('estado')}}</span>
+                                        @endif
+
                                     </div>
 
                                 </div>

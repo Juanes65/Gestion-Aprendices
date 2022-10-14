@@ -29,7 +29,6 @@ class AprendicesImport implements ToModel, WithHeadingRow, WithBatchInserts, Wit
             'cc' => $row['documento'],
             'nombre' => $row['nombres'],
             'apellido' => $row['apellidos'],
-            'edad' => $row['edad'],
             'genero' => $row['genero'],
             'desayuno' => 'Si',
             'almuerzo' => 'Si',
@@ -60,9 +59,6 @@ class AprendicesImport implements ToModel, WithHeadingRow, WithBatchInserts, Wit
                 'required',
              ],
              '*.apellidos' => [
-                'required',
-             ],
-             '*.edad' => [
                 'required',
              ],
              '*.genero' => [

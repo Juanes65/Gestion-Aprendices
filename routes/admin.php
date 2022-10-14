@@ -60,7 +60,7 @@ Route::delete('Novedades/{novedade}',               [NovedadeController::class, 
 Route::get('/Cocina',                               [RestauranteController::class, 'index']) ->name('index.cocina');
 Route::get('/Cocina/filtro',                        [RestauranteController::class, 'paginafiltro']) ->name('pagina.cocina');
 Route::get('/Cocina/filtroDoc',                     [RestauranteController::class, 'paginafiltroDoc']) ->name('paginadoc.cocina');
-// Route::get('/Cocina/filtroDoc/Dowload',             [RestauranteController::class, 'filtroPDF'])->name('dowload.cocina');
+Route::get('/Cocina/filtroDoc/Dowload{id}',         [RestauranteController::class, 'filtroPDF'])->name('dowload.cocina');
 Route::post('/Cocina/filtrar',                      [RestauranteController::class, 'filtro'])->name('filtro.cocina');
 Route::post('/Cocina/filtrarDoc',                   [RestauranteController::class, 'filtroDoc'])->name('filtrodoc.cocina');
 Route::get('/Cocina/agregar',                       [RestauranteController::class, 'create'])->name('create.cocina');
