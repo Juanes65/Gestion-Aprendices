@@ -24,7 +24,6 @@
                                                 <th scope="col">Documento</th>
                                                 <th scope="col">Nombre</th>
                                                 <th scope="col">Apellidos</th>
-                                                <th scope="col">Edad</th>
                                                 <th scope="col">Genero</th>
                                                 <th scope="col">Observaciones</th>
                                                 <th scope="col">Estado</th>
@@ -40,7 +39,6 @@
                                                     <td>{{$info->cc}}</td>
                                                     <td>{{$info->nombre}}</td>
                                                     <td>{{$info->apellido}}</td>
-                                                    <td>{{$info->edad}}</td>
                                                     <td>{{$info->genero}}</td>
                                                     <td>{{$info->observaciones}}</td>
                                                     <td>{{$info->estado}}</td>

@@ -25,7 +25,7 @@
                                                 <th scope="col">Total Desayunos</th>
                                                 <th scope="col">Total Almuerzos</th>
                                                 <th scope="col">Total Cenas</th>
-                                                {{-- <th scope="col">Descargar PDF</th> --}}
+                                                <th scope="col">Descargar PDF</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -36,7 +36,7 @@
                                                 <td>{{$desayuno}}</td>
                                                 <td>{{$almuerzo}}</td>
                                                 <td>{{$cena}}</td>
-                                                {{-- <td><a href="{{ route('dowload.cocina') }}" class="btn btn-success btn-sm">Exportar A PDF</a></td> --}}
+                                                <td><a href="{{ route('dowload.cocina',$id) }}" class="btn btn-success btn-sm">Exportar A PDF</a></td>
                                             </tr>
                                         </tbody>
                                     </table>

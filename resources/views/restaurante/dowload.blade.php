@@ -30,9 +30,10 @@
                     <th scope="col">Documento</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellidos</th>
-                    <th scope="col">Total Desayunos</th>
-                    <th scope="col">Total Almuerzos</th>
-                    <th scope="col">Total Cenas</th>
+                    <th scope="col">Desayuno</th>
+                    <th scope="col">Almuerzo</th>
+                    <th scope="col">Ceno</th>
+                    <th scope="col">Fecha</th>
                 </tr>
             </thead>
             <tbody>
@@ -44,6 +45,7 @@
                         <td>{{$info->desayuno}}</td>
                         <td>{{$info->almuerzo}}</td>
                         <td>{{$info->cena}}</td>
+                        <td>{{$info->fecha}}</td>
                     </tr>
                 @endforeach
             </tbody>

@@ -19,7 +19,16 @@
                                 
                             <div class="row">
 
-                                <div class="col-lg-12">
+                                <div class="col-lg-6 col-12">
+
+                                    <div class="mb-4 box2">
+                                        <input type="date" name="date">
+                                        <span>Fecha de Ingreso de la Ficha</span>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="col-lg-6 col-12">
                                    
                                     <div class="mb-4 box3">
                                         <select name="ficha_restaurante" id="my-select" required="required">                                                    
