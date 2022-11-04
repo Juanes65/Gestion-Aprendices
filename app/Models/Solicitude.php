@@ -18,4 +18,8 @@ class Solicitude extends Model
     public function restaurantes(){
         return $this->belongsTo('App\Models\Restaurante', 'solicitud', 'id');
     }
+
+    public function platillo_solicitude(){
+        return $this->hasMany('App\Models\Platillo_Solcitude', 'solicitud', 'id');
+    }
 }

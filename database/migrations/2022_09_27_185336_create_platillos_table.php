@@ -16,13 +16,18 @@ return new class extends Migration
         Schema::create('platillos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre_platillo', 50);
-            $table->string('ingre_1', 50);
-            $table->string('ingre_2', 50);
-            $table->string('ingre_3', 50);
-            $table->string('ingre_4', 50);
-            $table->string('ingre_5', 50);
+            $table->string('cantidad_1', 50)->nullable();
+            $table->string('cantidad_2', 50)->nullable();
+            $table->string('cantidad_3', 50)->nullable();
+            $table->string('cantidad_4', 50)->nullable();
+            $table->string('cantidad_5', 50)->nullable();
+            $table->string('ingre_1', 50)->nullable();
+            $table->string('ingre_2', 50)->nullable();
+            $table->string('ingre_3', 50)->nullable();
+            $table->string('ingre_4', 50)->nullable();
+            $table->string('ingre_5', 50)->nullable();
 
-            
+
             $table->timestamps();
         });
     }

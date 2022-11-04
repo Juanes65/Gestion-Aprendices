@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cupo;
+use App\Models\Dormitorio;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -106,7 +107,7 @@ class CupoController extends Controller
         //nos aseguramos que sea necesario que los campos sean necesraios y que la llave foranea de aprendiz sea unica
         $request->validate([
             'fecha_ingreso' => 'required',
-            'fecha_salida' => 'required', 
+            'fecha_salida' => 'required',
             'fk_estudiantes' => 'required|unique:cupos',
             'fk_dormitorios' => 'required'
         ]);
@@ -118,6 +119,59 @@ class CupoController extends Controller
             'fk_estudiantes' => $request->fk_estudiantes,
             'fk_dormitorios' => $request->fk_dormitorios
         ]);
+
+        //Actualizar (Update) de la tabla dormitorio
+
+        $dormitorio = Dormitorio::find($request->fk_dormitorios);
+
+        $var = DB::select('select genero from dormitorios where id = ?', [$request->fk_dormitorios]);
+
+        //tranformamos la informacion en texto y lo almacenamos en la variable $genero
+        foreach($var as $ver){
+            $genero = $ver->genero;
+        };
+
+        //verificamos que la varaible genero sea igual a masculino o femenino
+        if($genero == "Femenino"){
+            //$cuenta almacena una cuenta donde mediga cuantos aprendices femeninos hay en el dormitorio
+            $cuenta = DB::table('cupos')->join('dormitorios','dormitorios.id','=','cupos.fk_dormitorios')
+                        ->join('aprendices','aprendices.id','=','cupos.fk_estudiantes')
+                        ->select('cupos.fk_dormitorios, cupos.fk_aprendiz, aprendices.desayuno.cena, fecha')
+                        ->where('fk_dormitorios',[$request->fk_dormitorios])->where('aprendices.genero','Femenino')->count();
+
+        }else{
+            //$cuenta almacena una cuenta donde mediga cuantos aprendices masculinos hay en el dormitorio
+            $cuenta = DB::table('cupos')->join('dormitorios','dormitorios.id','=','cupos.fk_dormitorios')
+                        ->join('aprendices','aprendices.id','=','cupos.fk_estudiantes')
+                        ->select('cupos.fk_dormitorios, cupos.fk_aprendiz, aprendices.desayuno.cena, fecha')
+                        ->where('fk_dormitorios',[$request->fk_dormitorios])->where('aprendices.genero','Masculino')->count();
+        }
+
+
+        //$suma almacena al total de camas que hay en el dormitorio
+        $suma = DB::select('select camas from dormitorios where id = ?', [$request->fk_dormitorios]);
+        //accedemos a la informacion para que la transforme en texto
+        foreach($suma as $var){
+            $resta = $var->camas;
+        };
+        //$total se almacena la resta de la varieble cuenta y la variable resta para saber la disponibilidad del dormitorio
+        $total = $resta-$cuenta;
+
+        //comprobamos que el total se menor o igual a 0
+        if($total <= 0){
+            //accede a la base de datos y a la funcion actualizar y segun el resultado estado se almacena ocupado
+            $dormitorio->update([
+                'disponible' => $total,
+                'estado' => "Ocupado",
+            ]);
+            return redirect()->route('index.dormitorio');
+        }else{
+            //accede a la base de datos y a la funcion actualizar y segun el resultado estado se almacena disponible
+            $dormitorio->update([
+                'disponible' => $total,
+                'estado' => "Disponible",
+            ]);
+        }
 
         //una vez almacenada la informacion indicamos que nos rediriga a otra ruta
         return redirect()->route('index.dormitorio')->with('crear','ok');
@@ -195,11 +249,78 @@ class CupoController extends Controller
     //funcion destroy elimina la informacion de la base de datos
     public function destroy($id)
     {
+
         //$cupos almacena el id seleccionado previamente
         $cupos = Cupo::findOrFail($id);
-        //accede al id seleccionado y elmina la informacion seleccionada
-        $cupos->delete();
 
-        return redirect()->back()->with('eliminar','ok');
+         //Actualizar (Update) de la tabla dormitorio
+
+         $var2 = DB::select('select fk_dormitorios from cupos where id = ?', [$id]);
+
+         foreach($var2 as $ver2){
+            $fk_dormitorios = $ver2->fk_dormitorios;
+        };
+
+        $dormitorio = Dormitorio::find($fk_dormitorios);
+
+         $var = DB::select('select genero from dormitorios where id = ?', [$fk_dormitorios]);
+
+         //tranformamos la informacion en texto y lo almacenamos en la variable $genero
+         foreach($var as $ver){
+             $genero = $ver->genero;
+         };
+
+         //verificamos que la varaible genero sea igual a masculino o femenino
+         if($genero == "Femenino"){
+             //$cuenta almacena una cuenta donde mediga cuantos aprendices femeninos hay en el dormitorio
+             $cuenta = DB::table('cupos')->join('dormitorios','dormitorios.id','=','cupos.fk_dormitorios')
+                         ->join('aprendices','aprendices.id','=','cupos.fk_estudiantes')
+                         ->select('cupos.fk_dormitorios, cupos.fk_aprendiz, aprendices.desayuno.cena, fecha')
+                         ->where('fk_dormitorios',[$fk_dormitorios])->where('aprendices.genero','Femenino')->count();
+
+         }else{
+             //$cuenta almacena una cuenta donde mediga cuantos aprendices masculinos hay en el dormitorio
+             $cuenta = DB::table('cupos')->join('dormitorios','dormitorios.id','=','cupos.fk_dormitorios')
+                         ->join('aprendices','aprendices.id','=','cupos.fk_estudiantes')
+                         ->select('cupos.fk_dormitorios, cupos.fk_aprendiz, aprendices.desayuno.cena, fecha')
+                         ->where('fk_dormitorios',[$fk_dormitorios])->where('aprendices.genero','Masculino')->count();
+         }
+
+
+         //$suma almacena al total de camas que hay en el dormitorio
+         $suma = DB::select('select camas from dormitorios where id = ?', [$fk_dormitorios]);
+         //accedemos a la informacion para que la transforme en texto
+         foreach($suma as $var){
+             $resta = $var->camas;
+         };
+         //$total se almacena la resta de la varieble cuenta y la variable resta para saber la disponibilidad del dormitorio
+         $total = $resta-$cuenta+1;
+
+         //comprobamos que el total se menor o igual a 0
+         if($total <= 0){
+             //accede a la base de datos y a la funcion actualizar y segun el resultado estado se almacena ocupado
+             $dormitorio->update([
+                 'disponible' => $total,
+                 'estado' => "Ocupado",
+             ]);
+
+            $cupos->delete();
+
+            return redirect()->back()->with('eliminar','ok');
+
+         }else{
+             //accede a la base de datos y a la funcion actualizar y segun el resultado estado se almacena disponible
+             $dormitorio->update([
+                 'disponible' => $total,
+                 'estado' => "Disponible",
+             ]);
+
+             $cupos->delete();
+
+             return redirect()->back()->with('eliminar','ok');
+
+         }
+
+        //accede al id seleccionado y elmina la informacion seleccionada
     }
 }

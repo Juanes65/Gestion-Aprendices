@@ -24,4 +24,8 @@ class Producto extends Model
     public function areas(){
         return $this->belongsTo('App\Models\Area', 'area', 'id');
     }
+
+    public function pedido(){
+        return $this->hasMany('App\Models\Pedido', 'producto', 'id');
+    }
 }

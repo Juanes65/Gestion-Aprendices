@@ -40,6 +40,11 @@ class PlatilloController extends Controller
     {
         DB::table('Platillos')->insert([
             'nombre_platillo' => $request->nombre_platillo,
+            'cantidad_1' => $request->cantidad_1,
+            'cantidad_2' => $request->cantidad_2,
+            'cantidad_3' => $request->cantidad_3,
+            'cantidad_4' => $request->cantidad_4,
+            'cantidad_5' => $request->cantidad_5,
             'ingre_1' => $request->ingre_1,
             'ingre_2' => $request->ingre_2,
             'ingre_3' => $request->ingre_3,
