@@ -304,7 +304,7 @@ return [
         //Solicitud Logo
         [
             'text'    => 'Solicitud',
-            'icon'    => 'fas fa-fw fa-joint',
+            'icon'    => 'fas fa-fw fa-envelope',
             'icon_color' => 'white',
             'submenu' => [
                 [
@@ -324,8 +324,8 @@ return [
 
         [
             'text'    => 'Bodegas',
-            'icon'    => 'fas fa-fw fa-joint',
-            'icon_color' => 'white',
+            'icon'    => 'fas fa-fw fa-box-open',
+            'icon_color' => 'pink',
             'submenu' => [
                 [
                     'text' => 'Crear Bodegas',
@@ -347,8 +347,8 @@ return [
 
         [
             'text'    => 'Platillos',
-            'icon'    => 'fas fa-fw fa-joint',
-            'icon_color' => 'white',
+            'icon'    => 'fas fa-fw fa-check',
+            'icon_color' => 'cyan',
             'submenu' => [
                 [
                     'text' => 'Agregar Platillos',
@@ -381,6 +381,24 @@ return [
             ]
         ],
 
+
+        [
+            'text'    => 'Provedores',
+            'icon'    => 'fas fa-fw fa-truck',
+            'icon_color' => 'green',
+            'submenu' => [
+                [
+                    'text' => 'Registrar Insumo Provedor',
+                    'icon_color' => 'plate',
+                    'route'  => 'create.provedor',
+                ],
+                [
+                    'text' => 'Pedido del Provedor',
+                    'icon_color' => 'orange',
+                    'route'  => 'index.provedor',
+                ],
+            ]
+        ],
 
     ],
 

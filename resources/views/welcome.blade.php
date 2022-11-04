@@ -11,38 +11,22 @@
 <body>
 
     <div class="d-flex justify-content-center caja">
-
-        <form method="POST" action="{{ route('login') }}" class="formulario__login">
-            @csrf
-
-            <div class="d-flex justify-content-center col-12">
-                <h1 class="texto">Ingresar</h1>
-            </div>
             
-            <div class="box">
-                <input type="email" required="required" id="email" type="email"  class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" >
-                <span>Correo Electronico</span>
-                @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+            <div class="col-lg-6 col-6 d-flex justify-content-center bd-highlight">
+                @if (Route::has('login'))
+                    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                        @auth
+                            <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline" style="text-decoration: none; color:rgb(0, 0, 0); font-family: 'caviar_dreamsregular'; font-size:18px">Ingresar</a>
+                        @else
+                            <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline" style="text-decoration: none; color:rgb(0, 0, 0); font-family: 'caviar_dreamsregular'; font-size:15px">Iniciar Sesion</a>
+        
+                            {{-- @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline ms-2" style="text-decoration: none; color:rgb(0, 0, 0); font-family: 'caviar_dreamsregular'; font-size:15px">Registrarse</a>
+                            @endif --}}
+                        @endauth
+                    </div>
+                @endif
             </div>
-
-            <div class="box">
-                <input type="password" required="required" id="password" type="password" class="@error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                <span>Contraseña</span>
-                @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-
-            <div class="d-flex justify-content-center col-12 boton">
-                <button type="submit">Ingresar</button>
-            </div>
-        </form>
 
     </div>
 

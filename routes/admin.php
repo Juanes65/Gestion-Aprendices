@@ -14,6 +14,7 @@ use App\Http\Controllers\BodegaController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\PlatilloController;
+use App\Http\Controllers\ProvedoreController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -139,6 +140,15 @@ Route::post('platillo/store',                        [PlatilloController::class,
 Route::get('/platillo/edit/{platillo}',              [PlatilloController::class, 'edit'])->name('edit.platillo');
 Route::put('/platillo/{platillo}',                   [PlatilloController::class, 'update'])->name('update.platillo');
 Route::delete('/platillo/{platillo}',                [PlatilloController::class, 'destroy'])->name('destroy.platillo');
+
+//Rutas de provedor
+
+Route::get('/provedor',                              [ProvedoreController::class, 'index'])->name('index.provedor');
+Route::get('/provedor/agregar',                      [ProvedoreController::class, 'create'])->name('create.provedor');
+Route::post('provedor/store',                        [ProvedoreController::class, 'store'])->name('store.provedor');
+Route::get('/provedor/edit/{provedore}',             [ProvedoreController::class, 'edit'])->name('edit.provedor');
+Route::put('/provedor/{provedore}',                  [ProvedoreController::class, 'update'])->name('update.provedor');
+Route::delete('/provedor/{provedore}',               [ProvedoreController::class, 'destroy'])->name('destroy.provedor');
 
 //Rutas de la Inspecccion **poner esta seccion al final de las rutas**
 
