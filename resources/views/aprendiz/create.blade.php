@@ -19,21 +19,21 @@
                                 
                             <div class="row">
 
-                                <div class="col-lg-6 col-12">
-                                        
-                                    <input type="file" name="import">
-                                    
+                                <div class="mb-3 col-12">
+
+                                    <input class="form-control" type="file" name="import">
+
                                 </div>
 
-                                <div class="col-lg-6 col-12">
+
+                                <div class="col-lg-12 d-flex justify-content-center boton">
                                         
-                                    <div class="d-flex justify-content-end boton">
-                                        <button type="submit">Importar</button>
-                                    </div>
+                                    <button type="submit">Importar</button>
 
                                 </div>
 
                             </div>
+                            
                         </form>
                         
                     </div>   
@@ -45,5 +45,6 @@
 @endsection
 
 @section('css')
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/button.css')}}">
 @stop
