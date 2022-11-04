@@ -18,7 +18,7 @@ class DormitorioController extends Controller
     {
         //$dormitorio accede a la base de datos y me trae tosos los datos de la tabla dormitorios en forma de array
         $dormitorio=DB::select('select * from dormitorios');
-        //nos devuelve la vista index de la carpeta dormitorios junto con la informacion almacenada el la variable 
+        //nos devuelve la vista index de la carpeta dormitorios junto con la informacion almacenada el la variable
         return view('dormitorios.index', compact('dormitorio'));
     }
 
@@ -51,7 +51,7 @@ class DormitorioController extends Controller
             'genero' => 'required',
             'espacio' => 'required'
         ]);
-        
+
         //$input almacena el valor del campo camas del formulario creado
         $input = $request->camas;
 
@@ -76,8 +76,9 @@ class DormitorioController extends Controller
                 'genero' => $request->genero,
                 'espacio' => $request->espacio,
                 'estado' => "Disponible",
-            ]);    
+            ]);
         }
+
         //nos redirige a la ruta que le asignemos
         return redirect()->route('index.dormitorio')->with('crear','ok');
 
@@ -144,7 +145,7 @@ class DormitorioController extends Controller
                         ->join('aprendices','aprendices.id','=','cupos.fk_estudiantes')
                         ->select('cupos.fk_dormitorios, cupos.fk_aprendiz, aprendices.desayuno.cena, fecha')
                         ->where('fk_dormitorios',[$id])->where('aprendices.genero','Femenino')->count();
-                        
+
         }else{
             //$cuenta almacena una cuenta donde mediga cuantos aprendices masculinos hay en el dormitorio
             $cuenta = DB::table('cupos')->join('dormitorios','dormitorios.id','=','cupos.fk_dormitorios')

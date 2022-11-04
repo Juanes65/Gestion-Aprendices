@@ -14,6 +14,7 @@ use App\Http\Controllers\BodegaController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\PlatilloController;
+use App\Http\Controllers\PlatilloSolitudeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -139,6 +140,17 @@ Route::post('platillo/store',                        [PlatilloController::class,
 Route::get('/platillo/edit/{platillo}',              [PlatilloController::class, 'edit'])->name('edit.platillo');
 Route::put('/platillo/{platillo}',                   [PlatilloController::class, 'update'])->name('update.platillo');
 Route::delete('/platillo/{platillo}',                [PlatilloController::class, 'destroy'])->name('destroy.platillo');
+
+//Rutas Platillo Solicitud
+
+Route::get('/platilloSolicitud',                     [PlatilloSolitudeController::class, 'index'])->name('index.platillo_s');
+Route::get('/platilloSolicitud/agregar',             [PlatilloSolitudeController::class, 'create'])->name('create.platillo_s');
+Route::post('platilloSolicitud/store',               [PlatilloSolitudeController::class, 'store'])->name('store.platillo_s');
+// Route::get('/platillo/edit/{platillo}',              [PlatilloSolitudeController::class, 'edit'])->name('edit.platillo_s');
+// Route::put('/platillo/{platillo}',                   [PlatilloSolitudeController::class, 'update'])->name('update.platillo_s');
+Route::delete('/platillo',                           [PlatilloSolitudeController::class, 'destroy'])->name('destroy.platillo_s');
+
+
 
 //Rutas de la Inspecccion **poner esta seccion al final de las rutas**
 
