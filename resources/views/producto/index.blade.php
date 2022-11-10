@@ -28,6 +28,7 @@
                                                 <th scope="col">Stock Actual</th>
                                                 <th scope="col">Stock Minimo</th>
                                                 <th scope="col">Lote Producto</th>
+                                                <th scope="col">Bodega</th>
                                                 <th scope="col">Area</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
@@ -44,6 +45,7 @@
                                                     <td>{{$info->stock_actual}}</td>
                                                     <td>{{$info->stock_minimo}}</td>
                                                     <td>{{$info->lote_producto}}</td>
+                                                    <td>{{$info->nombre_bodega}}</td>
                                                     <td>{{$info->area}}</td>
 
                                                     <td class="td-actions text-center">

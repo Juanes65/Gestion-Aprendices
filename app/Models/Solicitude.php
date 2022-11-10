@@ -14,6 +14,7 @@ class Solicitude extends Model
         'cantidad_almuerzos',
         'cantidad_cenas',
         'solicitud',
+        'fecha_registro',
     ];
     public function restaurantes(){
         return $this->belongsTo('App\Models\Restaurante', 'solicitud', 'id');
