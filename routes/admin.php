@@ -102,7 +102,7 @@ Route::get('/solicitud',                             [SolicitudeController::clas
 Route::get('/solicitud/agregar',                     [SolicitudeController::class, 'create'])->name('create.solicitud');
 Route::post('/solicitud/almacenar',                  [SolicitudeController::class, 'store'])->name('store.solicitud');
 Route::get('/solicitud/edit/{solicitude}',           [SolicitudeController::class, 'edit']) ->name('edit.solicitud');
-Route::put('/solicitud/{solicitude}',                [SolicitudeController::class, 'update'])->name('update.solicitud');
+Route::put('/solicitud/update/{solicitude}',         [SolicitudeController::class, 'update'])->name('update.solicitud');
 Route::delete('/solicitud/{solicitude}',             [SolicitudeController::class, 'destroy'])->name('destroy.solicitud');
 
 //Rutas de Bodega

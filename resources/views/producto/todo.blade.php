@@ -3,7 +3,7 @@
 @section('title', 'Productos')
 
 @section('content_header')
-    <h1 style="text-align: center">Productos Disponibles</h1>
+    <h1 style="text-align: center">Historico</h1>
 @stop
 
 @section('content')
@@ -28,6 +28,7 @@
                                                 <th scope="col">Stock Actual</th>
                                                 <th scope="col">Stock Minimo</th>
                                                 <th scope="col">Lote Producto</th>
+                                                <th scope="col">Bodega</th>
                                                 <th scope="col">Area</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
@@ -44,7 +45,8 @@
                                                     <td>{{$info->stock_actual}}</td>
                                                     <td>{{$info->stock_minimo}}</td>
                                                     <td>{{$info->lote_producto}}</td>
-                                                    <td>{{$info->area}}</td>
+                                                    <td>{{$info->areas->bodegas->nombre_bodega}}</td>
+                                                    <td>{{$info->areas->nombre_area}}</td>
 
                                                     <td class="td-actions text-center">
 

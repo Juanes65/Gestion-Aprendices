@@ -27,7 +27,6 @@ class PlatilloSolitudeController extends Controller
      */
     public function create()
     {
-
         //$fichas nos almecena por medio de un array todo la informacion de los Platillos de la base de datos
         $platillo = Platillo::all();
         $solicitud = Solicitude::all();

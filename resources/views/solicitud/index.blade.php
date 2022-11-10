@@ -22,6 +22,7 @@
                                                 <th scope="col">Total Desayunos</th>
                                                 <th scope="col">Total Almuerzos</th>
                                                 <th scope="col">Total Cenas</th>
+                                                <th scope="col">Fecha Solicitud</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
@@ -31,6 +32,7 @@
                                                     <td>{{$info->cantidad_desayuno}}</td>
                                                     <td>{{$info->cantidad_almuerzo}}</td>
                                                     <td>{{$info->cantidad_cena}}</td>
+                                                    <td>{{$info->fecha_registro}}</td>
                                                     <td class="td-actions text-center">
 
                                                         <div class="dropdown">

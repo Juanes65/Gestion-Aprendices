@@ -50,11 +50,22 @@
                                 </div>
 
                                 <div class="col-lg-6 col-12">
-                                    <div class="mb-4 box">
-                                        <input type="text" name="unidad_medida" value="{{old('unidad_medida')}}" required="required">
+                                    <div class="mb-4 box3">
+                                        <select name="unidad_medida" id="my-select" value="{{old('unidad_medida')}}" required="required">
+
+                                            <option value=""></option>
+                                            <option value="Litro">Litros (L)</option>
+                                            <option value="Mililitro">Mililitros (ML)</option>
+                                            <option value="Centímetro cúbico">Centimetros Cubicos (C.C)</option>
+                                            <option value="Gramo">Gramos (GR)</option>
+                                            <option value="Kilogramo">Kilogramos (KG)</option>
+                                            <option value="Libra">Libras (LB)</option>
+
+                                        </select>
                                         <span>Unidad de Medida</span>
-                                        @if ($errors->has('unidad_medida'))
-                                            <span class="error text-danger" for="input-name">{{$errors->first('unidad_medida')}}</span>
+
+                                        @if ($errors->has('unidad'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('unidad')}}</span>
                                         @endif
                                     </div>
                                 </div>
