@@ -26,6 +26,11 @@ return new class extends Migration
             $table->string('ingre_3', 50)->nullable();
             $table->string('ingre_4', 50)->nullable();
             $table->string('ingre_5', 50)->nullable();
+            $table->string('unidad_1', 50)->nullable();
+            $table->string('unidad_2', 50)->nullable();
+            $table->string('unidad_3', 50)->nullable();
+            $table->string('unidad_4', 50)->nullable();
+            $table->string('unidad_5', 50)->nullable();
 
 
             $table->timestamps();

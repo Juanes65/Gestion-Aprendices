@@ -50,6 +50,11 @@ class PlatilloController extends Controller
             'ingre_3' => $request->ingre_3,
             'ingre_4' => $request->ingre_4,
             'ingre_5' => $request->ingre_5,
+            'unidad_1' => $request->unidad_1,
+            'unidad_2' => $request->unidad_2,
+            'unidad_3' => $request->unidad_3,
+            'unidad_4' => $request->unidad_4,
+            'unidad_5' => $request->unidad_5,
 
         ]);
 
@@ -90,11 +95,21 @@ class PlatilloController extends Controller
     {
         $platillo->update([
             'nombre_platillo' => $request->nombre_platillo,
+            'cantidad_1' => $request->cantidad_1,
+            'cantidad_2' => $request->cantidad_2,
+            'cantidad_3' => $request->cantidad_3,
+            'cantidad_4' => $request->cantidad_4,
+            'cantidad_5' => $request->cantidad_5,
             'ingre_1' => $request->ingre_1,
             'ingre_2' => $request->ingre_2,
             'ingre_3' => $request->ingre_3,
             'ingre_4' => $request->ingre_4,
             'ingre_5' => $request->ingre_5,
+            'unidad_1' => $request->unidad_1,
+            'unidad_2' => $request->unidad_2,
+            'unidad_3' => $request->unidad_3,
+            'unidad_4' => $request->unidad_4,
+            'unidad_5' => $request->unidad_5,
         ]);
 
         return redirect()->route('index.platillo')->with('actualizar', 'ok');

@@ -21,6 +21,11 @@ class Platillo extends Model
         'ingre_3',
         'ingre_4',
         'ingre_5',
+        'unidad_1',
+        'unidad_2',
+        'unidad_3',
+        'unidad_4',
+        'unidad_5',
     ];
     public function platillo_solicitud(){
         return $this->hasMany('App\Models\Platillo_Solcitude', 'platillo', 'id');

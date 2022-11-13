@@ -126,6 +126,7 @@ Route::delete('/bodega/area/{area}',                 [AreaController::class, 'de
 //Rutas de Producto
 
 Route::get('/producto',                              [ProductoController::class, 'todo'])->name('index.todo');
+Route::get('/producto/minimo',                       [ProductoController::class, 'minimo'])->name('index.minimo');
 Route::get('/bodega/area/producto/{id}',             [ProductoController::class, 'index'])->name('index.producto');
 Route::get('/producto/agregar{id}',                  [ProductoController::class, 'create'])->name('create.producto');
 Route::post('producto/store',                        [ProductoController::class, 'store'])->name('store.producto');

@@ -50,17 +50,9 @@
                                                             <div
                                                                 class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
 
-                                                                <a href="{{ route('index.platillo', $info->id) }}"
-                                                                    class="btn btn-outline-warning"><i
-                                                                        class="material-icons">info</i></a>
-
                                                                 <a href="{{ route('edit.platillo', $info->id) }}"
                                                                     class="btn btn-outline-warning"><i
                                                                         class="material-icons">edit</i></a>
-
-                                                                <a href="{{ route('create.platillo') }}"
-                                                                    class="btn btn-outline-warning"><i
-                                                                        class="material-icons">add</i></a>
 
                                                                 <form action="{{ route('destroy.platillo', $info->id) }}"
                                                                     class="form-eliminar" method="POST"

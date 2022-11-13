@@ -342,6 +342,11 @@ return [
                     'icon_color' => 'red',
                     'route'  => 'index.todo',
                 ],
+                [
+                    'text' => 'Productos',
+                    'icon_color' => 'red',
+                    'route'  => 'index.minimo',
+                ],
             ]
         ],
 

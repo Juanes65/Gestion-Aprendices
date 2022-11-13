@@ -22,6 +22,13 @@ class ProductoController extends Controller
         return view('producto.index', compact('producto'));
     }
 
+    public function minimo()
+    {
+        $producto = DB::select('select id, nombre_producto, stock_actual, stock_minimo from productos');
+
+        return view('producto.minimo', compact('producto'));
+    }
+
     public function todo ()
     {
         $producto = Producto::all();

@@ -31,7 +31,7 @@
 
                                 </div>
 
-                                <div class="col-lg-6 col-12">
+                                <div class="col-lg-4 col-12">
 
                                     <div class="mb-4 box">
                                         <input type="text" name="ingre_1" value="{{old('ingre_1')}}">
@@ -41,22 +41,6 @@
                                         @endif
                                     </div>
 
-                                </div>
-
-                                <div class="col-lg-6 col-12">
-
-                                    <div class="mb-4 box">
-                                        <input type="number" name="cantidad_1" value="{{old('cantidad_1')}}">
-                                        <span>Cantidad 1</span>
-                                        @if ($errors->has('cantidad_1'))
-                                            <span class="error text-danger" for="input-name">{{$errors->first('cantidad_1')}}</span>
-                                        @endif
-                                    </div>
-
-                                </div>
-
-                                <div class="col-lg-6 col-12">
-
                                     <div class="mb-4 box">
                                         <input type="text" name="ingre_2" value="{{old('ingre_2')}}">
                                         <span>Ingrediente 2</span>
@@ -64,22 +48,6 @@
                                             <span class="error text-danger" for="input-name">{{$errors->first('ingre_2')}}</span>
                                         @endif
                                     </div>
-
-                                </div>
-
-                                <div class="col-lg-6 col-12">
-
-                                    <div class="mb-4 box">
-                                        <input type="number" name="cantidad_2" value="{{old('cantidad_2')}}">
-                                        <span>Cantidad 2</span>
-                                        @if ($errors->has('cantidad_2'))
-                                            <span class="error text-danger" for="input-name">{{$errors->first('cantidad_2')}}</span>
-                                        @endif
-                                    </div>
-
-                                </div>
-
-                                <div class="col-lg-6 col-12">
 
                                     <div class="mb-4 box">
                                         <input type="text" name="ingre_3" value="{{old('ingre_3')}}">
@@ -89,22 +57,6 @@
                                         @endif
                                     </div>
 
-                                </div>
-
-                                <div class="col-lg-6 col-12">
-
-                                    <div class="mb-4 box">
-                                        <input type="number" name="cantidad_3" value="{{old('cantidad_3')}}">
-                                        <span>Cantidad 3</span>
-                                        @if ($errors->has('v'))
-                                            <span class="error text-danger" for="input-name">{{$errors->first('cantidad_3')}}</span>
-                                        @endif
-                                    </div>
-
-                                </div>
-
-                                <div class="col-lg-6 col-12">
-
                                     <div class="mb-4 box">
                                         <input type="text" name="ingre_4" value="{{old('ingre_4')}}">
                                         <span>Ingrediente 4</span>
@@ -112,22 +64,6 @@
                                             <span class="error text-danger" for="input-name">{{$errors->first('ingre_4')}}</span>
                                         @endif
                                     </div>
-
-                                </div>
-
-                                <div class="col-lg-6 col-12">
-
-                                    <div class="mb-4 box">
-                                        <input type="number" name="cantidad_4" value="{{old('cantidad_4')}}">
-                                        <span>Cantidad 4</span>
-                                        @if ($errors->has('cantidad_4'))
-                                            <span class="error text-danger" for="input-name">{{$errors->first('cantidad_4')}}</span>
-                                        @endif
-                                    </div>
-
-                                </div>
-
-                                <div class="col-lg-6 col-12">
 
                                     <div class="mb-4 box">
                                         <input type="text" name="ingre_5" value="{{old('ingre_5')}}">
@@ -139,7 +75,39 @@
 
                                 </div>
 
-                                <div class="col-lg-6 col-12">
+                                <div class="col-lg-4 col-12">
+
+                                    <div class="mb-4 box">
+                                        <input type="number" name="cantidad_1" value="{{old('cantidad_1')}}">
+                                        <span>Cantidad 1</span>
+                                        @if ($errors->has('cantidad_1'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('cantidad_1')}}</span>
+                                        @endif
+                                    </div>
+
+                                    <div class="mb-4 box">
+                                        <input type="number" name="cantidad_2" value="{{old('cantidad_2')}}">
+                                        <span>Cantidad 2</span>
+                                        @if ($errors->has('cantidad_2'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('cantidad_2')}}</span>
+                                        @endif
+                                    </div>
+
+                                    <div class="mb-4 box">
+                                        <input type="number" name="cantidad_3" value="{{old('cantidad_3')}}">
+                                        <span>Cantidad 3</span>
+                                        @if ($errors->has('v'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('cantidad_3')}}</span>
+                                        @endif
+                                    </div>
+
+                                    <div class="mb-4 box">
+                                        <input type="number" name="cantidad_4" value="{{old('cantidad_4')}}">
+                                        <span>Cantidad 4</span>
+                                        @if ($errors->has('cantidad_4'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('cantidad_4')}}</span>
+                                        @endif
+                                    </div>
 
                                     <div class="mb-4 box">
                                         <input type="number" name="cantidad_5" value="{{old('cantidad_5')}}">
@@ -147,6 +115,110 @@
                                         @if ($errors->has('cantidad_5'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('cantidad_5')}}</span>
                                         @endif
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-4 col-12">
+
+                                    <div class="mb-4 box3">
+                                        <select name="unidad_1" id="my-select" value="{{old('unidad_1')}}">                                                    
+
+                                            <option value=""></option>
+                                            <option value="Litro">l.</option>
+                                            <option value="Militro">ml.</option>
+                                            <option value="Centímetros cúbicos">c.c.</option>
+                                            <option value="Gramo">gr.</option>
+                                            <option value="Kilogramo">Kg.</option>
+                                            <option value="Libra">lb.</option>
+
+                                        </select>
+                                        <span>Unidad de Medida</span>
+                                        
+                                        @if ($errors->has('unidad_1'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('unidad_1')}}</span>
+                                        @endif
+
+                                    </div>
+
+                                    <div class="mb-4 box3">
+                                        <select name="unidad_2" id="my-select" value="{{old('unidad_2')}}">                                                    
+
+                                            <option value=""></option>
+                                            <option value="Litro">l.</option>
+                                            <option value="Militro">ml.</option>
+                                            <option value="Centímetros cúbicos">c.c.</option>
+                                            <option value="Gramo">gr.</option>
+                                            <option value="Kilogramo">Kg.</option>
+                                            <option value="Libra">lb.</option>
+
+                                        </select>
+                                        <span>Unidad de Medida</span>
+                                        
+                                        @if ($errors->has('unidad_2'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('unidad_2')}}</span>
+                                        @endif
+
+                                    </div>
+
+                                    <div class="mb-4 box3">
+                                        <select name="unidad_3" id="my-select" value="{{old('unidad_3')}}">                                                    
+
+                                            <option value=""></option>
+                                            <option value="Litro">l.</option>
+                                            <option value="Militro">ml.</option>
+                                            <option value="Centímetros cúbicos">c.c.</option>
+                                            <option value="Gramo">gr.</option>
+                                            <option value="Kilogramo">Kg.</option>
+                                            <option value="Libra">lb.</option>
+
+                                        </select>
+                                        <span>Unidad de Medida</span>
+                                        
+                                        @if ($errors->has('unidad_3'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('unidad_3')}}</span>
+                                        @endif
+
+                                    </div>
+
+                                    <div class="mb-4 box3">
+                                        <select name="unidad_4" id="my-select" value="{{old('unidad_4')}}">                                                    
+
+                                            <option value=""></option>
+                                            <option value="Litro">l.</option>
+                                            <option value="Militro">ml.</option>
+                                            <option value="Centímetros cúbicos">c.c.</option>
+                                            <option value="Gramo">gr.</option>
+                                            <option value="Kilogramo">Kg.</option>
+                                            <option value="Libra">lb.</option>
+
+                                        </select>
+                                        <span>Unidad de Medida</span>
+                                        
+                                        @if ($errors->has('unidad_4'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('unidad_4')}}</span>
+                                        @endif
+
+                                    </div>
+
+                                    <div class="mb-4 box3">
+                                        <select name="unidad_5" id="my-select" value="{{old('unidad_5')}}">                                                    
+
+                                            <option value=""></option>
+                                            <option value="Litro">l.</option>
+                                            <option value="Militro">ml.</option>
+                                            <option value="Centímetros cúbicos">c.c.</option>
+                                            <option value="Gramo">gr.</option>
+                                            <option value="Kilogramo">Kg.</option>
+                                            <option value="Libra">lb.</option>
+
+                                        </select>
+                                        <span>Unidad de Medida</span>
+                                        
+                                        @if ($errors->has('unidad_5'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('unidad_5')}}</span>
+                                        @endif
+
                                     </div>
 
                                 </div>
