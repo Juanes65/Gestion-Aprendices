@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CupoDelete;
 use App\Models\Platillo;
 use App\Models\Solicitude;
 use App\Models\Platillo_Solitude;
@@ -17,7 +18,11 @@ class PlatilloSolitudeController extends Controller
      */
     public function index()
     {
-        //
+        $platillo = DB::select('SELECT platillo_solitudes.*,solicitudes.id,platillos.nombre_platillo FROM platillo_solitudes
+        INNER JOIN solicitudes on solicitudes.id=platillo_solitudes.id
+        INNER JOIN platillos on platillos.id=platillo_solitudes.id');
+
+        return view('platillo_solicitud.index', compact('platillo'));
     }
 
     /**
@@ -79,6 +84,8 @@ class PlatilloSolitudeController extends Controller
             'total5' => $multi5,
         ]);
 
+        return redirect()->route('index.platillo_s');
+
     }
 
     /**
@@ -100,7 +107,7 @@ class PlatilloSolitudeController extends Controller
      */
     public function edit(Platillo_Solitude $platillo_Solitude)
     {
-        //
+        return view('platillo_solicitud.edit', compact('platillo_Solitude'));
     }
 
     /**
@@ -121,8 +128,13 @@ class PlatilloSolitudeController extends Controller
      * @param  \App\Models\Platillo_Solitude  $platillo_Solitude
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Platillo_Solitude $platillo_Solitude)
+    public function destroy($id)
     {
-        //
+
+        $var = Platillo_Solitude::find($id);
+
+        DB::delete('delete platillo_solitudes where id = ?', [$var]);
+
+        return redirect()->back()->with('eliminar', 'ok');
     }
 }
