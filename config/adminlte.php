@@ -338,7 +338,7 @@ return [
                     'route'  => 'index.bodega',
                 ],
                 [
-                    'text' => 'Ver Productos',
+                    'text' => 'Historico',
                     'icon_color' => 'red',
                     'route'  => 'index.todo',
                 ],

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use App\Models\Area;
+use App\Models\Bodega;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -14,10 +15,10 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index ( $id )
+    public function index ($id)
     {
-        $producto = DB::select('select productos.*, areas.nombre_area from productos
-                            inner join areas on productos.area = areas.id where productos.area = ?', [$id]);
+        $producto = DB::select('select productos.*, areas.nombre_area, bodegas.nombre_bodega from productos
+                            inner join areas on productos.area = areas.id inner join bodegas on areas.bodega = bodegas.id where productos.area = ?', [$id]);
 
         return view('producto.index', compact('producto'));
     }
@@ -47,7 +48,7 @@ class ProductoController extends Controller
 
         $data = array('lista_areas' => $area);
 
-        return view('producto.create', $data);
+        return view('producto.create', $data );
     }
 
     /**

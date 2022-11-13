@@ -20,18 +20,17 @@
 
                             <div class="row">
 
-
                                 <div class="col-lg-6 col-12">
-
-                                    {{-- <div class="mb-4 box">
+                                    
+                                    <div class="mb-4 box">
                                         <input type="text" name="cantidad_desayuno" value="{{old('cantidad_desayuno',$solicitude->cantidad_desayuno)}}" required="required">
                                         <span>Total Desayunos</span>
                                         @if ($errors->has('cantidad_desayuno'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('cantidad_desayuno')}}</span>
                                         @endif
-                                    </div> --}}
+                                    </div>
 
-                                    {{-- <div class="mb-4 box">
+                                    <div class="mb-4 box">
                                         <input type="text" name="cantidad_almuerzo" value="{{old('cantidad_almuerzo',$solicitude->cantidad_almuerzo)}}" required="required">
                                         <span>Total Almuerzos</span>
                                         @if ($errors->has('cantidad_almuerzo'))
@@ -45,7 +44,15 @@
                                         @if ($errors->has('cantidad_cena'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('cantidad_cena')}}</span>
                                         @endif
-                                    </div> --}}
+                                    </div>
+
+                                    <div class="mb-4 box">
+                                        <input type="date" name="fecha_registro" value="{{old('fecha_registro',$solicitude->fecha_registro)}}" required="required">
+                                        <span>Fecha Registro</span>
+                                        @if ($errors->has('fecha_registro'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('fecha_registro')}}</span>
+                                        @endif
+                                    </div>
 
                                 </div>
 

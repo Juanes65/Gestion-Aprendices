@@ -45,10 +45,13 @@ class SolicitudeController extends Controller
 
         $cena = DB::table('restaurantes')->select('total_cenas')->sum('total_cenas');
 
+        $fecha = date("Y-m-d");
+
         DB::table('Solicitudes')->insert([
             'cantidad_desayuno' => $desayuno,
             'cantidad_almuerzo' => $almuerzo,
             'cantidad_cena' => $cena,
+            'fecha_registro' =>$fecha,
         ]);
 
         return redirect()->route('index.solicitud');
@@ -91,10 +94,13 @@ class SolicitudeController extends Controller
 
         $cena = DB::table('restaurantes')->select('total_cenas')->sum('total_cenas');
 
+        $fecha = date("Y-m-d");
+
         $solicitude->update([
             'cantidad_desayuno' => $desayuno,
             'cantidad_almuerzo' => $almuerzo,
             'cantidad_cena' => $cena,
+            'fecha_registro' =>$fecha,
         ]);
 
         return redirect()->route('index.solicitud')->with('actualizar', 'ok');

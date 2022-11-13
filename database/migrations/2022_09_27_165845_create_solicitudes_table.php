@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('cantidad_desayuno', 5);
             $table->string('cantidad_almuerzo', 5);
             $table->string('cantidad_cena', 5);
+            $table->date('fecha_registro');
+
             $table->unsignedBigInteger('solicitud')->nullable();
 
             $table->foreign('solicitud')->references('id')->on('restaurantes')->onDelete('cascade');
