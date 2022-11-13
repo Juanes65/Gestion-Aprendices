@@ -148,8 +148,8 @@ Route::delete('/platillo/{platillo}',                [PlatilloController::class,
 Route::get('/platilloSolicitud',                     [PlatilloSolitudeController::class, 'index'])->name('index.platillo_s');
 Route::get('/platilloSolicitud/agregar',             [PlatilloSolitudeController::class, 'create'])->name('create.platillo_s');
 Route::post('platilloSolicitud/store',               [PlatilloSolitudeController::class, 'store'])->name('store.platillo_s');
-// Route::get('/platillo/edit/{platillo}',              [PlatilloSolitudeController::class, 'edit'])->name('edit.platillo_s');
-// Route::put('/platillo/{platillo}',                   [PlatilloSolitudeController::class, 'update'])->name('update.platillo_s');
+Route::get('/platillo/edit/{platillo}',              [PlatilloSolitudeController::class, 'edit'])->name('edit.platillo_s');
+Route::put('/platillo/update/{platillo}',            [PlatilloSolitudeController::class, 'update'])->name('update.platillo_s');
 Route::delete('/platillo',                           [PlatilloSolitudeController::class, 'destroy'])->name('destroy.platillo_s');
 
 //Rutas de provedor
