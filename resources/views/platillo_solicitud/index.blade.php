@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Productos')
+@section('title', 'Platillos Solicitados')
 
 @section('content_header')
-    <h1 style="text-align: center">Productos Disponibles</h1>
+    <h1 style="text-align: center">Platillos Solicitados</h1>
 @stop
 
 @section('content')
@@ -16,36 +16,29 @@
                         <p class="card-text">
                             <div class="author table-responsive">
                                 <div class="card-body">
-                                    <table class="table table-bordered table-striped" id="aprendiz">
+                                    <table class="table table-bordered table-striped" id="solicitud">
                                         <thead class="table-secondary">
                                             <tr style="text-align: center">
-                                                <th scope="col">Nombre del Producto</th>
-                                                <th scope="col">Marca del Producto</th>
-                                                <th scope="col">Unidad de Medida</th>
-                                                <th scope="col">Clasificacion del Producto</th>
-                                                <th scope="col">Fecha Caducidad</th>
-                                                <th scope="col">Fecha llegada</th>
-                                                <th scope="col">Stock Actual</th>
-                                                <th scope="col">Stock Minimo</th>
-                                                <th scope="col">Lote Producto</th>
-                                                <th scope="col">Area</th>
+                                                <th scope="col">Total 1</th>
+                                                <th scope="col">Total 2</th>
+                                                <th scope="col">Total 3</th>
+                                                <th scope="col">Total 4</th>
+                                                <th scope="col">Total 5</th>
+                                                <th scope="col">Platillos</th>
+                                                <th scope="col">Solicitud</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($producto as $info)
+                                            @foreach ($platillo as $info)
                                                 <tr style="text-align: center">
-                                                    <td>{{$info->nombre_producto}}</td>
-                                                    <td>{{$info->marca_producto}}</td>
-                                                    <td>{{$info->unidad_medida}}</td>
-                                                    <td>{{$info->clasificacion_producto}}</td>
-                                                    <td>{{$info->fecha_caducidad}}</td>
-                                                    <td>{{$info->fecha_llegada}}</td>
-                                                    <td>{{$info->stock_actual}}</td>
-                                                    <td>{{$info->stock_minimo}}</td>
-                                                    <td>{{$info->lote_producto}}</td>
-                                                    <td>{{$info->area}}</td>
-
+                                                    <td>{{$info->total}}</td>
+                                                    <td>{{$info->total2}}</td>
+                                                    <td>{{$info->total3}}</td>
+                                                    <td>{{$info->total4}}</td>
+                                                    <td>{{$info->total5}}</td>
+                                                    <td>{{$info->nombre_platillo}}</td>
+                                                    <td>{{$info->solicitud}}</td>
                                                     <td class="td-actions text-center">
 
                                                         <div class="dropdown">
@@ -53,9 +46,9 @@
                                                                 <i class="fa-solid fa-bars"></i>
                                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
 
-                                                                    <a href="{{route('edit.producto', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">edit</i></a>
+                                                                    <a></a>
 
-                                                                    <form action="{{route('destroy.producto', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
+                                                                    <form action="{{route('destroy.platillo_s', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
                                                                         @csrf
                                                                         @method('DELETE')
                                                                         <button class="btn btn-success" type="submit" rel="tooltip">
@@ -64,7 +57,6 @@
                                                                             </i>
                                                                         </button>
                                                                     </form>
-
                                                                 </div>
                                                             </a>
                                                         </div>
@@ -98,7 +90,7 @@
 
     <script>
         $(document).ready(function() {
-        $('#aprendiz').DataTable({
+        $('#solicitud').DataTable({
             "language": {
                 "lengthMenu": "Mostrar _MENU_ registros por página",
                 "zeroRecords": "No se encontraron resultados - Disculpa",

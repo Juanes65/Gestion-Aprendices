@@ -363,6 +363,27 @@ return [
             ]
         ],
 
+        //Creación Platillo Solicitud
+
+        [
+            'text'    => 'Solicitar Platillos',
+            'icon'    => 'fas fa-fw fa-envelope',
+            'icon_color' => 'orange',
+            'submenu' => [
+                [
+                    'text' => 'Solicitar',
+                    'icon_color' => 'blue',
+                    'route'  => 'create.platillo_s',
+                ],
+                [
+                    'text' => 'Platillos Solicitados',
+                    'icon_color' => 'red',
+                    'route'  => 'index.platillo_s',
+                ],
+            
+            ]
+        ],
+
         [
             'text'    => 'Inspeccion',
             'icon'    => 'fas fa-fw fa-eye',
