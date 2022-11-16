@@ -58,7 +58,7 @@ class PlatilloController extends Controller
 
         ]);
 
-        return redirect()->route('index.platillo')->with('agregar', 'ok');
+        return redirect()->route('index.platillo')->with('crear', 'ok');
     }
 
     /**

@@ -10,6 +10,9 @@ class Producto extends Model
     use HasFactory;
 
     protected $fillable = [
+        'provedor',
+        'etiqueta',
+        'hora',
         'nombre_producto',
         'unidad_medida',
         'fecha_caducidad',
@@ -27,5 +30,9 @@ class Producto extends Model
 
     public function pedido(){
         return $this->hasMany('App\Models\Pedido', 'producto', 'id');
+    }
+
+    public function provedor(){
+        return $this->belongsTo('App\Models\Provedore', 'provedor', 'id');
     }
 }

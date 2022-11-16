@@ -39,13 +39,19 @@ class BodegaController extends Controller
     public function store(Request $request)
     {
 
+        $request->validate([
+            'nombre_bodega' => 'required',
+            'descripcion_bodega' => 'required',
+            'direccion_bodega' => 'required',
+        ]);
+
         DB::table('Bodegas')->insert([
             'nombre_bodega' => $request->nombre_bodega,
             'descripcion_bodega' => $request->descripcion_bodega,
             'direccion_bodega' => $request->direccion_bodega,
         ]);
 
-        return redirect()->route('index.bodega')->with('agregar', 'ok');
+        return redirect()->route('index.bodega')->with('crear', 'ok');
     }
 
     /**
@@ -79,6 +85,12 @@ class BodegaController extends Controller
      */
     public function update(Request $request, Bodega $bodega)
     {
+        $request->validate([
+            'nombre_bodega' => 'required',
+            'descripcion_bodega' => 'required',
+            'direccion_bodega' => 'required',
+        ]);
+        
         $bodega->update([
             'nombre_bodega' => $request->nombre_bodega,
             'descripcion_bodega' => $request->descripcion_bodega,

@@ -18,15 +18,15 @@
                         <p class="card-text">
                         <div class="author table-responsive">
                             <div class="card-body">
-                                <table class="table table-bordered table-striped" id="aprendiz">
+                                <table class="table table-bordered table-striped" id="platillos">
                                     <thead class="table-secondary">
                                         <tr style="text-align: center">
                                             <th scope="col">Nombre Platillo</th>
-                                            <th scope="col">Ingrediente 1</th>
+                                            <!-- <th scope="col">Ingrediente 1</th>
                                             <th scope="col">Ingrediente 2</th>
                                             <th scope="col">Ingrediente 3</th>
                                             <th scope="col">Ingrediente 4</th>
-                                            <th scope="col">Ingrediente 5</th>
+                                            <th scope="col">Ingrediente 5</th> -->
                                             <th scope="col">Acciones</th>
                                         </tr>
                                     </thead>
@@ -34,11 +34,11 @@
                                         @foreach ($platillo as $info)
                                             <tr style="text-align: center">
                                                 <td>{{ $info->nombre_platillo }}</td>
-                                                <td>{{ $info->ingre_1 }}</td>
+                                                <!-- <td>{{ $info->ingre_1 }}</td>
                                                 <td>{{ $info->ingre_2 }}</td>
                                                 <td>{{ $info->ingre_3 }}</td>
                                                 <td>{{ $info->ingre_4 }}</td>
-                                                <td>{{ $info->ingre_5 }}</td>
+                                                <td>{{ $info->ingre_5 }}</td> -->
                                                 <td class="td-actions text-center">
 
                                                     <div class="dropdown">
@@ -100,7 +100,7 @@
 
     <script>
         $(document).ready(function() {
-            $('#aprendiz').DataTable({
+            $('#platillos').DataTable({
                 "language": {
                     "lengthMenu": "Mostrar _MENU_ registros por página",
                     "zeroRecords": "No se encontraron resultados - Disculpa",

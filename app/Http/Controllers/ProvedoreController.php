@@ -17,7 +17,7 @@ class ProvedoreController extends Controller
     {
         $provedor = Provedore::all();
 
-        return view('provedor.index', compact('provedor'));
+        return view('Provedor.index', compact('provedor'));
     }
 
     /**
@@ -27,7 +27,7 @@ class ProvedoreController extends Controller
      */
     public function create()
     {
-        return view('provedor.create');
+        return view('Provedor.create');
     }
 
     /**
@@ -41,23 +41,11 @@ class ProvedoreController extends Controller
         $request->validate([
             'nombre' => 'required',
             'empresa' => 'required',
-            'nombre_pro' => 'required',
-            'cantidad' => 'required',
-            'unidad' => 'required',
-            'lote' => 'required',
-            'fecha' => 'required',
-            'hora' => 'required',
         ]);
 
         DB::table('provedores')->insert([
             'nombre' => $request->nombre,
             'empresa' => $request->empresa,
-            'nombre_pro' => $request->nombre_pro,
-            'cantidad' => $request->cantidad,
-            'unidad' => $request->unidad,
-            'lote' => $request->lote,
-            'fecha' => $request->fecha,
-            'hora' => $request->hora,
         ]);
 
         return redirect()->route('index.provedor')->with('crear','ok');
@@ -82,7 +70,7 @@ class ProvedoreController extends Controller
      */
     public function edit(Provedore $provedore)
     {
-        return view('provedor.edit', compact('provedore'));
+        return view('Provedor.edit', compact('provedore'));
     }
 
     /**
@@ -97,26 +85,14 @@ class ProvedoreController extends Controller
         $request->validate([
             'nombre' => 'required',
             'empresa' => 'required',
-            'nombre_pro' => 'required',
-            'cantidad' => 'required',
-            'unidad' => 'required',
-            'lote' => 'required',
-            'fecha' => 'required',
-            'hora' => 'required',
         ]);
-        
+
         $provedore->update([
             'nombre' => $request->nombre,
             'empresa' => $request->empresa,
-            'nombre_pro' => $request->nombre_pro,
-            'cantidad' => $request->cantidad,
-            'unidad' => $request->unidad,
-            'lote' => $request->lote,
-            'fecha' => $request->fecha,
-            'hora' => $request->hora,
         ]);
 
-        return redirect()->route('index.provedor')->with('actualizar','ok');
+        return redirect()->route('index.provedor')->with('actualizar', 'ok');
     }
 
     /**

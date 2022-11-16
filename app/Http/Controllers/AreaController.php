@@ -44,13 +44,19 @@ class AreaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nombre_area' => 'required',
+            'codigo' => 'required',
+            'bodega' => 'required',
+        ]);
+
         DB::table('areas')->insert([
             'nombre_area' => $request->nombre_area,
             'codigo' => $request->codigo,
             'bodega' => $request->bodega,
         ]);
 
-        return redirect()->route('index.bodega');
+        return redirect()->route('index.bodega')->with('crear','ok');
     }
 
     /**
@@ -88,13 +94,19 @@ class AreaController extends Controller
      */
     public function update(Request $request, Area $area)
     {
+        $request->validate([
+            'nombre_area' => 'required',
+            'codigo' => 'required',
+            'bodega' => 'required',
+        ]);
+
         $area->update([
             'nombre_area' => $request->nombre_area,
             'codigo' => $request->codigo,
             'bodega' => $request->bodega,
         ]);
 
-        return redirect()->route('index.bodega');
+        return redirect()->route('index.bodega')->whit('actualizar','ok');
     }
 
     /**

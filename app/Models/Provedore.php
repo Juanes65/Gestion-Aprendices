@@ -12,12 +12,9 @@ class Provedore extends Model
     protected $fillable = [
         'nombre',
         'empresa',
-        'nombre_pro',
-        'cantidad',
-        'unidad',
-        'lote',
-        'fecha',
-        'hora',
     ];
-    
+
+    public function producto(){
+        return $this->hasMany('App\Models\Producto', 'provedor', 'id');
+    }
 }

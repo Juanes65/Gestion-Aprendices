@@ -45,7 +45,6 @@
                                     <div class="d-flex justify-content-center boton">
                                         <button type="submit">Verificar</button>
                                     </div>
-
                                 </div>
                             </div>
                         </form>

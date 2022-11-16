@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Platillo_Solitude extends Model
+class platilloSolicitude extends Model
 {
     use HasFactory;
 
@@ -23,6 +23,6 @@ class Platillo_Solitude extends Model
     }
 
     public function platillo(){
-        return $this->belongsTo('App\Models\Platillo', 'platillos', 'id');
+        return $this->belongsTo('App\Models\Platillo', 'platillo', 'id');
     }
 }

@@ -12,9 +12,10 @@ use App\Http\Controllers\RestauranteController;
 use App\Http\Controllers\SolicitudeController;
 use App\Http\Controllers\BodegaController;
 use App\Http\Controllers\AreaController;
+use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\PlatilloController;
-use App\Http\Controllers\PlatilloSolitudeController;
+use App\Http\Controllers\PlatilloSolicitudeController;
 use App\Http\Controllers\ProvedoreController;
 use Illuminate\Support\Facades\Route;
 
@@ -145,21 +146,27 @@ Route::delete('/platillo/{platillo}',                [PlatilloController::class,
 
 //Rutas Platillo Solicitud
 
-Route::get('/platilloSolicitud',                                [PlatilloSolitudeController::class, 'index'])->name('index.platillo_s');
-Route::get('/platilloSolicitud/agregar',                        [PlatilloSolitudeController::class, 'create'])->name('create.platillo_s');
-Route::post('platilloSolicitud/store',                          [PlatilloSolitudeController::class, 'store'])->name('store.platillo_s');
-//Route::get('/platilloSolicitud/edit/{platilloSolicitud}',       [PlatilloSolitudeController::class, 'edit'])->name('edit.platillo_s');
-//Route::put('/platilloSolicitud/{platilloSolicitud}',            [PlatilloSolitudeController::class, 'update'])->name('update.platillo_s');
-Route::delete('/platilloSolicitud/delete/{id}',                 [PlatilloSolitudeController::class, 'destroy'])->name('destroy.platillo_s');
+Route::get('/platilloSolicitud',                                [PlatilloSolicitudeController::class, 'index'])->name('index.platillo_s');
+Route::get('/platilloSolicitud/agregar',                        [PlatilloSolicitudeController::class, 'create'])->name('create.platillo_s');
+Route::post('platilloSolicitud/store',                          [PlatilloSolicitudeController::class, 'store'])->name('store.platillo_s');
+//Route::get('/platilloSolicitud/edit/{platilloSolicitud}',       [PlatilloSolicitudeController::class, 'edit'])->name('edit.platillo_s');
+//Route::put('/platilloSolicitud/{platilloSolicitud}',            [PlatilloSolicitudeController::class, 'update'])->name('update.platillo_s');
+Route::delete('/platilloSolicitud/eliminar/{platilloSolicitude}',        [PlatilloSolicitudeController::class, 'destroy'])->name('destroy.platillo_s');
 
-//Rutas de provedor
+//rutas de solicitud
 
-Route::get('/provedor',                              [ProvedoreController::class, 'index'])->name('index.provedor');
-Route::get('/provedor/agregar',                      [ProvedoreController::class, 'create'])->name('create.provedor');
-Route::post('provedor/store',                        [ProvedoreController::class, 'store'])->name('store.provedor');
-Route::get('/provedor/edit/{provedore}',             [ProvedoreController::class, 'edit'])->name('edit.provedor');
-Route::put('/provedor/{provedore}',                  [ProvedoreController::class, 'update'])->name('update.provedor');
-Route::delete('/provedor/{provedore}',               [ProvedoreController::class, 'destroy'])->name('destroy.provedor');
+Route::get('/Pedido/agregar',                        [PedidoController::class, 'create'])->name('create.pedido');
+Route::post('/Pedido/store',                          [PedidoController::class, 'store'])->name('store.pedido');
+Route::put('/platilloSolicitud/{pedido}',             [PedidoController::class, 'update'])->name('update.pedido');
+
+//rutas del los provedores
+
+Route::get('/Porveores',                                [ProvedoreController::class, 'index'])->name('index.provedor');
+Route::get('/Porveores/agregar',                        [ProvedoreController::class, 'create'])->name('create.provedor');
+Route::post('Porveores/store',                          [ProvedoreController::class, 'store'])->name('store.provedor');
+Route::get('/Porveores/edit/{provedore}',               [ProvedoreController::class, 'edit'])->name('edit.provedor');
+Route::put('/Porveores/edit/{provedore}',                    [ProvedoreController::class, 'update'])->name('update.provedor');
+Route::delete('/Porveores/{provedore}',                 [ProvedoreController::class, 'destroy'])->name('destroy.provedor');
 
 //Rutas de la Inspecccion **poner esta seccion al final de las rutas**
 

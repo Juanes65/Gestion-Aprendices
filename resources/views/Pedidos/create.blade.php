@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Platillos Solicitados')
+@section('title', 'Solicitud de Platillos')
 
 @section('content_header')
-    <h1 style="text-align: center">Platillos Solicitados</h1>
+    <h1 style="text-align: center">Pedido</h1>
 @stop
 
 @section('content')
@@ -13,52 +13,42 @@
             <div class="col-md-12">
                 <div class="card card-user">
                     <div class="card-body">
-                        <p class="card-text">
-                            <div class="author table-responsive">
-                                <div class="card-body">
-                                    <table class="table table-bordered table-striped" id="solicitud_platillo">
-                                        <thead class="table-secondary">
-                                            <tr style="text-align: center">
-                                                <th scope="col">Total 1</th>
-                                                <th scope="col">Total 2</th>
-                                                <th scope="col">Total 3</th>
-                                                <th scope="col">Total 4</th>
-                                                <th scope="col">Total 5</th>
-                                                <th scope="col">Platillos</th>
-                                                <th scope="col">Solicitud</th>
-                                                <th scope="col">Acciones</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($platillo as $info)
-                                                <tr style="text-align: center">
-                                                    <td>{{$info->total}}</td>
-                                                    <td>{{$info->total2}}</td>
-                                                    <td>{{$info->total3}}</td>
-                                                    <td>{{$info->total4}}</td>
-                                                    <td>{{$info->total5}}</td>
-                                                    <td>{{$info->nombre_platillo}}</td>
-                                                    <td>{{$info->fecha_registro}}</td>
-                                                    <td class="td-actions text-center">
 
-                                                        <form action="{{route('destroy.platillo_s', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button class="btn btn-success" type="submit" rel="tooltip">
-                                                                <i class="material-icons">
-                                                                    delete
-                                                                </i>
-                                                            </button>
-                                                        </form>
+                        <form action="{{route('store.pedido')}}" method="POST" enctype="multipart/form-data">
+                            @csrf
 
-                                                    </td>
-                                                </tr>
+                            <div class="row">
+
+                                <div class="col-lg-6 col-12">
+                                    <div class="mb-4 box3">
+                                        <select name="solicitud" id="my-select" required="required">
+                                            @foreach ($solicitudes as $item)
+                                                <option value="{{$item->id}}">{{$item->cantidad_desayuno}}</option>
                                             @endforeach
-                                        </tbody>
-                                    </table>
+                                        </select>
+                                        <span>Seleccione las Solicitudes</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <div class="mb-4 box3">
+                                        <select name="platillo" id="my-select" required="required">
+                                            @foreach ($platillos as $item)
+                                                <option value="{{$item->id}}">{{$item->nombre_platillo}}</option>
+                                            @endforeach
+                                        </select>
+                                        <span>Selecione los Platillos</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="d-flex justify-content-center boton">
+                                        <button type="submit">Verificar</button>
+                                    </div>
+
                                 </div>
                             </div>
-                        </p>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -68,8 +58,7 @@
 @endsection
 
 @section('css')
-    <script src="https://kit.fontawesome.com/cf5c5d84ea.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="{{asset('css/button.css')}}">
 @stop
 
 @section('js')

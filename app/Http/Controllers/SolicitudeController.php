@@ -54,7 +54,7 @@ class SolicitudeController extends Controller
             'fecha_registro' =>$fecha,
         ]);
 
-        return redirect()->route('index.solicitud');
+        return redirect()->route('index.solicitud')->with('crear','ok');
     }
 
     /**
