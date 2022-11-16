@@ -17,12 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('nombre', 20);
             $table->string('empresa', 20);
-            $table->string('nombre_pro', 20);
-            $table->string('cantidad', 20);
-            $table->string('unidad', 10);
-            $table->string('lote', 20);
-            $table->date('fecha');
-            $table->time('hora');
             $table->timestamps();
         });
     }

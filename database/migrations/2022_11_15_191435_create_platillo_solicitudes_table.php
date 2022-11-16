@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('platillo_solitudes', function (Blueprint $table) {
+        Schema::create('platillo_solicitudes', function (Blueprint $table) {
             $table->id();
             $table->string('total', 20)->nullable();
             $table->string('total2', 20)->nullable();
@@ -23,9 +23,8 @@ return new class extends Migration
             $table->unsignedBigInteger('platillo');
             $table->unsignedBigInteger('solicitud');
 
-
-            $table->foreign('platillo')->references('id')->on('solicitudes')->onDelete('cascade');
-            $table->foreign('solicitud')->references('id')->on('platillos')->onDelete('cascade');
+            $table->foreign('platillo')->references('id')->on('platillos')->onDelete('cascade');
+            $table->foreign('solicitud')->references('id')->on('solicitudes')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -37,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('platillo_solitudes');
+        Schema::dropIfExists('platillo_solicitudes');
     }
 };

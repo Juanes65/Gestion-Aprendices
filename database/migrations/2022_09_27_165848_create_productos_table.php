@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
+            $table->string('etiqueta', 20);
+            $table->time('hora');
             $table->string('nombre_producto', 20);
             $table->string('unidad_medida', 20);
             $table->date('fecha_caducidad', 20);
@@ -24,9 +26,11 @@ return new class extends Migration
             $table->string('stock_minimo', 20);
             $table->string('lote_producto', 20);
             $table->date('fecha_llegada', 20);
+            $table->unsignedBigInteger('provedor');
             $table->unsignedBigInteger('area');
 
             $table->foreign('area')->references('id')->on('areas')->onDelete('cascade');
+            $table->foreign('provedor')->references('id')->on('provedores')->onDelete('cascade');
             $table->timestamps();
         });
     }

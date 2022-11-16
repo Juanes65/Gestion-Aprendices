@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\platilloSolicitude;
 use App\Models\CupoDelete;
 use App\Models\Platillo;
 use App\Models\Solicitude;
-use App\Models\Platillo_Solitude;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-class PlatilloSolitudeController extends Controller
+class PlatilloSolicitudeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +18,9 @@ class PlatilloSolitudeController extends Controller
      */
     public function index()
     {
-        $platillo = DB::select('SELECT platillo_solitudes.*,solicitudes.id,platillos.nombre_platillo FROM platillo_solitudes
-        INNER JOIN solicitudes on solicitudes.id=platillo_solitudes.id
-        INNER JOIN platillos on platillos.id=platillo_solitudes.id');
+        $platillo = DB::select('select platillo_solicitudes.*,solicitudes.fecha_registro,platillos.nombre_platillo from platillo_solicitudes
+        inner join solicitudes on solicitudes.id=platillo_solicitudes.solicitud
+        inner join platillos on platillos.id=platillo_solicitudes.platillo');
 
         return view('platillo_solicitud.index', compact('platillo'));
     }
@@ -74,7 +74,7 @@ class PlatilloSolitudeController extends Controller
         $multi4 = $cantidad_desayuno * $cantidad_4;
         $multi5 = $cantidad_desayuno * $cantidad_5;
 
-        DB::table('platillo_solitudes')->insert([
+        DB::table('platillo_solicitudes')->insert([
             'platillo' => $request->platillo,
             'solicitud' => $request->solicitud,
             'total' => $multi,
@@ -84,17 +84,16 @@ class PlatilloSolitudeController extends Controller
             'total5' => $multi5,
         ]);
 
-        return redirect()->route('index.platillo_s');
-
+        return redirect()->route('index.platillo_s')->with('crear','ok');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Platillo_Solitude  $platillo_Solitude
+     * @param  \App\Models\platilloSolicitude  $platilloSolicitude
      * @return \Illuminate\Http\Response
      */
-    public function show(Platillo_Solitude $platillo_Solitude)
+    public function show(platilloSolicitude $platilloSolicitude)
     {
         //
     }
@@ -102,22 +101,22 @@ class PlatilloSolitudeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Platillo_Solitude  $platillo_Solitude
+     * @param  \App\Models\platilloSolicitude  $platilloSolicitude
      * @return \Illuminate\Http\Response
      */
-    public function edit(Platillo_Solitude $platillo_Solitude)
+    public function edit(platilloSolicitude $platilloSolicitude)
     {
-        return view('platillo_solicitud.edit', compact('platillo_Solitude'));
+        return view('platillo_solicitud.edit', compact('platilloSolicitude'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Platillo_Solitude  $platillo_Solitude
+     * @param  \App\Models\platilloSolicitude  $platilloSolicitude
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Platillo_Solitude $platillo_Solitude)
+    public function update(Request $request, platilloSolicitude $platilloSolicitude)
     {
         //
     }
@@ -125,16 +124,13 @@ class PlatilloSolitudeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Platillo_Solitude  $platillo_Solitude
+     * @param  \App\Models\platilloSolicitude  $platilloSolicitude
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(platilloSolicitude $platilloSolicitude)
     {
+        $platilloSolicitude->delete();
 
-        $var = Platillo_Solitude::find($id);
-
-        DB::delete('delete platillo_solitudes where id = ?', [$var]);
-
-        return redirect()->back()->with('eliminar', 'ok');
+        return redirect()->back()->with('eliminar','ok');
     }
 }

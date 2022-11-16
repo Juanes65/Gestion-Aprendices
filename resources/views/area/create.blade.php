@@ -54,9 +54,9 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 col-12">
+                                <div class="col-lg-12">
 
-                                    <div class="d-flex justify-content-end boton">
+                                    <div class="d-flex justify-content-center boton">
                                         <button type="submit">Importar</button>
                                     </div>
 

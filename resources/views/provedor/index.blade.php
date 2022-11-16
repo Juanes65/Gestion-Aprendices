@@ -20,13 +20,7 @@
                                         <thead class="table-secondary">
                                             <tr style="text-align: center">
                                                 <th scope="col">Nombre del Provedor</th>
-                                                <th scope="col">Nombre de La Empresa</th>
-                                                <th scope="col">Nombre del Producto</th>
-                                                <th scope="col">Cantidad</th>
-                                                <th scope="col">Unidad de Medida</th>
-                                                <th scope="col">Lote</th>
-                                                <th scope="col">Fecha</th>
-                                                <th scope="col">Hora Llegada</th>
+                                                <th scope="col">Nombre de la Empresa</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
@@ -35,12 +29,6 @@
                                                 <tr style="text-align: center">
                                                     <td>{{$info->nombre}}</td>
                                                     <td>{{$info->empresa}}</td>
-                                                    <td>{{$info->nombre_pro}}</td>
-                                                    <td>{{$info->cantidad}}</td>
-                                                    <td>{{$info->unidad}}</td>
-                                                    <td>{{$info->lote}}</td>
-                                                    <td>{{$info->fecha}}</td>
-                                                    <td>{{$info->hora}}</td>
 
                                                     <td class="td-actions text-center">
 

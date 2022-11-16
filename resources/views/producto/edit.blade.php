@@ -20,6 +20,29 @@
 
                             <div class="row">
 
+                                <div class="col-lg-6 col-12">
+
+                                    <div class="mb-4 box">
+                                        <input type="text" name="etiqueta" value="{{old('etiqueta',$producto->etiqueta)}}" required="required">
+                                        <span>Etiqueta del Producto</span>
+                                        @if ($errors->has('etiqueta'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('etiqueta')}}</span>
+                                        @endif
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+
+                                    <div class="mb-4 box2">
+                                        <input type="time" name="hora" value="{{old('hora',$producto->hora)}}" required="required">
+                                        <span>Hora Llegada</span>
+                                        @if ($errors->has('hora'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('hora')}}</span>
+                                        @endif
+                                    </div>
+
+                                </div>
 
                                 <div class="col-lg-12">
                                     <div class="mb-4 box">

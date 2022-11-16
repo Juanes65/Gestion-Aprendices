@@ -28,7 +28,7 @@ class Platillo extends Model
         'unidad_5',
     ];
     public function platillo_solicitud(){
-        return $this->hasMany('App\Models\Platillo_Solcitude', 'platillo', 'id');
+        return $this->hasMany('App\Models\platilloSolcitude', 'platillo', 'id');
     }
 
     public function pedido(){

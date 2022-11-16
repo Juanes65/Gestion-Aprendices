@@ -414,14 +414,27 @@ return [
             'icon_color' => 'green',
             'submenu' => [
                 [
-                    'text' => 'Registrar Insumo Provedor',
+                    'text' => 'Agregar Provedor ',
                     'icon_color' => 'plate',
                     'route'  => 'create.provedor',
                 ],
                 [
-                    'text' => 'Pedido del Provedor',
-                    'icon_color' => 'orange',
+                    'text' => 'Provedores',
+                    'icon_color' => 'plate',
                     'route'  => 'index.provedor',
+                ],
+            ]
+        ],
+
+        [
+            'text'    => 'Pedidos',
+            'icon'    => 'fas fa-fw fa-truck',
+            'icon_color' => 'orange',
+            'submenu' => [
+                [
+                    'text' => 'Registrar Pedido',
+                    'icon_color' => 'plate',
+                    'route'  => 'create.pedido',
                 ],
             ]
         ],

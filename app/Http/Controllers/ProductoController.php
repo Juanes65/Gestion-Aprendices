@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Producto;
 use App\Models\Area;
 use App\Models\Bodega;
+use App\Models\Provedore;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -45,10 +46,12 @@ class ProductoController extends Controller
     public function create($id)
     {
         $area = DB::select('select * from areas where id = ?', [$id]);
+        $provedor = Provedore::all();
 
         $data = array('lista_areas' => $area);
+        $data2 = array('lista_provedores' => $provedor);
 
-        return view('producto.create', $data );
+        return view('producto.create', $data, $data2 );
     }
 
     /**
@@ -59,7 +62,26 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'provedor' => 'required',
+            'etiqueta' => 'required',
+            'hora' => 'required',
+            'nombre_producto' => 'required',
+            'unidad_medida' => 'required',
+            'fecha_caducidad' => 'required',
+            'marca_producto' => 'required',
+            'clasificacion_producto' => 'required',
+            'stock_actual' => 'required',
+            'stock_minimo' => 'required',
+            'lote_producto' => 'required',
+            'fecha_llegada' => 'required',
+            'area' => 'required',
+        ]);
+
         DB::table('productos')->insert([
+            'provedor' => $request->provedor,
+            'etiqueta' => $request->etiqueta,
+            'hora' => $request->hora,
             'nombre_producto' => $request->nombre_producto,
             'unidad_medida' => $request->unidad_medida,
             'fecha_caducidad' => $request->fecha_caducidad,
@@ -72,7 +94,7 @@ class ProductoController extends Controller
             'area' => $request->area,
         ]);
 
-        return redirect()->route('index.bodega');
+        return redirect()->back()->with('crear','ok');
     }
 
     /**
@@ -95,10 +117,12 @@ class ProductoController extends Controller
     public function edit(Producto $producto)
     {
         $productos = Area::all();
+        $provedor = Provedore::all();
 
+        $data2 = array('lista_provedores' => $provedor);
         $data = array('lista_areas' => $productos);
 
-        return view('producto.edit', compact('producto'), $data);
+        return view('producto.edit', compact('producto'), $data,$data2);
     }
 
     /**
@@ -110,7 +134,26 @@ class ProductoController extends Controller
      */
     public function update(Request $request, Producto $producto)
     {
+        $request->validate([
+            'provedor' => 'required',
+            'etiqueta' => 'required',
+            'hora' => 'required',
+            'nombre_producto' => 'required',
+            'unidad_medida' => 'required',
+            'fecha_caducidad' => 'required',
+            'marca_producto' => 'required',
+            'clasificacion_producto' => 'required',
+            'stock_actual' => 'required',
+            'stock_minimo' => 'required',
+            'lote_producto' => 'required',
+            'fecha_llegada' => 'required',
+            'area' => 'required',
+        ]);
+
         $producto->update([
+            'provedor' => $request->provedor,
+            'etiqueta' => $request->etiqueta,
+            'hora' => $request->hora,
             'nombre_producto' => $request->nombre_producto,
             'unidad_medida' => $request->unidad_medida,
             'fecha_caducidad' => $request->fecha_caducidad,

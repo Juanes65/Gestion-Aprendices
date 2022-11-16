@@ -16,7 +16,7 @@
                         <p class="card-text">
                             <div class="author table-responsive">
                                 <div class="card-body">
-                                    <table class="table table-bordered table-striped" id="aprendiz">
+                                    <table class="table table-bordered table-striped" id="producto">
                                         <thead class="table-secondary">
                                             <tr style="text-align: center">
                                                 <th scope="col">Nombre del Producto</th>
@@ -84,7 +84,7 @@
 
     <script>
         $(document).ready(function() {
-        $('#aprendiz').DataTable({
+        $('#producto').DataTable({
             "language": {
                 "lengthMenu": "Mostrar _MENU_ registros por página",
                 "zeroRecords": "No se encontraron resultados - Disculpa",
