@@ -73,8 +73,29 @@ class PedidoController extends Controller
         $multi3 = $cantidad_desayuno * $cantidad_3;
         $multi4 = $cantidad_desayuno * $cantidad_4;
         $multi5 = $cantidad_desayuno * $cantidad_5;
+        
+        // for ($num = 1; $num++){
 
-        if($ingre_1 != null && $ingre_2 == null && $ingre_3 == null && $ingre_4 == null && $ingre_5 == null){
+        //     $completo = $ingre_1 + $num;
+
+        //     $var3 = DB::select('select * from productos where nombre_producto = ?', [$completo]);
+
+        //     foreach($var3 as $ver3){
+        //         $stock_actual = $ver3->stock_actual;
+        //         $id = $ver3->id;
+        //     };
+
+        //     $producto = Producto::find($id);
+
+        //     $total = $stock_actual - $multi;
+
+        //     $producto->update([
+        //         'stock_actual' => $total,
+        //     ]);
+
+        // }
+
+        if($ingre_1 != null && $ingre_2 == null){
 
             $var3 = DB::select('select * from productos where nombre_producto = ?', [$ingre_1]);
 
@@ -92,7 +113,7 @@ class PedidoController extends Controller
             ]);
         }
 
-        if($ingre_1 != null && $ingre_2 != null && $ingre_3 == null && $ingre_4 == null && $ingre_5 == null){
+        if($ingre_1 != null && $ingre_2 != null && $ingre_3 == null){
 
             $var3 = DB::select('select * from productos where nombre_producto = ?', [$ingre_1]);
 
@@ -125,7 +146,7 @@ class PedidoController extends Controller
             ]);
         }
 
-        if($ingre_1 != null && $ingre_2 == null && $ingre_3 == null && $ingre_4 == null && $ingre_5 == null){
+        if($ingre_1 != null && $ingre_2 != null && $ingre_3 != null && $ingre_4 == null){
 
             $var3 = DB::select('select * from productos where nombre_producto = ?', [$ingre_1]);
 
@@ -157,16 +178,31 @@ class PedidoController extends Controller
                 'stock_actual' => $total,
             ]);
 
-            $var3 = DB::select('select * from productos where nombre_producto = ?', [$ingre_3]);
+            $var5 = DB::select('select * from productos where nombre_producto = ?', [$ingre_3]);
 
-            foreach($var3 as $ver3){
-                $stock_actual = $ver3->stock_actual;
-                $id = $ver3->id;
+            foreach($var5 as $ver5){
+                $stock_actual = $ver5->stock_actual;
+                $id = $ver5->id;
             };
 
             $producto = Producto::find($id);
 
             $total = $stock_actual - $multi3;
+
+            $producto->update([
+                'stock_actual' => $total,
+            ]);
+
+            $var6 = DB::select('select * from productos where nombre_producto = ?', [$ingre_4]);
+
+            foreach($var6 as $ver6){
+                $stock_actual = $ver6->stock_actual;
+                $id = $ver6->id;
+            };
+
+            $producto = Producto::find($id);
+
+            $total = $stock_actual - $multi4;
 
             $producto->update([
                 'stock_actual' => $total,

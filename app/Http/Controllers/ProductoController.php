@@ -78,21 +78,41 @@ class ProductoController extends Controller
             'area' => 'required',
         ]);
 
-        DB::table('productos')->insert([
-            'provedor' => $request->provedor,
-            'etiqueta' => $request->etiqueta,
-            'hora' => $request->hora,
-            'nombre_producto' => $request->nombre_producto,
-            'unidad_medida' => $request->unidad_medida,
-            'fecha_caducidad' => $request->fecha_caducidad,
-            'marca_producto' => $request->marca_producto,
-            'clasificacion_producto' => $request->clasificacion_producto,
-            'stock_actual' => $request->stock_actual,
-            'stock_minimo' => $request->stock_minimo,
-            'lote_producto' => $request->lote_producto,
-            'fecha_llegada' => $request->fecha_llegada,
-            'area' => $request->area,
-        ]);
+        $request->all();
+
+        $product = DB::select('select * from productos where nombre_producto = ?', [$request->nombre_producto]);
+
+        foreach($product as $producto){
+            $nombre_producto = $producto->nombre_producto;
+            $stock_actual = $producto->stock_actual;
+            $id = $producto->id;
+        };
+
+        if($product == null){
+            DB::table('productos')->insert([
+                'provedor' => $request->provedor,
+                'etiqueta' => $request->etiqueta,
+                'hora' => $request->hora,
+                'nombre_producto' => $request->nombre_producto,
+                'unidad_medida' => $request->unidad_medida,
+                'fecha_caducidad' => $request->fecha_caducidad,
+                'marca_producto' => $request->marca_producto,
+                'clasificacion_producto' => $request->clasificacion_producto,
+                'stock_actual' => $request->stock_actual,
+                'stock_minimo' => $request->stock_minimo,
+                'lote_producto' => $request->lote_producto,
+                'fecha_llegada' => $request->fecha_llegada,
+                'area' => $request->area,
+            ]);
+        }else{
+            $suma = $stock_actual + $request->stock_actual;
+
+            $productos = Producto::find($id);
+
+            $productos->update([
+                'stock_actual' => $suma,
+            ]);
+        }
 
         return redirect()->back()->with('crear','ok');
     }
