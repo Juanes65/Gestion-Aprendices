@@ -155,7 +155,6 @@ class ProductoController extends Controller
     public function update(Request $request, Producto $producto)
     {
         $request->validate([
-            'provedor' => 'required',
             'etiqueta' => 'required',
             'hora' => 'required',
             'nombre_producto' => 'required',
@@ -171,7 +170,6 @@ class ProductoController extends Controller
         ]);
 
         $producto->update([
-            'provedor' => $request->provedor,
             'etiqueta' => $request->etiqueta,
             'hora' => $request->hora,
             'nombre_producto' => $request->nombre_producto,

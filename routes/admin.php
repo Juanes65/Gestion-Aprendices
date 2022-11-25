@@ -153,11 +153,24 @@ Route::post('platilloSolicitud/store',                          [PlatilloSolicit
 //Route::put('/platilloSolicitud/{platilloSolicitud}',            [PlatilloSolicitudeController::class, 'update'])->name('update.platillo_s');
 Route::delete('/platilloSolicitud/eliminar/{platilloSolicitude}',        [PlatilloSolicitudeController::class, 'destroy'])->name('destroy.platillo_s');
 
-//rutas de solicitud
+//rutas de solicitud desayunos
 
-Route::get('/Pedido/agregar',                        [PedidoController::class, 'create'])->name('create.pedido');
+Route::get('/Pedido/agregar',                         [PedidoController::class, 'create'])->name('create.pedido');
 Route::post('/Pedido/store',                          [PedidoController::class, 'store'])->name('store.pedido');
-Route::put('/platilloSolicitud/{pedido}',             [PedidoController::class, 'update'])->name('update.pedido');
+// Route::put('/platilloSolicitud/{pedido}',             [PedidoController::class, 'update'])->name('update.pedido');
+
+//rutas de solicitud almuerzos
+
+Route::get('/Pedido/agregar2',                         [PedidoController::class, 'create2'])->name('create2.pedido');
+Route::post('/Pedido/store2',                          [PedidoController::class, 'store2'])->name('store2.pedido');
+// Route::put('/platilloSolicitud/{pedido}',             [PedidoController::class, 'update'])->name('update.pedido');
+
+//rutas de solicitud cenas
+
+Route::get('/Pedido/agregar3',                         [PedidoController::class, 'create3'])->name('create3.pedido');
+Route::post('/Pedido/store3',                          [PedidoController::class, 'store3'])->name('store3.pedido');
+// Route::put('/platilloSolicitud/{pedido}',             [PedidoController::class, 'update'])->name('update.pedido');
+
 
 //rutas del los provedores
 
@@ -165,7 +178,7 @@ Route::get('/Porveores',                                [ProvedoreController::cl
 Route::get('/Porveores/agregar',                        [ProvedoreController::class, 'create'])->name('create.provedor');
 Route::post('Porveores/store',                          [ProvedoreController::class, 'store'])->name('store.provedor');
 Route::get('/Porveores/edit/{provedore}',               [ProvedoreController::class, 'edit'])->name('edit.provedor');
-Route::put('/Porveores/edit/{provedore}',                    [ProvedoreController::class, 'update'])->name('update.provedor');
+Route::put('/Porveores/edit/{provedore}',               [ProvedoreController::class, 'update'])->name('update.provedor');
 Route::delete('/Porveores/{provedore}',                 [ProvedoreController::class, 'destroy'])->name('destroy.provedor');
 
 //Rutas de la Inspecccion **poner esta seccion al final de las rutas**

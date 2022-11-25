@@ -14,7 +14,7 @@
                 <div class="card card-user">
                     <div class="card-body">
 
-                        <form action="{{route('store.pedido')}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{route('store2.pedido')}}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="row">
@@ -23,7 +23,7 @@
                                     <div class="mb-4 box3">
                                         <select name="solicitud" id="my-select" required="required">
                                             @foreach ($solicitudes as $item)
-                                                <option value="{{$item->id}}">{{$item->cantidad_desayuno}}</option>
+                                                <option value="{{$item->id}}">{{$item->cantidad_almuerzo}}</option>
                                             @endforeach
                                         </select>
                                         <span>Seleccione las Solicitudes</span>
