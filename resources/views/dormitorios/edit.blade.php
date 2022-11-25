@@ -8,7 +8,7 @@
 
 @section('content')
 
-    <div class="card-body">                       
+    <div class="card-body">
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-user">
@@ -21,7 +21,7 @@
                             <div class="row">
 
                                 <div class="col-lg-6 col-12">
-                                        
+
                                     <div class="mb-4 box">
                                         <input type="text" name="nombre_dor" value="{{old('nombre_dor',$dormitorio->nombre_dor)}}" >
                                         <span>Nombre del Dormitorio (O numero)</span>
@@ -39,12 +39,13 @@
                                     </div>
 
                                     <div class="mb-4 box3">
-                                        <select name="espacio" id="my-select" required="required">                                                    
+                                        <select name="espacio" id="my-select" required="required">
 
                                             <option value=""></option>
                                             <option @if (old('espacio',$dormitorio->espacio)=="Limpio")
                                                 @selected(true)
                                             @endif value="Limpio">Limpio</option>
+                                            
                                             <option @if (old('espacio',$dormitorio->espacio)=="Por Limpiar")
                                                 @selected(true)
                                             @endif value="Por Limpiar">Por Limpiar</option>
@@ -69,7 +70,7 @@
                                     </div>
 
                                     <div class="mb-4 box3">
-                                        <select name="genero" id="my-select" required="reuired">                                                    
+                                        <select name="genero" id="my-select" required="reuired">
 
                                             <option value=""></option>
                                             <option @if (old('genero',$dormitorio->genero)=="Masculino")
@@ -87,15 +88,15 @@
                                     </div>
 
                                 </div>
-                                    
+
                                 <div class="d-flex justify-content-end col-12 boton">
                                     <button type="submit">Actualizar</button>
                                 </div>
 
                             </div>
                         </form>
-                        
-                    </div>   
+
+                    </div>
                 </div>
             </div>
         </div>

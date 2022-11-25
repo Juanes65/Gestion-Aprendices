@@ -122,19 +122,20 @@
                                 <div class="col-lg-4 col-12">
 
                                     <div class="mb-4 box3">
-                                        <select name="unidad_1" id="my-select" value="{{old('unidad_1')}}">                                                    
+                                        <select name="unidad_1" id="my-select" value="{{old('unidad_1')}}">
 
                                             <option value=""></option>
-                                            <option value="Litro">l.</option>
-                                            <option value="Militro">ml.</option>
-                                            <option value="Centímetros cúbicos">c.c.</option>
-                                            <option value="Gramo">gr.</option>
-                                            <option value="Kilogramo">Kg.</option>
-                                            <option value="Libra">lb.</option>
+                                            <option value="Litros">Litros (L)</option>
+                                            <option value="Libras">Libras (LB)</option>
+                                            <option value="Gramos">Gramos (GR)</option>
+                                            <option value="Unidad">Unidad(U)</option>
+                                            <option value="Mililitros">Mililitros (ML)</option>
+                                            <option value="Kilogramos">Kilogramos (KG)</option>
+                                            <option value="Centimetro cubico">Centimetros Cubicos (C.C)</option>
 
                                         </select>
                                         <span>Unidad de Medida</span>
-                                        
+
                                         @if ($errors->has('unidad_1'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('unidad_1')}}</span>
                                         @endif
@@ -142,19 +143,20 @@
                                     </div>
 
                                     <div class="mb-4 box3">
-                                        <select name="unidad_2" id="my-select" value="{{old('unidad_2')}}">                                                    
+                                        <select name="unidad_2" id="my-select" value="{{old('unidad_2')}}">
 
                                             <option value=""></option>
-                                            <option value="Litro">l.</option>
-                                            <option value="Militro">ml.</option>
-                                            <option value="Centímetros cúbicos">c.c.</option>
-                                            <option value="Gramo">gr.</option>
-                                            <option value="Kilogramo">Kg.</option>
-                                            <option value="Libra">lb.</option>
+                                            <option value="Litros">Litros (L)</option>
+                                            <option value="Libras">Libras (LB)</option>
+                                            <option value="Gramos">Gramos (GR)</option>
+                                            <option value="Unidad">Unidad(U)</option>
+                                            <option value="Mililitros">Mililitros (ML)</option>
+                                            <option value="Kilogramos">Kilogramos (KG)</option>
+                                            <option value="Centimetro cubico">Centimetros Cubicos (C.C)</option>
 
                                         </select>
                                         <span>Unidad de Medida</span>
-                                        
+
                                         @if ($errors->has('unidad_2'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('unidad_2')}}</span>
                                         @endif
@@ -162,19 +164,20 @@
                                     </div>
 
                                     <div class="mb-4 box3">
-                                        <select name="unidad_3" id="my-select" value="{{old('unidad_3')}}">                                                    
+                                        <select name="unidad_3" id="my-select" value="{{old('unidad_3')}}">
 
                                             <option value=""></option>
-                                            <option value="Litro">l.</option>
-                                            <option value="Militro">ml.</option>
-                                            <option value="Centímetros cúbicos">c.c.</option>
-                                            <option value="Gramo">gr.</option>
-                                            <option value="Kilogramo">Kg.</option>
-                                            <option value="Libra">lb.</option>
+                                            <option value="Litros">Litros (L)</option>
+                                            <option value="Libras">Libras (LB)</option>
+                                            <option value="Gramos">Gramos (GR)</option>
+                                            <option value="Unidad">Unidad(U)</option>
+                                            <option value="Mililitros">Mililitros (ML)</option>
+                                            <option value="Kilogramos">Kilogramos (KG)</option>
+                                            <option value="Centimetro cubico">Centimetros Cubicos (C.C)</option>
 
                                         </select>
                                         <span>Unidad de Medida</span>
-                                        
+
                                         @if ($errors->has('unidad_3'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('unidad_3')}}</span>
                                         @endif
@@ -182,19 +185,20 @@
                                     </div>
 
                                     <div class="mb-4 box3">
-                                        <select name="unidad_4" id="my-select" value="{{old('unidad_4')}}">                                                    
+                                        <select name="unidad_4" id="my-select" value="{{old('unidad_4')}}">
 
                                             <option value=""></option>
-                                            <option value="Litro">l.</option>
-                                            <option value="Militro">ml.</option>
-                                            <option value="Centímetros cúbicos">c.c.</option>
-                                            <option value="Gramo">gr.</option>
-                                            <option value="Kilogramo">Kg.</option>
-                                            <option value="Libra">lb.</option>
+                                            <option value="Litros">Litros (L)</option>
+                                            <option value="Libras">Libras (LB)</option>
+                                            <option value="Gramos">Gramos (GR)</option>
+                                            <option value="Unidad">Unidad(U)</option>
+                                            <option value="Mililitros">Mililitros (ML)</option>
+                                            <option value="Kilogramos">Kilogramos (KG)</option>
+                                            <option value="Centimetro cubico">Centimetros Cubicos (C.C)</option>
 
                                         </select>
                                         <span>Unidad de Medida</span>
-                                        
+
                                         @if ($errors->has('unidad_4'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('unidad_4')}}</span>
                                         @endif
@@ -202,19 +206,20 @@
                                     </div>
 
                                     <div class="mb-4 box3">
-                                        <select name="unidad_5" id="my-select" value="{{old('unidad_5')}}">                                                    
+                                        <select name="unidad_5" id="my-select" value="{{old('unidad_5')}}">
 
                                             <option value=""></option>
-                                            <option value="Litro">l.</option>
-                                            <option value="Militro">ml.</option>
-                                            <option value="Centímetros cúbicos">c.c.</option>
-                                            <option value="Gramo">gr.</option>
-                                            <option value="Kilogramo">Kg.</option>
-                                            <option value="Libra">lb.</option>
+                                            <option value="Litros">Litros (L)</option>
+                                            <option value="Libras">Libras (LB)</option>
+                                            <option value="Gramos">Gramos (GR)</option>
+                                            <option value="Unidad">Unidad(U)</option>
+                                            <option value="Mililitros">Mililitros (ML)</option>
+                                            <option value="Kilogramos">Kilogramos (KG)</option>
+                                            <option value="Centimetro cubico">Centimetros Cubicos (C.C)</option>
 
                                         </select>
                                         <span>Unidad de Medida</span>
-                                        
+
                                         @if ($errors->has('unidad_5'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('unidad_5')}}</span>
                                         @endif

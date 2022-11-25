@@ -36,7 +36,7 @@
 
                                     <div class="mb-4 box">
                                         <input type="text" name="etiqueta" value="{{old('etiqueta')}}" required="required">
-                                        <span>Etiqueta del Producto</span>
+                                        <span>Factura</span>
                                         @if ($errors->has('etiqueta'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('etiqueta')}}</span>
                                         @endif
@@ -80,12 +80,13 @@
                                         <select name="unidad_medida" id="my-select" value="{{old('unidad_medida')}}" required="required">
 
                                             <option value=""></option>
-                                            <option value="Litro">Litros (L)</option>
-                                            <option value="Mililitro">Mililitros (ML)</option>
-                                            <option value="Centímetro cúbico">Centimetros Cubicos (C.C)</option>
-                                            <option value="Gramo">Gramos (GR)</option>
-                                            <option value="Kilogramo">Kilogramos (KG)</option>
-                                            <option value="Libra">Libras (LB)</option>
+                                            <option value="Litros">Litros (L)</option>
+                                            <option value="Libras">Libras (LB)</option>
+                                            <option value="Gramos">Gramos (GR)</option>
+                                            <option value="Unidad">Unidad(U)</option>
+                                            <option value="Mililitros">Mililitros (ML)</option>
+                                            <option value="Kilogramos">Kilogramos (KG)</option>
+                                            <option value="Centimetro cubico">Centimetros Cubicos (C.C)</option>
 
                                         </select>
                                         <span>Unidad de Medida</span>

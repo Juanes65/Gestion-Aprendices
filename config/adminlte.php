@@ -328,16 +328,6 @@ return [
             'icon_color' => 'pink',
             'submenu' => [
                 [
-                    'text' => 'Crear Bodegas',
-                    'icon_color' => 'red',
-                    'route'  => 'create.bodega',
-                ],
-                [
-                    'text' => 'Bodegas Dispónibles',
-                    'icon_color' => 'blue',
-                    'route'  => 'index.bodega',
-                ],
-                [
                     'text' => 'Historico',
                     'icon_color' => 'red',
                     'route'  => 'index.todo',
@@ -346,6 +336,16 @@ return [
                     'text' => 'Productos',
                     'icon_color' => 'red',
                     'route'  => 'index.minimo',
+                ],
+                [
+                    'text' => 'Crear Bodegas',
+                    'icon_color' => 'red',
+                    'route'  => 'create.bodega',
+                ],
+                [
+                    'text' => 'Bodegas Dispónibles',
+                    'icon_color' => 'blue',
+                    'route'  => 'index.bodega',
                 ],
             ]
         ],
@@ -385,7 +385,7 @@ return [
                     'icon_color' => 'red',
                     'route'  => 'index.platillo_s',
                 ],
-            
+
             ]
         ],
 
@@ -432,10 +432,21 @@ return [
             'icon_color' => 'orange',
             'submenu' => [
                 [
-                    'text' => 'Registrar Pedido',
+                    'text' => 'Desayunos',
                     'icon_color' => 'plate',
                     'route'  => 'create.pedido',
                 ],
+                [
+                    'text' => 'Almuerzos',
+                    'icon_color' => 'plate',
+                    'route'  => 'create2.pedido',
+                ],
+                [
+                    'text' => 'Cenas',
+                    'icon_color' => 'plate',
+                    'route'  => 'create3.pedido',
+                ],
+
             ]
         ],
 

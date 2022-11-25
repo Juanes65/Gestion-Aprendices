@@ -24,7 +24,7 @@
 
                                     <div class="mb-4 box">
                                         <input type="text" name="etiqueta" value="{{old('etiqueta',$producto->etiqueta)}}" required="required">
-                                        <span>Etiqueta del Producto</span>
+                                        <span>Factura</span>
                                         @if ($errors->has('etiqueta'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('etiqueta')}}</span>
                                         @endif
@@ -75,25 +75,40 @@
                                 </div>
 
                                 <div class="col-lg-6 col-12">
-                                <div class="mb-4 box3">
-                                    <select name="unidad_medida" id="my-select" value="{{old('unidad_medida', $producto->unidad_medida)}}" required="required">
+                                    <div class="mb-4 box3">
+                                        <select name="unidad_medida" id="my-select" required="required">
 
-                                        <option value=""></option>
-                                        <option value="Litro">Litros (L)</option>
-                                        <option value="Mililitro">Mililitros (ML)</option>
-                                        <option value="Centímetro cúbico">Centimetros Cubicos (C.C)</option>
-                                        <option value="Gramo">Gramos (GR)</option>
-                                        <option value="Kilogramo">Kilogramos (KG)</option>
-                                        <option value="Libra">Libras (LB)</option>
+                                            <option value=""></option>
+                                            <option @if (old('unidad_medida',$producto->unidad_medida)=="Litros")
+                                                @selected(true)
+                                            @endif value="Litros">Litros (L)</option>
+                                            <option @if (old('unidad_medida',$producto->unidad_medida)=="Libras")
+                                                @selected(true)
+                                            @endif  value="Libras">Libras (LB)</option>
+                                            <option @if (old('unidad_medida',$producto->unidad_medida)=="Gramos")
+                                                @selected(true)
+                                            @endif  value="Gramos">Gramos (GR)</option>
+                                            <option @if (old('unidad_medida',$producto->unidad_medida)=="Unidad")
+                                                @selected(true)
+                                                @endif  value="Unidad">Unidad (U)</option>
+                                            <option @if (old('unidad_medida',$producto->unidad_medida)=="Mililitro")
+                                                    @selected(true)
+                                            @endif  value="Mililitros">Mililitros (ML)</option>
+                                            <option @if (old('unidad_medida',$producto->unidad_medida)=="Kilogramos")
+                                                @selected(true)
+                                            @endif  value="Kilogramos">Kilogramos (KG)</option>
+                                            <option @if (old('unidad_medida',$producto->unidad_medida)=="Centimetro cubico")
+                                                @selected(true)
+                                            @endif  value="Centimetro cubico">Centimetros Cubicos (C.C)</option>
 
-                                    </select>
-                                    <span>Unidad de Medida</span>
+                                        </select>
+                                        <span>Unidad de Medida</span>
 
-                                    @if ($errors->has('unidad'))
-                                        <span class="error text-danger" for="input-name">{{$errors->first('unidad')}}</span>
-                                    @endif
+                                        @if ($errors->has('unidad_medida'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('unidad_medida')}}</span>
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
 
                                 <div class="col-lg-6 col-12">
                                     <div class="mb-4 box2">
