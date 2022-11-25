@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Inicio')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Inicio</h1>
 @stop
 
 
@@ -14,16 +14,15 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Productos Pronto a Agotarse') }}</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
+                    
+                        @foreach ($info as $item)
+                            <h4 style="color: red;font-family: Verdana, Geneva, Tahoma, sans-serif;">El Produto {{$item->nombre_producto}} ({{$item->marca_producto}}) tiene pocas esxistencias.</h4>
+                            <br>
+                        @endforeach 
+                    
                 </div>
             </div>
         </div>

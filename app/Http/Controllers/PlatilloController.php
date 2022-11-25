@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Platillo;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,7 +28,11 @@ class PlatilloController extends Controller
      */
     public function create()
     {
-        return view('platillos.create');
+        $producto = Producto::all();
+
+        $data = array('lista_productos' => $producto);
+
+        return view('platillos.create', $data);
     }
 
     /**

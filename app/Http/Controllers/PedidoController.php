@@ -97,7 +97,7 @@ class PedidoController extends Controller
 
         if($ingre_1 != null && $ingre_2 == null){
 
-            $var3 = DB::select('select * from productos where nombre_producto = ?', [$ingre_1]);
+            $var3 = DB::select('select * from productos where marca_producto = ?', [$ingre_1]);
 
             foreach($var3 as $ver3){
                 $stock_actual = $ver3->stock_actual;
@@ -110,12 +110,15 @@ class PedidoController extends Controller
 
             $producto->update([
                 'stock_actual' => $total,
+                'fecha_caducidad' => $request->fecha_caducidad,
+                'lote_producto' => $request->lote_producto,
+                'unidad_medida' => $request->unidad_medida
             ]);
         }
 
         if($ingre_1 != null && $ingre_2 != null && $ingre_3 == null){
 
-            $var3 = DB::select('select * from productos where nombre_producto = ?', [$ingre_1]);
+            $var3 = DB::select('select * from productos where marca_producto = ?', [$ingre_1]);
 
             foreach($var3 as $ver3){
                 $stock_actual = $ver3->stock_actual;
@@ -128,9 +131,12 @@ class PedidoController extends Controller
 
             $producto->update([
                 'stock_actual' => $total,
+                'fecha_caducidad' => $request->fecha_caducidad,
+                'lote_producto' => $request->lote_producto,
+                'unidad_medida' => $request->unidad_medida
             ]);
             
-            $var4 = DB::select('select * from productos where nombre_producto = ?', [$ingre_2]);
+            $var4 = DB::select('select * from productos where marca_producto = ?', [$ingre_2]);
 
             foreach($var4 as $ver4){
                 $stock_actual = $ver4->stock_actual;
@@ -143,12 +149,15 @@ class PedidoController extends Controller
 
             $producto->update([
                 'stock_actual' => $total,
+                'fecha_caducidad' => $request->fecha_caducidad,
+                'lote_producto' => $request->lote_producto,
+                'unidad_medida' => $request->unidad_medida
             ]);
         }
 
         if($ingre_1 != null && $ingre_2 != null && $ingre_3 != null && $ingre_4 == null){
 
-            $var3 = DB::select('select * from productos where nombre_producto = ?', [$ingre_1]);
+            $var3 = DB::select('select * from productos where marca_producto = ?', [$ingre_1]);
 
             foreach($var3 as $ver3){
                 $stock_actual = $ver3->stock_actual;
@@ -161,9 +170,12 @@ class PedidoController extends Controller
 
             $producto->update([
                 'stock_actual' => $total,
+                'fecha_caducidad' => $request->fecha_caducidad,
+                'lote_producto' => $request->lote_producto,
+                'unidad_medida' => $request->unidad_medida
             ]);
             
-            $var4 = DB::select('select * from productos where nombre_producto = ?', [$ingre_2]);
+            $var4 = DB::select('select * from productos where marca_producto = ?', [$ingre_2]);
 
             foreach($var4 as $ver4){
                 $stock_actual = $ver4->stock_actual;
@@ -176,9 +188,12 @@ class PedidoController extends Controller
 
             $producto->update([
                 'stock_actual' => $total,
+                'fecha_caducidad' => $request->fecha_caducidad,
+                'lote_producto' => $request->lote_producto,
+                'unidad_medida' => $request->unidad_medida
             ]);
 
-            $var5 = DB::select('select * from productos where nombre_producto = ?', [$ingre_3]);
+            $var5 = DB::select('select * from productos where marca_producto = ?', [$ingre_3]);
 
             foreach($var5 as $ver5){
                 $stock_actual = $ver5->stock_actual;
@@ -191,9 +206,12 @@ class PedidoController extends Controller
 
             $producto->update([
                 'stock_actual' => $total,
+                'fecha_caducidad' => $request->fecha_caducidad,
+                'lote_producto' => $request->lote_producto,
+                'unidad_medida' => $request->unidad_medida
             ]);
 
-            $var6 = DB::select('select * from productos where nombre_producto = ?', [$ingre_4]);
+            $var6 = DB::select('select * from productos where marca_producto = ?', [$ingre_4]);
 
             foreach($var6 as $ver6){
                 $stock_actual = $ver6->stock_actual;
@@ -206,6 +224,9 @@ class PedidoController extends Controller
 
             $producto->update([
                 'stock_actual' => $total,
+                'fecha_caducidad' => $request->fecha_caducidad,
+                'lote_producto' => $request->lote_producto,
+                'unidad_medida' => $request->unidad_medida
             ]);
 
         }

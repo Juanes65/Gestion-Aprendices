@@ -33,41 +33,66 @@
 
                                 <div class="col-lg-4 col-12">
 
-                                    <div class="mb-4 box">
-                                        <input type="text" name="ingre_1" value="{{old('ingre_1')}}">
-                                        <span>Ingrediente 1</span>
+                                    <div class="mb-4 box3">
+                                        <select name="ingre_1" id="my-select">
+                                            <option value=""></option>
+                                            @foreach ($lista_productos as $item)
+                                                <option value="{{$item->marca_producto}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
+                                            @endforeach
+                                        </select>
+                                        <span>Selecione El Ingrediente 1</span>
                                         @if ($errors->has('ingre_1'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('ingre_1')}}</span>
                                         @endif
                                     </div>
 
-                                    <div class="mb-4 box">
-                                        <input type="text" name="ingre_2" value="{{old('ingre_2')}}">
-                                        <span>Ingrediente 2</span>
+                                    <div class="mb-4 box3">
+                                        <select name="ingre_2" id="my-select">
+                                            <option value=""></option>
+                                            @foreach ($lista_productos as $item)
+                                                <option value="{{$item->marca_producto}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
+                                            @endforeach
+                                        </select>
+                                        <span>Selecione El Ingrediente 2</span>
                                         @if ($errors->has('ingre_2'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('ingre_2')}}</span>
                                         @endif
                                     </div>
 
-                                    <div class="mb-4 box">
-                                        <input type="text" name="ingre_3" value="{{old('ingre_3')}}">
-                                        <span>Ingrediente 3</span>
+                                    <div class="mb-4 box3">
+                                        <select name="ingre_3" id="my-select">
+                                            <option value=""></option>
+                                            @foreach ($lista_productos as $item)
+                                                <option value="{{$item->marca_producto}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
+                                            @endforeach
+                                        </select>
+                                        <span>Selecione El Ingrediente 3</span>
                                         @if ($errors->has('ingre_3'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('ingre_3')}}</span>
                                         @endif
                                     </div>
 
-                                    <div class="mb-4 box">
-                                        <input type="text" name="ingre_4" value="{{old('ingre_4')}}">
-                                        <span>Ingrediente 4</span>
+                                    <div class="mb-4 box3">
+                                        <select name="ingre_4" id="my-select">
+                                            <option value=""></option>
+                                            @foreach ($lista_productos as $item)
+                                                <option value="{{$item->marca_producto}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
+                                            @endforeach
+                                        </select>
+                                        <span>Selecione El Ingrediente 4</span>
                                         @if ($errors->has('ingre_4'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('ingre_4')}}</span>
                                         @endif
                                     </div>
 
-                                    <div class="mb-4 box">
-                                        <input type="text" name="ingre_5" value="{{old('ingre_5')}}">
-                                        <span>Ingrediente 5</span>
+                                    <div class="mb-4 box3">
+                                        <select name="ingre_5" id="my-select">
+                                            <option value=""></option>
+                                            @foreach ($lista_productos as $item)
+                                                <option value="{{$item->marca_producto}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
+                                            @endforeach
+                                        </select>
+                                        <span>Selecione El Ingrediente 5</span>
                                         @if ($errors->has('ingre_5'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('ingre_5')}}</span>
                                         @endif

@@ -20,6 +20,8 @@
                                         <thead class="table-secondary">
                                             <tr style="text-align: center">
                                                 <th scope="col">Nombre del Producto</th>
+                                                <th scope="col">Marca del Producto</th>
+                                                <th scope="col">Unidad de Meida</th>
                                                 <th scope="col">Stock Actual</th>
                                                 <th scope="col">Stock Minimo</th>
                                                 <th scope="col">Acciones</th>
@@ -29,6 +31,8 @@
                                             @foreach ($producto as $info)
                                                 <tr style="text-align: center">
                                                     <td>{{$info->nombre_producto}}</td>
+                                                    <td>{{$info->marca_producto}}</td>
+                                                    <td>{{$info->unidad_medida}}</td>
                                                     <td>{{$info->stock_actual}}</td>
                                                     <td>{{$info->stock_minimo}}</td>
 

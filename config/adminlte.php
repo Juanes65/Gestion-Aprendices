@@ -249,6 +249,7 @@ return [
             'text'    => 'Dormitorios',
             'icon'    => 'fas fa-fw fa-bed',
             'icon_color' => 'red',
+            'can' => 'admin',
             'submenu' => [
                 [
                     'text' => 'Agregar Dormitorio',
@@ -271,6 +272,7 @@ return [
             'text'    => 'Novedades',
             'icon'    => 'fas fa-fw fa-lightbulb',
             'icon_color' => 'yellow',
+            'can' => 'admin',
             'submenu' => [
                 // [
                 //     'text' => 'Agregar',
@@ -288,6 +290,7 @@ return [
             'text'    => 'Restaurante',
             'icon'    => 'fas fa-fw fa-utensils',
             'icon_color' => 'white',
+            'can' => 'admin',
             'submenu' => [
                 [
                     'text' => 'Agregar reporte',
@@ -306,6 +309,7 @@ return [
             'text'    => 'Solicitud',
             'icon'    => 'fas fa-fw fa-envelope',
             'icon_color' => 'white',
+            'can' => 'cocina',
             'submenu' => [
                 [
                     'text' => 'Traer Informe',
@@ -326,6 +330,7 @@ return [
             'text'    => 'Bodegas',
             'icon'    => 'fas fa-fw fa-box-open',
             'icon_color' => 'pink',
+            'can' => 'cocina',
             'submenu' => [
                 [
                     'text' => 'Crear Bodegas',
@@ -354,6 +359,7 @@ return [
             'text'    => 'Platillos',
             'icon'    => 'fas fa-fw fa-check',
             'icon_color' => 'cyan',
+            'can' => 'cocina',
             'submenu' => [
                 [
                     'text' => 'Agregar Platillos',
@@ -374,6 +380,7 @@ return [
             'text'    => 'Solicitar Platillos',
             'icon'    => 'fas fa-fw fa-envelope',
             'icon_color' => 'orange',
+            'can' => 'cocina',
             'submenu' => [
                 [
                     'text' => 'Solicitar',
@@ -390,28 +397,10 @@ return [
         ],
 
         [
-            'text'    => 'Inspeccion',
-            'icon'    => 'fas fa-fw fa-eye',
-            'icon_color' => 'blue',
-            'submenu' => [
-                [
-                    'text' => 'Agregar Reporte ',
-                    'icon_color' => 'plate',
-                    'route'  => 'create.inspeccion',
-                ],
-                [
-                    'text' => 'ver',
-                    'icon_color' => 'orange',
-                    'route'  => 'index.inspeccion',
-                ],
-            ]
-        ],
-
-
-        [
             'text'    => 'Provedores',
             'icon'    => 'fas fa-fw fa-truck',
             'icon_color' => 'green',
+            'can' => 'cocina',
             'submenu' => [
                 [
                     'text' => 'Agregar Provedor ',
@@ -430,11 +419,30 @@ return [
             'text'    => 'Pedidos',
             'icon'    => 'fas fa-fw fa-truck',
             'icon_color' => 'orange',
+            'can' => 'cocina',
             'submenu' => [
                 [
                     'text' => 'Registrar Pedido',
                     'icon_color' => 'plate',
                     'route'  => 'create.pedido',
+                ],
+            ]
+        ],
+
+        [
+            'text'    => 'Inspeccion',
+            'icon'    => 'fas fa-fw fa-eye',
+            'icon_color' => 'blue',
+            'submenu' => [
+                [
+                    'text' => 'Agregar Reporte ',
+                    'icon_color' => 'plate',
+                    'route'  => 'create.inspeccion',
+                ],
+                [
+                    'text' => 'ver',
+                    'icon_color' => 'orange',
+                    'route'  => 'index.inspeccion',
                 ],
             ]
         ],
