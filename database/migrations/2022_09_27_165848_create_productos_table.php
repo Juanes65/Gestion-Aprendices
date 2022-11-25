@@ -22,15 +22,15 @@ return new class extends Migration
             $table->date('fecha_caducidad', 20);
             $table->string('marca_producto', 20);
             $table->string('clasificacion_producto', 20);
-            $table->string('stock_actual', 20);
-            $table->string('stock_minimo', 20);
+            $table->float('stock_actual', 20);
+            $table->float('stock_minimo', 20);
             $table->string('lote_producto', 20);
             $table->date('fecha_llegada', 20);
-            $table->unsignedBigInteger('provedor');
+            $table->unsignedBigInteger('provedor')->nullable();
             $table->unsignedBigInteger('area');
 
             $table->foreign('area')->references('id')->on('areas')->onDelete('cascade');
-            $table->foreign('provedor')->references('id')->on('provedores')->onDelete('cascade');
+            $table->foreign('provedor')->references('id')->on('provedores')->nullOnDelete();
             $table->timestamps();
         });
     }

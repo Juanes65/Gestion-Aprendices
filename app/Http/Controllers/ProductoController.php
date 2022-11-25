@@ -26,7 +26,7 @@ class ProductoController extends Controller
 
     public function minimo()
     {
-        $producto = DB::select('select id, nombre_producto, stock_actual, stock_minimo from productos');
+        $producto = DB::select('select id, nombre_producto, stock_actual, stock_minimo, marca_producto, unidad_medida from productos');
 
         return view('producto.minimo', compact('producto'));
     }
@@ -80,15 +80,17 @@ class ProductoController extends Controller
 
         $request->all();
 
-        $product = DB::select('select * from productos where nombre_producto = ?', [$request->nombre_producto]);
+        $product = DB::select('select * from productos where marca_producto = ?', [$request->marca_producto]);
 
         foreach($product as $producto){
             $nombre_producto = $producto->nombre_producto;
             $stock_actual = $producto->stock_actual;
+            $marca_producto = $producto->marca_producto;
             $id = $producto->id;
         };
 
-        if($product == null){
+
+        if($product == null || $request->marca_producto != $marca_producto){ 
             DB::table('productos')->insert([
                 'provedor' => $request->provedor,
                 'etiqueta' => $request->etiqueta,
