@@ -399,7 +399,7 @@ return [
         [
             'text'    => 'Provedores',
             'icon'    => 'fas fa-fw fa-truck',
-            'icon_color' => 'green',
+            'icon_color' => 'red',
             'can' => 'cocina',
             'submenu' => [
                 [
@@ -417,7 +417,7 @@ return [
 
         [
             'text'    => 'Pedidos',
-            'icon'    => 'fas fa-fw fa-truck',
+            'icon'    => 'fas fa-fw fa-border-none',
             'icon_color' => 'orange',
             'can' => 'cocina',
             'submenu' => [

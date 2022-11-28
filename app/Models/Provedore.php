@@ -14,7 +14,7 @@ class Provedore extends Model
         'empresa',
     ];
 
-    public function producto(){
+    public function productos(){
         return $this->hasMany('App\Models\Producto', 'provedor', 'id');
     }
 }
