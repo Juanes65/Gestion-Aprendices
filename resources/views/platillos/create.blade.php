@@ -37,7 +37,7 @@
                                         <select name="ingre_1" id="my-select">
                                             <option value=""></option>
                                             @foreach ($lista_productos as $item)
-                                                <option value="{{$item->marca_producto}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
+                                                <option value="{{$item->id}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
                                             @endforeach
                                         </select>
                                         <span>Selecione El Ingrediente 1</span>
@@ -50,7 +50,7 @@
                                         <select name="ingre_2" id="my-select">
                                             <option value=""></option>
                                             @foreach ($lista_productos as $item)
-                                                <option value="{{$item->marca_producto}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
+                                                <option value="{{$item->id}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
                                             @endforeach
                                         </select>
                                         <span>Selecione El Ingrediente 2</span>
@@ -63,7 +63,7 @@
                                         <select name="ingre_3" id="my-select">
                                             <option value=""></option>
                                             @foreach ($lista_productos as $item)
-                                                <option value="{{$item->marca_producto}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
+                                                <option value="{{$item->id}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
                                             @endforeach
                                         </select>
                                         <span>Selecione El Ingrediente 3</span>
@@ -76,7 +76,7 @@
                                         <select name="ingre_4" id="my-select">
                                             <option value=""></option>
                                             @foreach ($lista_productos as $item)
-                                                <option value="{{$item->marca_producto}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
+                                                <option value="{{$item->id}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
                                             @endforeach
                                         </select>
                                         <span>Selecione El Ingrediente 4</span>
@@ -89,7 +89,7 @@
                                         <select name="ingre_5" id="my-select">
                                             <option value=""></option>
                                             @foreach ($lista_productos as $item)
-                                                <option value="{{$item->marca_producto}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
+                                                <option value="{{$item->id}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
                                             @endforeach
                                         </select>
                                         <span>Selecione El Ingrediente 5</span>

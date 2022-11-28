@@ -90,7 +90,7 @@ class ProductoController extends Controller
         };
 
 
-        if($product == null || $request->marca_producto != $marca_producto){ 
+        if($product == null || $request->marca_producto != $marca_producto || $request->nombre_producto != $nombre_producto){ 
             DB::table('productos')->insert([
                 'provedor' => $request->provedor,
                 'etiqueta' => $request->etiqueta,
@@ -113,6 +113,9 @@ class ProductoController extends Controller
 
             $productos->update([
                 'stock_actual' => $suma,
+                'fecha_caducidad' => $request->fecha_caducidad,
+                'lote_producto' => $request->lote_producto,
+                'unidad_medida' => $request->unidad_medida,
             ]);
         }
 

@@ -30,8 +30,8 @@
                                                 <th scope="col">Lote Producto</th>
                                                 <th scope="col">Bodega</th>
                                                 <th scope="col">Area</th>
-                                                {{-- <th scope="col">Nombre del Provedor</th>
-                                                <th scope="col">Empresa del Provedor</th> --}}
+                                                <th scope="col">Nombre del Provedor</th>
+                                                <th scope="col">Empresa del Provedor</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
@@ -49,8 +49,8 @@
                                                     <td>{{$info->lote_producto}}</td>
                                                     <td>{{$info->areas->bodegas->nombre_bodega}}</td>
                                                     <td>{{$info->areas->nombre_area}}</td>
-                                                    {{-- <td>{{$info->provedores->nombre}}</td>
-                                                    <td>{{$info->provedores->empresa}}</td> --}}
+                                                    <td>{{$info->provedores->nombre}}</td>
+                                                    <td>{{$info->provedores->empresa}}</td>
 
                                                     <td class="td-actions text-center">
 

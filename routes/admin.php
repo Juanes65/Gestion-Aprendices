@@ -155,21 +155,21 @@ Route::delete('/platilloSolicitud/eliminar/{platilloSolicitude}',        [Platil
 
 //rutas del desayno
 
-Route::get('/Pedido/agregar',                        [PedidoController::class, 'create'])->middleware('can:cocina')->name('create.pedido');
-Route::post('/Pedido/store',                          [PedidoController::class, 'store'])->middleware('can:cocina')->name('store.pedido');
-Route::put('/platilloSolicitud/{pedido}',             [PedidoController::class, 'update'])->middleware('can:cocina')->name('update.pedido');
+Route::get('/Pedido/agregar',                           [PedidoController::class, 'create'])->middleware('can:cocina')->name('create.pedido');
+Route::post('/Pedido/store',                            [PedidoController::class, 'store'])->middleware('can:cocina')->name('store.pedido');
+Route::put('/platilloSolicitud/{pedido}',               [PedidoController::class, 'update'])->middleware('can:cocina')->name('update.pedido');
 
 //rutas de solicitud almuerzos
 
-Route::get('/Pedido/agregar2',                         [PedidoController::class, 'create2'])->name('create2.pedido');
-Route::post('/Pedido/store2',                          [PedidoController::class, 'store2'])->name('store2.pedido');
-// Route::put('/platilloSolicitud/{pedido}',             [PedidoController::class, 'update'])->name('update.pedido');
+Route::get('/Pedido/agregar2',                          [PedidoController::class, 'create2'])->name('create2.pedido');
+Route::post('/Pedido/store2',                           [PedidoController::class, 'store2'])->name('store2.pedido');
+Route::put('/platilloSolicitud/{pedido}',               [PedidoController::class, 'update'])->name('update.pedido');
 
 //rutas de solicitud cenas
 
-Route::get('/Pedido/agregar3',                         [PedidoController::class, 'create3'])->name('create3.pedido');
-Route::post('/Pedido/store3',                          [PedidoController::class, 'store3'])->name('store3.pedido');
-// Route::put('/platilloSolicitud/{pedido}',             [PedidoController::class, 'update'])->name('update.pedido');
+Route::get('/Pedido/agregar3',                          [PedidoController::class, 'create3'])->name('create3.pedido');
+Route::post('/Pedido/store3',                           [PedidoController::class, 'store3'])->name('store3.pedido');
+Route::put('/platilloSolicitud/{pedido}',               [PedidoController::class, 'update'])->name('update.pedido');
 
 //rutas del los provedores
 

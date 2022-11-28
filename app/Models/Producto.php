@@ -32,7 +32,7 @@ class Producto extends Model
         return $this->hasMany('App\Models\Pedido', 'producto', 'id');
     }
 
-    public function provedor(){
+    public function provedores(){
         return $this->belongsTo('App\Models\Provedore', 'provedor', 'id');
     }
 }
