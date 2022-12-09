@@ -85,8 +85,11 @@ class PlatilloController extends Controller
      */
     public function edit(Platillo $platillo)
     {
+        $producto = Producto::all();
 
-        return view('platillos.edit', compact('platillo'));
+        $data = array('lista_productos' => $producto);
+
+        return view('platillos.edit', compact('platillo'),$data);
     }
 
     /**

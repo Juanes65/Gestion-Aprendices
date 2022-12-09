@@ -3,7 +3,7 @@
 @section('title', 'Provedor')
 
 @section('content_header')
-    <h1 style="text-align: center">Ingresar Provedor</h1>
+    <h1 style="text-align: center">Ingresar Proveedor</h1>
 @stop
 
 @section('content')
@@ -23,7 +23,7 @@
 
                                     <div class="mb-4 box">
                                         <input type="text" name="nombre" value="{{old('nombre')}}" required="required">
-                                        <span>Nombre Provedor</span>
+                                        <span>Nombre Proveedor</span>
                                         @if ($errors->has('nombre'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('nombre')}}</span>
                                         @endif

@@ -21,6 +21,7 @@
                                             <tr style="text-align: center">
                                                 <th scope="col">Nombre del Producto</th>
                                                 <th scope="col">Marca del Producto</th>
+                                                <th scope="col">Factura</th>
                                                 <th scope="col">Unidad de Medida</th>
                                                 <th scope="col">Clasificacion del Producto</th>
                                                 <th scope="col">Fecha Caducidad</th>
@@ -40,6 +41,7 @@
                                                 <tr style="text-align: center">
                                                     <td>{{$info->nombre_producto}}</td>
                                                     <td>{{$info->marca_producto}}</td>
+                                                    <td>{{$info->etiqueta}}</td>
                                                     <td>{{$info->unidad_medida}}</td>
                                                     <td>{{$info->clasificacion_producto}}</td>
                                                     <td>{{$info->fecha_caducidad}}</td>

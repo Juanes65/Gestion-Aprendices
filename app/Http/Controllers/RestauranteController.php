@@ -202,17 +202,20 @@ class RestauranteController extends Controller
         $desayuno = DB::table('consumos')->join('aprendices','aprendices.id','=','consumos.aprendiz_consumos')
                         ->select('consumos.desayuno, consumos.almuerzo, consumos.cena, fecha')
                         ->where('aprendices.estado','Activo')
-                        ->where('consumos.desayuno','Si')->where('aprendiz_ficha',[$inpu['ficha_restaurante']])->count();
+                        ->where('consumos.desayuno','Si')->where('aprendiz_ficha',[$inpu['ficha_restaurante']])
+                        ->where('consumos.fecha','>=',$request->date)->count();
         //$almuerzo almacena la suma de los aprendices que van a almuerzan durante el periodo de estancia
         $almuerzo = DB::table('consumos')->join('aprendices','aprendices.id','=','consumos.aprendiz_consumos')
                         ->select('consumos.desayuno, consumos.almuerzo, consumos.cena, fecha')
                         ->where('aprendices.estado','Activo')
-                        ->where('consumos.almuerzo','Si')->where('aprendiz_ficha',[$inpu['ficha_restaurante']])->count();
+                        ->where('consumos.almuerzo','Si')->where('aprendiz_ficha',[$inpu['ficha_restaurante']])
+                        ->where('consumos.fecha','>=',$request->date)->count();
         //$cena almacena la suma de los aprendices que van a cenar durante el periodo de estancia
         $cena    = DB::table('consumos')->join('aprendices','aprendices.id','=','consumos.aprendiz_consumos')
                         ->select('consumos.desayuno, consumos.almuerzo, consumos.cena, fecha')
                         ->where('aprendices.estado','Activo')
-                        ->where('consumos.cena','Si')->where('aprendiz_ficha',[$inpu['ficha_restaurante']])->count();
+                        ->where('consumos.cena','Si')->where('aprendiz_ficha',[$inpu['ficha_restaurante']])
+                        ->where('consumos.fecha','>=',$request->date)->count();
         //accede a la base de datos a la tabla restaurantes y actualiza la informacion en los diferentes resultados de las variables
         $restaurante->update([
             'total_desayunos'=> $desayuno, 

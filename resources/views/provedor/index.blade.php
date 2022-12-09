@@ -19,7 +19,7 @@
                                     <table class="table table-bordered table-striped" id="provedor">
                                         <thead class="table-secondary">
                                             <tr style="text-align: center">
-                                                <th scope="col">Nombre del Provedor</th>
+                                                <th scope="col">Nombre del Proveedor</th>
                                                 <th scope="col">Nombre de la Empresa</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>

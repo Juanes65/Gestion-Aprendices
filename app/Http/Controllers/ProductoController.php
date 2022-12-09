@@ -116,6 +116,7 @@ class ProductoController extends Controller
                 'fecha_caducidad' => $request->fecha_caducidad,
                 'lote_producto' => $request->lote_producto,
                 'unidad_medida' => $request->unidad_medida,
+                'etiqueta' => $request->etiqueta,
             ]);
         }
 

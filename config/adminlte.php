@@ -397,18 +397,18 @@ return [
         ],
 
         [
-            'text'    => 'Provedores',
+            'text'    => 'Proveedores',
             'icon'    => 'fas fa-fw fa-truck',
             'icon_color' => 'red',
             'can' => 'cocina',
             'submenu' => [
                 [
-                    'text' => 'Agregar Provedor ',
+                    'text' => 'Agregar Proveedor ',
                     'icon_color' => 'plate',
                     'route'  => 'create.provedor',
                 ],
                 [
-                    'text' => 'Provedores',
+                    'text' => 'Proveedores',
                     'icon_color' => 'plate',
                     'route'  => 'index.provedor',
                 ],
