@@ -52,7 +52,7 @@
                                                     <td>{{$info->areas->bodegas->nombre_bodega}}</td>
                                                     <td>{{$info->areas->nombre_area}}</td>
                                                     <td>{{$info->provedores->nombre}}</td>
-                                                    <td>{{$info->provedores->empresa}}</td>
+                                                    <td>{{$info->provedores->empresa}}</td> 
 
                                                     <td class="td-actions text-center">
 
