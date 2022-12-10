@@ -34,41 +34,76 @@
 
                                 <div class="col-lg-4 col-12">
 
-                                    <div class="mb-4 box">
-                                        <input type="text" name="ingre_1" value="{{old('ingre_1',$platillo->ingre_1)}}">
-                                        <span>Ingrediente 1</span>
+                                    <div class="mb-4 box3">
+                                        <select name="ingre_1" id="my-select">
+                                            <option value=""></option>
+                                            @foreach ($lista_productos as $item)
+                                                <option @if (old('ingre_1',$platillo->ingre_1)==$item->id)
+                                                    @selected(true)
+                                                @endif value="{{$item->id}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
+                                            @endforeach
+                                        </select>
+                                        <span>Selecione El Ingrediente 1</span>
                                         @if ($errors->has('ingre_1'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('ingre_1')}}</span>
                                         @endif
                                     </div>
 
-                                    <div class="mb-4 box">
-                                        <input type="text" name="ingre_2" value="{{old('ingre_2',$platillo->ingre_2)}}">
-                                        <span>Ingrediente 2</span>
+                                    <div class="mb-4 box3">
+                                        <select name="ingre_2" id="my-select">
+                                            <option value=""></option>
+                                            @foreach ($lista_productos as $item)
+                                                <option @if (old('ingre_2',$platillo->ingre_2)==$item->id)
+                                                    @selected(true)
+                                                @endif value="{{$item->id}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
+                                            @endforeach
+                                        </select>
+                                        <span>Selecione El Ingrediente 2</span>
                                         @if ($errors->has('ingre_2'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('ingre_2')}}</span>
                                         @endif
                                     </div>
 
-                                    <div class="mb-4 box">
-                                        <input type="text" name="ingre_3" value="{{old('ingre_3',$platillo->ingre_3)}}">
-                                        <span>Ingrediente 3</span>
+                                    <div class="mb-4 box3">
+                                        <select name="ingre_3" id="my-select">
+                                            <option value=""></option>
+                                            @foreach ($lista_productos as $item)
+                                                <option @if (old('ingre_3',$platillo->ingre_3)==$item->id)
+                                                    @selected(true)
+                                                @endif value="{{$item->id}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
+                                            @endforeach
+                                        </select>
+                                        <span>Selecione El Ingrediente 3</span>
                                         @if ($errors->has('ingre_3'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('ingre_3')}}</span>
                                         @endif
                                     </div>
 
-                                    <div class="mb-4 box">
-                                        <input type="text" name="ingre_4" value="{{old('ingre_4',$platillo->ingre_4)}}">
-                                        <span>Ingrediente 4</span>
+                                    <div class="mb-4 box3">
+                                        <select name="ingre_4" id="my-select">
+                                            <option value=""></option>
+                                            @foreach ($lista_productos as $item)
+                                                <option @if (old('ingre_4',$platillo->ingre_4)==$item->id)
+                                                    @selected(true)
+                                                @endif value="{{$item->id}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
+                                            @endforeach
+                                        </select>
+                                        <span>Selecione El Ingrediente 4</span>
                                         @if ($errors->has('ingre_4'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('ingre_4')}}</span>
                                         @endif
                                     </div>
 
-                                    <div class="mb-4 box">
-                                        <input type="text" name="ingre_5" value="{{old('ingre_5',$platillo->ingre_5)}}">
-                                        <span>Ingrediente 5</span>
+                                    <div class="mb-4 box3">
+                                        <select name="ingre_5" id="my-select">
+                                            <option value=""></option>
+                                            @foreach ($lista_productos as $item)
+                                                <option @if (old('ingre_5',$platillo->ingre_5)==$item->id)
+                                                    @selected(true)
+                                                @endif value="{{$item->id}}">{{$item->nombre_producto}} : {{$item->marca_producto}}</option>
+                                            @endforeach
+                                        </select>
+                                        <span>Selecione El Ingrediente 5</span>
                                         @if ($errors->has('ingre_5'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('ingre_5')}}</span>
                                         @endif
@@ -126,25 +161,25 @@
                                         <select name="unidad_1" id="my-select" value="{{old('unidad_1')}}">
 
                                             <option value=""></option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Litros")
+                                            <option @if (old('unidad_medida',$platillo->unidad_1)=="Litros")
                                                 @selected(true)
                                             @endif value="Litros">Litros (L)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Libras")
+                                            <option @if (old('unidad_medida',$platillo->unidad_1)=="Libras")
                                                 @selected(true)
                                             @endif  value="Libras">Libras (LB)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Gramos")
+                                            <option @if (old('unidad_medida',$platillo->unidad_1)=="Gramos")
                                                 @selected(true)
                                             @endif  value="Gramos">Gramos (GR)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Unidad")
+                                            <option @if (old('unidad_medida',$platillo->unidad_1)=="Unidad")
                                                 @selected(true)
                                                 @endif  value="Unidad">Unidad (U)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Mililitro")
+                                            <option @if (old('unidad_medida',$platillo->unidad_1)=="Mililitro")
                                                     @selected(true)
                                             @endif  value="Mililitros">Mililitros (ML)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Kilogramos")
+                                            <option @if (old('unidad_medida',$platillo->unidad_1)=="Kilogramos")
                                                 @selected(true)
                                             @endif  value="Kilogramos">Kilogramos (KG)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Centimetro cubico")
+                                            <option @if (old('unidad_medida',$platillo->unidad_1)=="Centimetro cubico")
                                                 @selected(true)
                                             @endif  value="Centimetro cubico">Centimetros Cubicos (C.C)</option>
 
@@ -161,25 +196,25 @@
                                         <select name="unidad_2" id="my-select" value="{{old('unidad_2')}}">
 
                                             <option value=""></option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Litros")
+                                            <option @if (old('unidad_medida',$platillo->unidad_2)=="Litros")
                                                 @selected(true)
                                             @endif value="Litros">Litros (L)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Libras")
+                                            <option @if (old('unidad_medida',$platillo->unidad_2)=="Libras")
                                                 @selected(true)
                                             @endif  value="Libras">Libras (LB)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Gramos")
+                                            <option @if (old('unidad_medida',$platillo->unidad_2)=="Gramos")
                                                 @selected(true)
                                             @endif  value="Gramos">Gramos (GR)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Unidad")
+                                            <option @if (old('unidad_medida',$platillo->unidad_2)=="Unidad")
                                                 @selected(true)
                                                 @endif  value="Unidad">Unidad (U)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Mililitro")
+                                            <option @if (old('unidad_medida',$platillo->unidad_2)=="Mililitro")
                                                     @selected(true)
                                             @endif  value="Mililitros">Mililitros (ML)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Kilogramos")
+                                            <option @if (old('unidad_medida',$platillo->unidad_2)=="Kilogramos")
                                                 @selected(true)
                                             @endif  value="Kilogramos">Kilogramos (KG)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Centimetro cubico")
+                                            <option @if (old('unidad_medida',$platillo->unidad_2)=="Centimetro cubico")
                                                 @selected(true)
                                             @endif  value="Centimetro cubico">Centimetros Cubicos (C.C)</option>
 
@@ -196,25 +231,25 @@
                                         <select name="unidad_3" id="my-select" value="{{old('unidad_3')}}">
 
                                             <option value=""></option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Litros")
+                                            <option @if (old('unidad_medida',$platillo->unidad_3)=="Litros")
                                                 @selected(true)
                                             @endif value="Litros">Litros (L)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Libras")
+                                            <option @if (old('unidad_medida',$platillo->unidad_3)=="Libras")
                                                 @selected(true)
                                             @endif  value="Libras">Libras (LB)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Gramos")
+                                            <option @if (old('unidad_medida',$platillo->unidad_3)=="Gramos")
                                                 @selected(true)
                                             @endif  value="Gramos">Gramos (GR)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Unidad")
+                                            <option @if (old('unidad_medida',$platillo->unidad_3)=="Unidad")
                                                 @selected(true)
                                                 @endif  value="Unidad">Unidad (U)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Mililitro")
+                                            <option @if (old('unidad_medida',$platillo->unidad_3)=="Mililitro")
                                                     @selected(true)
                                             @endif  value="Mililitros">Mililitros (ML)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Kilogramos")
+                                            <option @if (old('unidad_medida',$platillo->unidad_3)=="Kilogramos")
                                                 @selected(true)
                                             @endif  value="Kilogramos">Kilogramos (KG)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Centimetro cubico")
+                                            <option @if (old('unidad_medida',$platillo->unidad_3)=="Centimetro cubico")
                                                 @selected(true)
                                             @endif  value="Centimetro cubico">Centimetros Cubicos (C.C)</option>
 
@@ -231,25 +266,25 @@
                                         <select name="unidad_4" id="my-select" value="{{old('unidad_4')}}">
 
                                             <option value=""></option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Litros")
+                                            <option @if (old('unidad_medida',$platillo->unidad_4)=="Litros")
                                                 @selected(true)
                                             @endif value="Litros">Litros (L)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Libras")
+                                            <option @if (old('unidad_medida',$platillo->unidad_4)=="Libras")
                                                 @selected(true)
                                             @endif  value="Libras">Libras (LB)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Gramos")
+                                            <option @if (old('unidad_medida',$platillo->unidad_4)=="Gramos")
                                                 @selected(true)
                                             @endif  value="Gramos">Gramos (GR)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Unidad")
+                                            <option @if (old('unidad_medida',$platillo->unidad_4)=="Unidad")
                                                 @selected(true)
                                                 @endif  value="Unidad">Unidad (U)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Mililitro")
+                                            <option @if (old('unidad_medida',$platillo->unidad_4)=="Mililitro")
                                                     @selected(true)
                                             @endif  value="Mililitros">Mililitros (ML)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Kilogramos")
+                                            <option @if (old('unidad_medida',$platillo->unidad_4)=="Kilogramos")
                                                 @selected(true)
                                             @endif  value="Kilogramos">Kilogramos (KG)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Centimetro cubico")
+                                            <option @if (old('unidad_medida',$platillo->unidad_4)=="Centimetro cubico")
                                                 @selected(true)
                                             @endif  value="Centimetro cubico">Centimetros Cubicos (C.C)</option>
 
@@ -266,25 +301,25 @@
                                         <select name="unidad_5" id="my-select" value="{{old('unidad_5')}}">
 
                                             <option value=""></option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Litros")
+                                            <option @if (old('unidad_medida',$platillo->unidad_5)=="Litros")
                                                 @selected(true)
                                             @endif value="Litros">Litros (L)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Libras")
+                                            <option @if (old('unidad_medida',$platillo->unidad_5)=="Libras")
                                                 @selected(true)
                                             @endif  value="Libras">Libras (LB)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Gramos")
+                                            <option @if (old('unidad_medida',$platillo->unidad_5)=="Gramos")
                                                 @selected(true)
                                             @endif  value="Gramos">Gramos (GR)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Unidad")
+                                            <option @if (old('unidad_medida',$platillo->unidad_5)=="Unidad")
                                                 @selected(true)
                                                 @endif  value="Unidad">Unidad (U)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Mililitro")
+                                            <option @if (old('unidad_medida',$platillo->unidad_5)=="Mililitro")
                                                     @selected(true)
                                             @endif  value="Mililitros">Mililitros (ML)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Kilogramos")
+                                            <option @if (old('unidad_medida',$platillo->unidad_5)=="Kilogramos")
                                                 @selected(true)
                                             @endif  value="Kilogramos">Kilogramos (KG)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_medida)=="Centimetro cubico")
+                                            <option @if (old('unidad_medida',$platillo->unidad_5)=="Centimetro cubico")
                                                 @selected(true)
                                             @endif  value="Centimetro cubico">Centimetros Cubicos (C.C)</option>
 
