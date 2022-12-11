@@ -3,7 +3,7 @@
 @section('title', 'Areas')
 
 @section('content_header')
-    <h1 style="text-align: center">Agregar Areas</h1>
+    <h1 style="text-align: center">Agregar areas</h1>
 @stop
 
 @section('content')
@@ -57,7 +57,7 @@
                                 <div class="col-lg-12">
 
                                     <div class="d-flex justify-content-center boton">
-                                        <button type="submit">Importar</button>
+                                        <button type="submit">Crear Area</button>
                                     </div>
 
                                 </div>

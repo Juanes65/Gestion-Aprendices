@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-    <h1 style="text-align: center">Bodegas Disponibles</h1>
+    <h1 style="text-align: center">Bodegas disponibles</h1>
 
 @stop
 

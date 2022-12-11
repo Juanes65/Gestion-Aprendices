@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-    <h1 style="text-align: center">Platillos Disponibles</h1>
+    <h1 style="text-align: center">Platillos disponibles</h1>
 
 @stop
 

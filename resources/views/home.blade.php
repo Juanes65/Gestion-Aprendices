@@ -19,7 +19,7 @@
                 <div class="card-body">
                     
                         @foreach ($info as $item)
-                            <h4 style="color: red;font-family: Verdana, Geneva, Tahoma, sans-serif;">El Produto {{$item->nombre_producto}} ({{$item->marca_producto}}) tiene pocas esxistencias.</h4>
+                            <h4 style="color: red;font-family: Verdana, Geneva, Tahoma, sans-serif;">El Produto {{$item->nombre_producto}} ({{$item->marca_producto}}) tiene pocas existencias.</h4>
                             <br>
                         @endforeach 
                     

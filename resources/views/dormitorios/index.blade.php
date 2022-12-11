@@ -3,7 +3,7 @@
 @section('title', 'Dormitorios')
 
 @section('content_header')
-    <h1 style="text-align: center">Dormitorios Registrados</h1>
+    <h1 style="text-align: center">Dormitorios registrados</h1>
 @stop
 
 @section('content')

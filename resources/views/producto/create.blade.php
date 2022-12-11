@@ -3,7 +3,7 @@
 @section('title', 'Productos')
 
 @section('content_header')
-    <h1 style="text-align: center">Insertar Productos</h1>
+    <h1 style="text-align: center">Insertar productos</h1>
 @stop
 
 @section('content')
@@ -76,23 +76,11 @@
                                         @endif
                                     </div>
 
-                                    <div class="mb-4 box3">
-                                        <select name="unidad_medida" id="my-select" value="{{old('unidad_medida')}}" required="required">
-
-                                            <option value=""></option>
-                                            <option value="Litros">Litros (L)</option>
-                                            <option value="Libras">Libras (LB)</option>
-                                            <option value="Gramos">Gramos (GR)</option>
-                                            <option value="Unidad">Unidad(U)</option>
-                                            <option value="Mililitros">Mililitros (ML)</option>
-                                            <option value="Kilogramos">Kilogramos (KG)</option>
-                                            <option value="Centimetro cubico">Centimetros Cubicos (C.C)</option>
-
-                                        </select>
-                                        <span>Unidad de Medida</span>
-
-                                        @if ($errors->has('unidad'))
-                                            <span class="error text-danger" for="input-name">{{$errors->first('unidad')}}</span>
+                                    <div class="mb-4 box2">
+                                        <input type="date" name="fecha_llegada" value="{{old('fecha_llegada')}}" required="required">
+                                        <span>Fecha de Llegada</span>
+                                        @if ($errors->has('fecha_llegada'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('fecha_llegada')}}</span>
                                         @endif
                                     </div>
 
@@ -106,21 +94,38 @@
 
                                     <div class="mb-4 box">
                                         <input type="number" name="stock_actual" value="{{old('stock_actual')}}" required="required">
-                                        <span>Stock Actual</span>
+                                        <span>Catidad Reducida</span>
                                         @if ($errors->has('stock_actual'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('stock_actual')}}</span>
                                         @endif
+                                    </div>
+
+                                    <div class="mb-4 box3">
+                                        <select name="area" id="my-select" required="required">
+                                            @foreach ($lista_areas as $item)
+                                                <option value="{{$item->id}}">{{$item->nombre_area}}</option>
+                                            @endforeach
+                                        </select>
+                                        <span>Area</span>
                                     </div>
 
                                 </div>
 
                                 <div class="col-lg-6 col-12">
 
-                                    <div class="mb-4 box2">
-                                        <input type="date" name="fecha_llegada" value="{{old('fecha_llegada')}}" required="required">
-                                        <span>Fecha de Llegada</span>
-                                        @if ($errors->has('fecha_llegada'))
-                                            <span class="error text-danger" for="input-name">{{$errors->first('fecha_llegada')}}</span>
+                                    <div class="mb-4 box3">
+                                        <select name="unidad_medida" id="my-select" value="{{old('unidad_medida')}}" required="required">
+
+                                            <option value=""></option>
+                                            <option value="Gramos">Gramos (GR)</option>
+                                            <option value="Unidad">Unidad(U)</option>
+                                            <option value="Mililitros">Mililitros (ML)</option>
+
+                                        </select>
+                                        <span>Unidad de Medida</span>
+
+                                        @if ($errors->has('unidad'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('unidad')}}</span>
                                         @endif
                                     </div>
 
@@ -148,17 +153,14 @@
                                         @endif
                                     </div>
 
-                                </div>
-
-                                <div class="col-lg-12">
-                                    <div class="mb-4 box3">
-                                        <select name="area" id="my-select" required="required">
-                                            @foreach ($lista_areas as $item)
-                                                <option value="{{$item->id}}">{{$item->nombre_area}}</option>
-                                            @endforeach
-                                        </select>
-                                        <span>Area</span>
+                                    <div class="mb-4 box">
+                                        <input type="text" name="recibo" value="{{old('recibo')}}" required="required">
+                                        <span>Quien Recive el Producto</span>
+                                        @if ($errors->has('recibo'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('recibo')}}</span>
+                                        @endif
                                     </div>
+
                                 </div>
 
                                 <div class="col-lg-12">

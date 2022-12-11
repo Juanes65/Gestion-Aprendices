@@ -39,11 +39,11 @@ class SolicitudeController extends Controller
      */
     public function store(Request $request)
     {
-        $desayuno = DB::table('restaurantes')->select('total_desayunos')->sum('total_desayunos');
+        $desayuno = DB::table('consumos')->select('desayuno')->where('desayuno','Si')->where('fecha','=',$request->date)->count();
 
-        $almuerzo = DB::table('restaurantes')->select('total_almuerzos')->sum('total_almuerzos');
+        $almuerzo = DB::table('consumos')->select('almuerzo')->where('almuerzo','Si')->where('fecha','=',$request->date)->count();
 
-        $cena = DB::table('restaurantes')->select('total_cenas')->sum('total_cenas');
+        $cena = DB::table('consumos')->select('cena')->where('cena','Si')->where('fecha','=',$request->date)->count();
 
         $fecha = date("Y-m-d");
 
@@ -88,11 +88,11 @@ class SolicitudeController extends Controller
      */
     public function update(Request $request, Solicitude $solicitude)
     {
-        $desayuno = DB::table('restaurantes')->select('total_desayunos')->sum('total_desayunos');
+        $desayuno = DB::table('consumos')->select('desayuno')->where('desayuno','Si')->where('fecha','=',$request->date)->count();
 
-        $almuerzo = DB::table('restaurantes')->select('total_almuerzos')->sum('total_almuerzos');
+        $almuerzo = DB::table('consumos')->select('almuerzo')->where('almuerzo','Si')->where('fecha','=',$request->date)->count();
 
-        $cena = DB::table('restaurantes')->select('total_cenas')->sum('total_cenas');
+        $cena = DB::table('consumos')->select('cena')->where('cena','Si')->where('fecha','=',$request->date)->count();
 
         $solicitude->update([
             'cantidad_desayuno' => $desayuno,

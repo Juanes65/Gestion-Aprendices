@@ -20,6 +20,7 @@ class Producto extends Model
         'clasificacion_producto',
         'stock_actual',
         'stock_minimo',
+        'recibo',
         'lote_producto',
         'fecha_llegada',
         'area',

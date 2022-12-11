@@ -26,6 +26,7 @@ return new class extends Migration
             $table->float('stock_minimo', 20);
             $table->string('lote_producto', 20);
             $table->date('fecha_llegada', 20);
+            $table->string('recibo',30);
             $table->unsignedBigInteger('provedor')->nullable();
             $table->unsignedBigInteger('area');
 

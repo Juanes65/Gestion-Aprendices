@@ -3,7 +3,7 @@
 @section('title', 'Fichas')
 
 @section('content_header')
-    <h1 style="text-align: center">Fichas Registradas</h1>
+    <h1 style="text-align: center">Fichas registradas</h1>
 @stop
 
 @section('content')

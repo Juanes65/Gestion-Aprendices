@@ -3,7 +3,7 @@
 @section('title', 'Platillos')
 
 @section('content_header')
-    <h1 style="text-align: center">Editar Platillo</h1>
+    <h1 style="text-align: center">Editar platillo</h1>
 @stop
 
 @section('content')
@@ -161,12 +161,6 @@
                                         <select name="unidad_1" id="my-select" value="{{old('unidad_1')}}">
 
                                             <option value=""></option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_1)=="Litros")
-                                                @selected(true)
-                                            @endif value="Litros">Litros (L)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_1)=="Libras")
-                                                @selected(true)
-                                            @endif  value="Libras">Libras (LB)</option>
                                             <option @if (old('unidad_medida',$platillo->unidad_1)=="Gramos")
                                                 @selected(true)
                                             @endif  value="Gramos">Gramos (GR)</option>
@@ -176,12 +170,6 @@
                                             <option @if (old('unidad_medida',$platillo->unidad_1)=="Mililitro")
                                                     @selected(true)
                                             @endif  value="Mililitros">Mililitros (ML)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_1)=="Kilogramos")
-                                                @selected(true)
-                                            @endif  value="Kilogramos">Kilogramos (KG)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_1)=="Centimetro cubico")
-                                                @selected(true)
-                                            @endif  value="Centimetro cubico">Centimetros Cubicos (C.C)</option>
 
                                         </select>
                                         <span>Unidad de Medida</span>
@@ -196,12 +184,6 @@
                                         <select name="unidad_2" id="my-select" value="{{old('unidad_2')}}">
 
                                             <option value=""></option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_2)=="Litros")
-                                                @selected(true)
-                                            @endif value="Litros">Litros (L)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_2)=="Libras")
-                                                @selected(true)
-                                            @endif  value="Libras">Libras (LB)</option>
                                             <option @if (old('unidad_medida',$platillo->unidad_2)=="Gramos")
                                                 @selected(true)
                                             @endif  value="Gramos">Gramos (GR)</option>
@@ -211,12 +193,6 @@
                                             <option @if (old('unidad_medida',$platillo->unidad_2)=="Mililitro")
                                                     @selected(true)
                                             @endif  value="Mililitros">Mililitros (ML)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_2)=="Kilogramos")
-                                                @selected(true)
-                                            @endif  value="Kilogramos">Kilogramos (KG)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_2)=="Centimetro cubico")
-                                                @selected(true)
-                                            @endif  value="Centimetro cubico">Centimetros Cubicos (C.C)</option>
 
                                         </select>
                                         <span>Unidad de Medida</span>
@@ -231,12 +207,6 @@
                                         <select name="unidad_3" id="my-select" value="{{old('unidad_3')}}">
 
                                             <option value=""></option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_3)=="Litros")
-                                                @selected(true)
-                                            @endif value="Litros">Litros (L)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_3)=="Libras")
-                                                @selected(true)
-                                            @endif  value="Libras">Libras (LB)</option>
                                             <option @if (old('unidad_medida',$platillo->unidad_3)=="Gramos")
                                                 @selected(true)
                                             @endif  value="Gramos">Gramos (GR)</option>
@@ -246,12 +216,6 @@
                                             <option @if (old('unidad_medida',$platillo->unidad_3)=="Mililitro")
                                                     @selected(true)
                                             @endif  value="Mililitros">Mililitros (ML)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_3)=="Kilogramos")
-                                                @selected(true)
-                                            @endif  value="Kilogramos">Kilogramos (KG)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_3)=="Centimetro cubico")
-                                                @selected(true)
-                                            @endif  value="Centimetro cubico">Centimetros Cubicos (C.C)</option>
 
                                         </select>
                                         <span>Unidad de Medida</span>
@@ -266,12 +230,6 @@
                                         <select name="unidad_4" id="my-select" value="{{old('unidad_4')}}">
 
                                             <option value=""></option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_4)=="Litros")
-                                                @selected(true)
-                                            @endif value="Litros">Litros (L)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_4)=="Libras")
-                                                @selected(true)
-                                            @endif  value="Libras">Libras (LB)</option>
                                             <option @if (old('unidad_medida',$platillo->unidad_4)=="Gramos")
                                                 @selected(true)
                                             @endif  value="Gramos">Gramos (GR)</option>
@@ -281,12 +239,6 @@
                                             <option @if (old('unidad_medida',$platillo->unidad_4)=="Mililitro")
                                                     @selected(true)
                                             @endif  value="Mililitros">Mililitros (ML)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_4)=="Kilogramos")
-                                                @selected(true)
-                                            @endif  value="Kilogramos">Kilogramos (KG)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_4)=="Centimetro cubico")
-                                                @selected(true)
-                                            @endif  value="Centimetro cubico">Centimetros Cubicos (C.C)</option>
 
                                         </select>
                                         <span>Unidad de Medida</span>
@@ -301,12 +253,6 @@
                                         <select name="unidad_5" id="my-select" value="{{old('unidad_5')}}">
 
                                             <option value=""></option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_5)=="Litros")
-                                                @selected(true)
-                                            @endif value="Litros">Litros (L)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_5)=="Libras")
-                                                @selected(true)
-                                            @endif  value="Libras">Libras (LB)</option>
                                             <option @if (old('unidad_medida',$platillo->unidad_5)=="Gramos")
                                                 @selected(true)
                                             @endif  value="Gramos">Gramos (GR)</option>
@@ -316,12 +262,6 @@
                                             <option @if (old('unidad_medida',$platillo->unidad_5)=="Mililitro")
                                                     @selected(true)
                                             @endif  value="Mililitros">Mililitros (ML)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_5)=="Kilogramos")
-                                                @selected(true)
-                                            @endif  value="Kilogramos">Kilogramos (KG)</option>
-                                            <option @if (old('unidad_medida',$platillo->unidad_5)=="Centimetro cubico")
-                                                @selected(true)
-                                            @endif  value="Centimetro cubico">Centimetros Cubicos (C.C)</option>
 
                                         </select>
                                         <span>Unidad de Medida</span>

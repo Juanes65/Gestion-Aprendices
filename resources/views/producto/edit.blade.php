@@ -3,7 +3,7 @@
 @section('title', 'Productos')
 
 @section('content_header')
-    <h1 style="text-align: center">Insertar Productos</h1>
+    <h1 style="text-align: center">Insertar productos</h1>
 @stop
 
 @section('content')
@@ -79,12 +79,6 @@
                                         <select name="unidad_medida" id="my-select" required="required">
 
                                             <option value=""></option>
-                                            <option @if (old('unidad_medida',$producto->unidad_medida)=="Litros")
-                                                @selected(true)
-                                            @endif value="Litros">Litros (L)</option>
-                                            <option @if (old('unidad_medida',$producto->unidad_medida)=="Libras")
-                                                @selected(true)
-                                            @endif  value="Libras">Libras (LB)</option>
                                             <option @if (old('unidad_medida',$producto->unidad_medida)=="Gramos")
                                                 @selected(true)
                                             @endif  value="Gramos">Gramos (GR)</option>
@@ -94,12 +88,6 @@
                                             <option @if (old('unidad_medida',$producto->unidad_medida)=="Mililitro")
                                                     @selected(true)
                                             @endif  value="Mililitros">Mililitros (ML)</option>
-                                            <option @if (old('unidad_medida',$producto->unidad_medida)=="Kilogramos")
-                                                @selected(true)
-                                            @endif  value="Kilogramos">Kilogramos (KG)</option>
-                                            <option @if (old('unidad_medida',$producto->unidad_medida)=="Centimetro cubico")
-                                                @selected(true)
-                                            @endif  value="Centimetro cubico">Centimetros Cubicos (C.C)</option>
 
                                         </select>
                                         <span>Unidad de Medida</span>
@@ -160,7 +148,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-12">
+                                <div class="col-lg-6 col-12">
                                     <div class="mb-4 box3">
                                         <select name="area" id="my-select" required="required">
                                             @foreach ($lista_areas as $item)
@@ -171,11 +159,20 @@
                                     </div>
                                 </div>
 
+                                <div class="col-lg-6 col-12">
+                                    <div class="mb-4 box">
+                                        <input type="text" name="recibo" value="{{old('recibo',$producto->recibo)}}" required="required">
+                                        <span>Quien Recive el Producto</span>
+                                        @if ($errors->has('recibo'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('recibo')}}</span>
+                                        @endif
+                                    </div>
+                                </div>
+
                                 <div class="col-lg-12">
                                     <div class="d-flex justify-content-center boton">
                                         <button type="submit">Actualizar</button>
                                     </div>
-
                                 </div>
                             </div>
                         </form>

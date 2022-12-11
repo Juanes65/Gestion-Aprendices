@@ -3,7 +3,7 @@
 @section('title', 'Areas')
 
 @section('content_header')
-    <h1 style="text-align: center">Editar Areas</h1>
+    <h1 style="text-align: center">Editar areas</h1>
 @stop
 
 @section('content')

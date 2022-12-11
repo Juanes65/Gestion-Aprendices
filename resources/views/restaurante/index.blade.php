@@ -3,7 +3,7 @@
 @section('title', 'Fichas')
 
 @section('content_header')
-    <h1 style="text-align: center">Reporte de Alimentacion </h1>
+    <h1 style="text-align: center">Reporte de alimentacion </h1>
 @stop
 
 @section('content')
@@ -17,11 +17,11 @@
                             <div class="author">
                                 <div class="row mb-3">
                                     <div class="col-lg-6 d-flex justify-content-start">
-                                        <a href="{{route('paginadoc.cocina')}}" class="btn btn-success">Filtrar Estuadinate Por Documento</a>
+                                        <a href="{{route('paginadoc.cocina')}}" class="btn btn-success">Filtrar el aprendis por documento</a>
                                     </div>
 
                                     <div class="col-lg-6 d-flex justify-content-end">
-                                        <a href="{{route('pagina.cocina')}}" class="btn btn-success">Estuadinates Que Fueron al restaurante</a>
+                                        <a href="{{route('pagina.cocina')}}" class="btn btn-success">Aprendices que asistieron al restaurante</a>
                                     </div>
                                 </div>
                                 <div class="card-body">

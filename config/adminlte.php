@@ -234,12 +234,12 @@ return [
             'can' => 'admin',
             'submenu' => [
                 [
-                    'text' => 'Agregar Ficha',
+                    'text' => 'Agregar ficha',
                     'icon_color' => 'green',
                     'route'  => 'create.ficha',
                 ],
                 [
-                    'text' => 'ver',
+                    'text' => 'Fichas disponibles',
                     'icon_color' => 'blue',
                     'route'  => 'index.ficha',
                 ],
@@ -252,7 +252,7 @@ return [
             'can' => 'admin',
             'submenu' => [
                 [
-                    'text' => 'Agregar Dormitorio',
+                    'text' => 'Agregar dormitorio',
                     'icon_color' => 'yellow',
                     'route'  => 'create.dormitorio',
                 ],
@@ -262,7 +262,7 @@ return [
                     'route'  => 'index.dormitorio',
                 ],
                 [
-                    'text' => 'Aprendiz Y Su Dormitorio',
+                    'text' => 'Aprendiz dormitorio',
                     'icon_color' => 'orange',
                     'route'  => 'indextodo.cupos',
                 ],
@@ -280,7 +280,7 @@ return [
                 //     'route'  => 'create.novedad',
                 // ],
                 [
-                    'text' => 'ver',
+                    'text' => 'Novedades realizadas',
                     'icon_color' => 'cyan',
                     'route'  => 'index.novedad',
                 ],
@@ -298,7 +298,7 @@ return [
                     'route'  => 'create.cocina',
                 ],
                 [
-                    'text' => 'ver',
+                    'text' => 'Reportes disponible',
                     'icon_color' => 'red',
                     'route'  => 'index.cocina',
                 ],
@@ -312,12 +312,12 @@ return [
             'can' => 'cocina',
             'submenu' => [
                 [
-                    'text' => 'Traer Informe',
+                    'text' => 'Traer informe',
                     'icon_color' => 'red',
                     'route'  => 'create.solicitud',
                 ],
                 [
-                    'text' => 'Cantidad de Platillos',
+                    'text' => 'Cantidad de platillos',
                     'icon_color' => 'blue',
                     'route'  => 'index.solicitud',
                 ],
@@ -343,12 +343,12 @@ return [
                     'route'  => 'index.minimo',
                 ],
                 [
-                    'text' => 'Crear Bodegas',
+                    'text' => 'Crear bodegas',
                     'icon_color' => 'red',
                     'route'  => 'create.bodega',
                 ],
                 [
-                    'text' => 'Bodegas Dispónibles',
+                    'text' => 'Bodegas disponibles',
                     'icon_color' => 'blue',
                     'route'  => 'index.bodega',
                 ],
@@ -362,12 +362,12 @@ return [
             'can' => 'cocina',
             'submenu' => [
                 [
-                    'text' => 'Agregar Platillos',
+                    'text' => 'Agregar platillos',
                     'icon_color' => 'red',
                     'route'  => 'create.platillo',
                 ],
                 [
-                    'text' => 'Platillos Disponibles',
+                    'text' => 'Platillos disponibles',
                     'icon_color' => 'blue',
                     'route'  => 'index.platillo',
                 ],
@@ -388,7 +388,7 @@ return [
                     'route'  => 'create.platillo_s',
                 ],
                 [
-                    'text' => 'Platillos Solicitados',
+                    'text' => 'Platillos solicitados',
                     'icon_color' => 'red',
                     'route'  => 'index.platillo_s',
                 ],
@@ -403,7 +403,7 @@ return [
             'can' => 'cocina',
             'submenu' => [
                 [
-                    'text' => 'Agregar Proveedor ',
+                    'text' => 'Agregar proveedor ',
                     'icon_color' => 'plate',
                     'route'  => 'create.provedor',
                 ],
@@ -446,12 +446,12 @@ return [
             'icon_color' => 'blue',
             'submenu' => [
                 [
-                    'text' => 'Agregar Reporte ',
+                    'text' => 'Agregar reporte ',
                     'icon_color' => 'plate',
                     'route'  => 'create.inspeccion',
                 ],
                 [
-                    'text' => 'ver',
+                    'text' => 'Reportes disponibles',
                     'icon_color' => 'orange',
                     'route'  => 'index.inspeccion',
                 ],

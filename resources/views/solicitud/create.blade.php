@@ -3,7 +3,7 @@
 @section('title', 'Solicitud')
 
 @section('content_header')
-    <h1 style="text-align: center">Solicitud</h1>
+    <h1 style="text-align: center">Crear solicitud</h1>
 @stop
 
 @section('content')
@@ -18,6 +18,15 @@
                             @csrf
 
                             <div class="row">
+
+                                <div class="col-lg-12">
+
+                                    <div class="mb-4 box2">
+                                        <input type="date" name="date">
+                                        <span>Fecha que se desea realizar el platillo</span>
+                                    </div>
+                                    
+                                </div>
 
                                 <div class="col-lg-12">
 

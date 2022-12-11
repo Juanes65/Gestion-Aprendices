@@ -33,6 +33,7 @@
                                                 <th scope="col">Area</th>
                                                 <th scope="col">Nombre del Provedor</th>
                                                 <th scope="col">Empresa del Provedor</th>
+                                                <th scope="col">Quien Recibe el Producto</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
@@ -53,6 +54,7 @@
                                                     <td>{{$info->areas->nombre_area}}</td>
                                                     <td>{{$info->provedores->nombre}}</td>
                                                     <td>{{$info->provedores->empresa}}</td> 
+                                                    <td>{{$info->recibo}}</td>
 
                                                     <td class="td-actions text-center">
 

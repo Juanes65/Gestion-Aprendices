@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('dormitorios', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre_dor', 20);
+            $table->string('nombre_dor', 80);
             $table->string('camas', 3);
             $table->string('disponible', 3)->nullable();
-            $table->string('ubicacion', 20);
+            $table->string('ubicacion', 80);
             $table->string('genero',20);
             $table->string('espacio',20);
             $table->string('estado',20);

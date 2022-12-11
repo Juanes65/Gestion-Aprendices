@@ -4,7 +4,7 @@
 
 @section('content_header')
     @foreach($ficha as $item)
-        <h1 style="text-align: center">Aprendices De La Ficha {{$item->ficha}}</h1>
+        <h1 style="text-align: center">Aprendices de la ficha {{$item->ficha}}</h1>
     @endforeach
 @stop
 
