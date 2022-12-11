@@ -54,7 +54,7 @@ class DormitorioController extends Controller
 
         //$input almacena el valor del campo camas del formulario creado
         $input = $request->camas;
-
+        
         //verificamos si el dato es igual a 0 o no
         if($input == "0"){
             //accede a la base de datos tabla dormitorios y accede a la funcion create donde se lamacena lo que me

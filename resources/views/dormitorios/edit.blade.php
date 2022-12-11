@@ -3,7 +3,7 @@
 @section('title', 'Dormitorios')
 
 @section('content_header')
-    <h1 style="text-align: center">Editar Dormitorio</h1>
+    <h1 style="text-align: center">Editar dormitorio</h1>
 @stop
 
 @section('content')
@@ -38,25 +38,6 @@
                                         @endif
                                     </div>
 
-                                    <div class="mb-4 box3">
-                                        <select name="espacio" id="my-select" required="required">
-
-                                            <option value=""></option>
-                                            <option @if (old('espacio',$dormitorio->espacio)=="Limpio")
-                                                @selected(true)
-                                            @endif value="Limpio">Limpio</option>
-                                            
-                                            <option @if (old('espacio',$dormitorio->espacio)=="Por Limpiar")
-                                                @selected(true)
-                                            @endif value="Por Limpiar">Por Limpiar</option>
-
-                                        </select>
-                                        <span>Estado del Dormitorio</span>
-                                        @if ($errors->has('espacio'))
-                                            <span class="error text-danger" for="input-name">{{$errors->first('espacio')}}</span>
-                                        @endif
-                                    </div>
-
                                 </div>
 
                                 <div class="col-lg-6 col-12">
@@ -87,6 +68,27 @@
                                         @endif
                                     </div>
 
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="mb-4 box3">
+                                        <select name="espacio" id="my-select" required="required">
+
+                                            <option value=""></option>
+                                            <option @if (old('espacio',$dormitorio->espacio)=="Limpio")
+                                                @selected(true)
+                                            @endif value="Limpio">Limpio</option>
+                                            
+                                            <option @if (old('espacio',$dormitorio->espacio)=="Por Limpiar")
+                                                @selected(true)
+                                            @endif value="Por Limpiar">Por Limpiar</option>
+
+                                        </select>
+                                        <span>Estado del Dormitorio</span>
+                                        @if ($errors->has('espacio'))
+                                            <span class="error text-danger" for="input-name">{{$errors->first('espacio')}}</span>
+                                        @endif
+                                    </div>
                                 </div>
 
                                 <div class="d-flex justify-content-end col-12 boton">

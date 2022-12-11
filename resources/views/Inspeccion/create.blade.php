@@ -3,7 +3,7 @@
 @section('title', 'Reporte')
 
 @section('content_header')
-    <h1 style="text-align: center">Ingresar Reporte De Inspeccion</h1>
+    <h1 style="text-align: center">Ingresar reporte de inspeccion</h1>
 @stop
 
 @section('content')

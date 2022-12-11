@@ -3,7 +3,7 @@
 @section('title', 'Platillos Solicitados')
 
 @section('content_header')
-    <h1 style="text-align: center">Platillos Solicitados</h1>
+    <h1 style="text-align: center">Platillos solicitados</h1>
 @stop
 
 @section('content')

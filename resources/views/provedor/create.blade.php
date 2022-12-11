@@ -3,7 +3,7 @@
 @section('title', 'Provedor')
 
 @section('content_header')
-    <h1 style="text-align: center">Ingresar Proveedor</h1>
+    <h1 style="text-align: center">Ingresar proveedor</h1>
 @stop
 
 @section('content')

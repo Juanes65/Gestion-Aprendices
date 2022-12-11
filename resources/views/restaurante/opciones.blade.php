@@ -3,7 +3,7 @@
 @section('title', 'Fichas')
 
 @section('content_header')
-    <h1 style="text-align: center">Seleccione el Filtro</h1>
+    <h1 style="text-align: center">Seleccione el filtro</h1>
 @stop
 
 @section('content')

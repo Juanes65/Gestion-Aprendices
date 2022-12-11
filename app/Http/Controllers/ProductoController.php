@@ -103,6 +103,7 @@ class ProductoController extends Controller
                 'stock_actual' => $request->stock_actual,
                 'stock_minimo' => $request->stock_minimo,
                 'lote_producto' => $request->lote_producto,
+                'recibo' => $request->recibo,
                 'fecha_llegada' => $request->fecha_llegada,
                 'area' => $request->area,
             ]);
@@ -117,6 +118,7 @@ class ProductoController extends Controller
                 'lote_producto' => $request->lote_producto,
                 'unidad_medida' => $request->unidad_medida,
                 'etiqueta' => $request->etiqueta,
+                'recibo' => $request->recibo,
             ]);
         }
 
@@ -173,6 +175,7 @@ class ProductoController extends Controller
             'lote_producto' => 'required',
             'fecha_llegada' => 'required',
             'area' => 'required',
+            'recibo' => 'required',
         ]);
 
         $producto->update([
@@ -187,6 +190,7 @@ class ProductoController extends Controller
             'stock_minimo' => $request->stock_minimo,
             'lote_producto' => $request->lote_producto,
             'fecha_llegada' => $request->fecha_llegada,
+            'recibo' => $request->recibo,
         ]);
 
         return redirect()->route('index.bodega')->with('actualizar', 'ok');
