@@ -4,6 +4,7 @@
 
 @section('content_header')
     <h1 style="text-align: center">Reporte de alimentacion </h1>
+    <link rel="stylesheet" href="css/tables.css">
 @stop
 
 @section('content')
@@ -17,7 +18,7 @@
                             <div class="author">
                                 <div class="row mb-3">
                                     <div class="col-lg-6 d-flex justify-content-start">
-                                        <a href="{{route('paginadoc.cocina')}}" class="btn btn-success">Filtrar el aprendis por documento</a>
+                                        <a href="{{route('paginadoc.cocina')}}" class="btn btn-success">Filtrar aprendiz por documento</a>
                                     </div>
 
                                     <div class="col-lg-6 d-flex justify-content-end">

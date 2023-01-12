@@ -23,7 +23,7 @@
                                 <div class="col-lg-12">
 
                                     <div class="mb-4 box">
-                                        <input type="text" name="nombre_platillo" value="{{old('nombre_platillo',$platillo->nombre_platillo)}}">
+                                        <input type="text" name="nombre_platillo" value="{{old('nombre_platillo',$platillo->nombre_platillo)}}" >
                                         <span>Nombre Platillo</span>
                                         @if ($errors->has('nombre_platillo'))
                                             <span class="error text-danger" for="input-name">{{$errors->first('nombre_platillo')}}</span>
@@ -276,9 +276,13 @@
 
                                 <div class="col-lg-12">
 
-                                    <div class="d-flex justify-content-center boton">
-                                        <button type="submit">Crear Platillo</button>
-                                    </div>
+                                    @can('cocina')
+
+                                        <div class="d-flex justify-content-center boton">
+                                            <button type="submit">Editar Platillo</button>
+                                        </div>
+
+                                    @endcan
 
                                 </div>
 

@@ -14,12 +14,15 @@ class PlatilloController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+  
     public function index()
     {
         $platillo = Platillo::all();
 
         return view('platillos.index', compact('platillo'));
     }
+
 
     /**
      * Show the form for creating a new resource.

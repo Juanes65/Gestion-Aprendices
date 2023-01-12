@@ -26,5 +26,11 @@ class UserSeeder extends Seeder
             'email' => 'cocina@gmail.com',
             'password' => bcrypt('12345678')
         ])->assignRole('Cocina');
+
+        User::create([
+            'name' => 'Chef',
+            'email' => 'chef@gmail.com',
+            'password' => bcrypt('12345678')
+        ])->assignRole('Chef');
     }
 }

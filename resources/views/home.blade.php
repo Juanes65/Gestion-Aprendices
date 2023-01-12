@@ -17,12 +17,12 @@
                 <div class="card-header">{{ __('Productos Pronto a Agotarse') }}</div>
 
                 <div class="card-body">
-                    
+
                         @foreach ($info as $item)
                             <h4 style="color: red;font-family: Verdana, Geneva, Tahoma, sans-serif;">El Produto {{$item->nombre_producto}} ({{$item->marca_producto}}) tiene pocas existencias.</h4>
                             <br>
-                        @endforeach 
-                    
+                        @endforeach
+
                 </div>
             </div>
         </div>

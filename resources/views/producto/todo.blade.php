@@ -4,6 +4,7 @@
 
 @section('content_header')
     <h1 style="text-align: center">Historico</h1>
+    <link rel="stylesheet" href="css/tables.css">
 @stop
 
 @section('content')
@@ -53,7 +54,7 @@
                                                     <td>{{$info->areas->bodegas->nombre_bodega}}</td>
                                                     <td>{{$info->areas->nombre_area}}</td>
                                                     <td>{{$info->provedores->nombre}}</td>
-                                                    <td>{{$info->provedores->empresa}}</td> 
+                                                    <td>{{$info->provedores->empresa}}</td>
                                                     <td>{{$info->recibo}}</td>
 
                                                     <td class="td-actions text-center">
@@ -63,12 +64,12 @@
                                                                 <i class="fa-solid fa-bars"></i>
                                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
 
-                                                                    <a href="{{route('edit.producto', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">edit</i></a>
+                                                                    <a href="{{route('edit.producto', $info->id)}}" class="btn btn-outline-success"><i class="material-icons">edit</i></a>
 
                                                                     <form action="{{route('destroy.producto', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
                                                                         @csrf
                                                                         @method('DELETE')
-                                                                        <button class="btn btn-success" type="submit" rel="tooltip">
+                                                                        <button class="btn btn-danger" type="submit" rel="tooltip">
                                                                             <i class="material-icons">
                                                                                 delete
                                                                             </i>

@@ -5,6 +5,7 @@
 @section('content_header')
 
     <h1 style="text-align: center">Platillos disponibles</h1>
+    <link rel="stylesheet" href="css/tables.css">
 
 @stop
 

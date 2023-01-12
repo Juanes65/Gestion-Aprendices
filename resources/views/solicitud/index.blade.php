@@ -4,6 +4,7 @@
 
 @section('content_header')
     <h1 style="text-align: center">Solicitudes</h1>
+    <link rel="stylesheet" href="css/tables.css">
 @stop
 
 @section('content')

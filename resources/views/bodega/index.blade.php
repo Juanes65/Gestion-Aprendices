@@ -5,10 +5,25 @@
 @section('content_header')
 
     <h1 style="text-align: center">Bodegas disponibles</h1>
+    <link rel="stylesheet" href="css/tables.css">
 
 @stop
 
 @section('content')
+
+<style>
+    .table-striped>tbody>tr:nth-child(odd)>td,
+    .table-striped>tbody>tr:nth-child(odd)>th {
+     background-color: #39a900;
+    }
+    .table-striped>tbody>tr:nth-child(even)>td,
+    .table-striped>tbody>tr:nth-child(even)>th {
+     background-color: rgb(255, 255, 255);
+    }
+    .table-striped>thead>tr>th {
+       background-color: rgb(255, 255, 255);
+    }
+  </style>
 
     <div class="card-body">
         <div class="row">
@@ -40,16 +55,17 @@
                                                                 <i class="fa-solid fa-bars"></i>
                                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
 
-                                                                    <a href="{{route('index.area', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">SHOW</i></a>
 
-                                                                    <a href="{{route('create.area')}}" class="btn btn-outline-warning"><i class="material-icons">ADD</i></a>
+                                                                    <a href="{{route('create.area')}}" class="btn btn-outline-success"><i class="material-icons">add</i></a>
 
-                                                                    <a href="{{route('edit.bodega', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">edit</i></a>
+                                                                    <a href="{{route('index.area', $info->id)}}" class="btn btn-outline-success"><i class="material-icons">visibility</i></a>
+
+                                                                    <a href="{{route('edit.bodega', $info->id)}}" class="btn btn-outline-success"><i class="material-icons">edit</i></a>
 
                                                                     <form action="{{route('destroy.bodega', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
                                                                         @csrf
                                                                         @method('DELETE')
-                                                                        <button class="btn btn-success" type="submit" rel="tooltip">
+                                                                        <button class="btn btn-danger" type="submit" rel="tooltip">
                                                                             <i class="material-icons">
                                                                                 delete
                                                                             </i>
