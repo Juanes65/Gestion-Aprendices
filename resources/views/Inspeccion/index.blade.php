@@ -4,6 +4,7 @@
 
 @section('content_header')
     <h1 style="text-align: center">Reportes registrados</h1>
+    <link rel="stylesheet" href="css/tables.css">
 @stop
 
 @section('content')

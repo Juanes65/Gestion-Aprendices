@@ -137,10 +137,10 @@ Route::delete('/producto/{producto}',                [ProductoController::class,
 
 //Rutas de platillos
 
-Route::get('/platillos',                             [PlatilloController::class, 'index'])->middleware('can:cocina')->name('index.platillo');
+Route::get('/platillos',                             [PlatilloController::class, 'index'])->name('index.platillo');
 Route::get('/platillo/agregar',                      [PlatilloController::class, 'create'])->middleware('can:cocina')->name('create.platillo');
 Route::post('platillo/store',                        [PlatilloController::class, 'store'])->middleware('can:cocina')->name('store.platillo');
-Route::get('/platillo/edit/{platillo}',              [PlatilloController::class, 'edit'])->middleware('can:cocina')->name('edit.platillo');
+Route::get('/platillo/edit/{platillo}',              [PlatilloController::class, 'edit'])->name('edit.platillo');
 Route::put('/platillo/{platillo}',                   [PlatilloController::class, 'update'])->middleware('can:cocina')->name('update.platillo');
 Route::delete('/platillo/{platillo}',                [PlatilloController::class, 'destroy'])->middleware('can:cocina')->name('destroy.platillo');
 

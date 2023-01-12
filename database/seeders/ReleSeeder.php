@@ -18,10 +18,13 @@ class ReleSeeder extends Seeder
     {
         $role1 = Role::create(['name' => 'Administrador']);
         $role2 = Role::create(['name' => 'Cocina']);
+        $role3 = Role::create(['name' => 'Chef']);
 
         //permisos del administrador
         Permission::create(['name' => 'admin'])->syncRoles([$role1]);
         Permission::create(['name' => 'cocina'])->syncRoles([$role2]);
+        Permission::create(['name' => 'chef'])->syncRoles([$role3]);
+
 
         //permiso del usuario
     }

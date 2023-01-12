@@ -46,7 +46,6 @@ return [
     */
 
     'logo' => '<b style:"text-align:center">BIENESTAR</b>',
-
     'logo_img' => 'vendor/adminlte/dist/img/9010.jpg',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -67,8 +66,8 @@ return [
 
     'usermenu_enabled' => true,
     'usermenu_header' => true,
-    'usermenu_header_class' => 'bg-primary',
-    'usermenu_image' => true,
+    'usermenu_header_class' => 'bg-success',
+    'usermenu_image' => false,
     'usermenu_desc' => false,
     'usermenu_profile_url' => false,
 
@@ -130,7 +129,7 @@ return [
     'classes_content' => '',
     'classes_sidebar' => 'sidebar-dark-green elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
+    'classes_topnav' => 'navbar-green navbar-dark',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
@@ -230,7 +229,7 @@ return [
         [
             'text'    => 'Fichas',
             'icon'    => 'fas fa-fw fa-folder',
-            'icon_color' => 'purple ',
+            'icon_color' => 'green',
             'can' => 'admin',
             'submenu' => [
                 [
@@ -240,7 +239,7 @@ return [
                 ],
                 [
                     'text' => 'Fichas disponibles',
-                    'icon_color' => 'blue',
+                    'icon_color' => 'green',
                     'route'  => 'index.ficha',
                 ],
             ]
@@ -248,22 +247,22 @@ return [
         [
             'text'    => 'Dormitorios',
             'icon'    => 'fas fa-fw fa-bed',
-            'icon_color' => 'red',
+            'icon_color' => 'green',
             'can' => 'admin',
             'submenu' => [
                 [
                     'text' => 'Agregar dormitorio',
-                    'icon_color' => 'yellow',
+                    'icon_color' => 'green',
                     'route'  => 'create.dormitorio',
                 ],
                 [
                     'text' => 'Disponibilidad',
-                    'icon_color' => 'purple',
+                    'icon_color' => 'green',
                     'route'  => 'index.dormitorio',
                 ],
                 [
                     'text' => 'Aprendiz dormitorio',
-                    'icon_color' => 'orange',
+                    'icon_color' => 'green',
                     'route'  => 'indextodo.cupos',
                 ],
             ]
@@ -271,7 +270,7 @@ return [
         [
             'text'    => 'Novedades',
             'icon'    => 'fas fa-fw fa-lightbulb',
-            'icon_color' => 'yellow',
+            'icon_color' => 'green',
             'can' => 'admin',
             'submenu' => [
                 // [
@@ -281,7 +280,7 @@ return [
                 // ],
                 [
                     'text' => 'Novedades realizadas',
-                    'icon_color' => 'cyan',
+                    'icon_color' => 'green',
                     'route'  => 'index.novedad',
                 ],
             ]
@@ -289,17 +288,17 @@ return [
         [
             'text'    => 'Restaurante',
             'icon'    => 'fas fa-fw fa-utensils',
-            'icon_color' => 'white',
+            'icon_color' => 'green',
             'can' => 'admin',
             'submenu' => [
                 [
                     'text' => 'Agregar reporte',
-                    'icon_color' => 'blue',
+                    'icon_color' => 'green',
                     'route'  => 'create.cocina',
                 ],
                 [
                     'text' => 'Reportes disponible',
-                    'icon_color' => 'red',
+                    'icon_color' => 'green',
                     'route'  => 'index.cocina',
                 ],
             ]
@@ -308,17 +307,17 @@ return [
         [
             'text'    => 'Solicitud',
             'icon'    => 'fas fa-fw fa-envelope',
-            'icon_color' => 'white',
+            'icon_color' => 'green',
             'can' => 'cocina',
             'submenu' => [
                 [
                     'text' => 'Traer informe',
-                    'icon_color' => 'red',
+                    'icon_color' => 'green',
                     'route'  => 'create.solicitud',
                 ],
                 [
                     'text' => 'Cantidad de platillos',
-                    'icon_color' => 'blue',
+                    'icon_color' => 'green',
                     'route'  => 'index.solicitud',
                 ],
             ]
@@ -329,27 +328,27 @@ return [
         [
             'text'    => 'Bodegas',
             'icon'    => 'fas fa-fw fa-box-open',
-            'icon_color' => 'pink',
+            'icon_color' => 'green',
             'can' => 'cocina',
             'submenu' => [
                 [
                     'text' => 'Historico',
-                    'icon_color' => 'red',
+                    'icon_color' => 'green',
                     'route'  => 'index.todo',
                 ],
                 [
                     'text' => 'Productos',
-                    'icon_color' => 'red',
+                    'icon_color' => 'green',
                     'route'  => 'index.minimo',
                 ],
                 [
                     'text' => 'Crear bodegas',
-                    'icon_color' => 'red',
+                    'icon_color' => 'green',
                     'route'  => 'create.bodega',
                 ],
                 [
                     'text' => 'Bodegas disponibles',
-                    'icon_color' => 'blue',
+                    'icon_color' => 'green',
                     'route'  => 'index.bodega',
                 ],
             ]
@@ -358,17 +357,18 @@ return [
         [
             'text'    => 'Platillos',
             'icon'    => 'fas fa-fw fa-check',
-            'icon_color' => 'cyan',
+            'icon_color' => 'green',
             'can' => 'cocina',
+            'can' => 'chef',
             'submenu' => [
                 [
                     'text' => 'Agregar platillos',
-                    'icon_color' => 'red',
+                    'icon_color' => 'green',
                     'route'  => 'create.platillo',
                 ],
                 [
                     'text' => 'Platillos disponibles',
-                    'icon_color' => 'blue',
+                    'icon_color' => 'green',
                     'route'  => 'index.platillo',
                 ],
             ]
@@ -379,17 +379,17 @@ return [
         [
             'text'    => 'Solicitar Platillos',
             'icon'    => 'fas fa-fw fa-envelope',
-            'icon_color' => 'orange',
+            'icon_color' => 'green',
             'can' => 'cocina',
             'submenu' => [
                 [
                     'text' => 'Solicitar',
-                    'icon_color' => 'blue',
+                    'icon_color' => 'green',
                     'route'  => 'create.platillo_s',
                 ],
                 [
                     'text' => 'Platillos solicitados',
-                    'icon_color' => 'red',
+                    'icon_color' => 'green',
                     'route'  => 'index.platillo_s',
                 ],
 
@@ -399,17 +399,17 @@ return [
         [
             'text'    => 'Proveedores',
             'icon'    => 'fas fa-fw fa-truck',
-            'icon_color' => 'red',
+            'icon_color' => 'green',
             'can' => 'cocina',
             'submenu' => [
                 [
                     'text' => 'Agregar proveedor ',
-                    'icon_color' => 'plate',
+                    'icon_color' => 'green',
                     'route'  => 'create.provedor',
                 ],
                 [
                     'text' => 'Proveedores',
-                    'icon_color' => 'plate',
+                    'icon_color' => 'green',
                     'route'  => 'index.provedor',
                 ],
             ]
@@ -418,22 +418,22 @@ return [
         [
             'text'    => 'Pedidos',
             'icon'    => 'fas fa-fw fa-border-none',
-            'icon_color' => 'orange',
+            'icon_color' => 'green',
             'can' => 'cocina',
             'submenu' => [
                 [
                     'text' => 'Desayunos',
-                    'icon_color' => 'plate',
+                    'icon_color' => 'green',
                     'route'  => 'create.pedido',
                 ],
                 [
                     'text' => 'Almuerzos',
-                    'icon_color' => 'plate',
+                    'icon_color' => 'green',
                     'route'  => 'create2.pedido',
                 ],
                 [
                     'text' => 'Cenas',
-                    'icon_color' => 'plate',
+                    'icon_color' => 'green',
                     'route'  => 'create3.pedido',
                 ],
 
@@ -443,16 +443,16 @@ return [
         [
             'text'    => 'Inspeccion',
             'icon'    => 'fas fa-fw fa-eye',
-            'icon_color' => 'blue',
+            'icon_color' => 'green',
             'submenu' => [
                 [
                     'text' => 'Agregar reporte ',
-                    'icon_color' => 'plate',
+                    'icon_color' => 'green',
                     'route'  => 'create.inspeccion',
                 ],
                 [
                     'text' => 'Reportes disponibles',
-                    'icon_color' => 'orange',
+                    'icon_color' => 'green',
                     'route'  => 'index.inspeccion',
                 ],
             ]

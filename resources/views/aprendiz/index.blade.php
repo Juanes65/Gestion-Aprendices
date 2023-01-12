@@ -7,6 +7,7 @@
         <h1 style="text-align: center">Aprendices de la ficha {{$item->ficha}}</h1>
     @endforeach
 @stop
+    <link rel="stylesheet" href="css/tables.css">
 
 @section('content')
 

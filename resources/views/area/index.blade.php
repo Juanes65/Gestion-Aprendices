@@ -4,6 +4,7 @@
 
 @section('content_header')
     <h1 style="text-align: center">Areas disponibles</h1>
+    <link rel="stylesheet" href="css/tables.css">
 @stop
 
 @section('content')
@@ -39,16 +40,16 @@
                                                                 <i class="fa-solid fa-bars"></i>
                                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
 
-                                                                    <a href="{{route('index.producto', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">SHOW</i></a>
+                                                                    <a href="{{route('create.producto', $info->id)}}" class="btn btn-outline-success"><i class="material-icons">add</i></a>
 
-                                                                    <a href="{{route('create.producto', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">ADD</i></a>
+                                                                    <a href="{{route('index.producto', $info->id)}}" class="btn btn-outline-success"><i class="material-icons">visibility</i></a>
 
-                                                                    <a href="{{route('edit.area', $info->id)}}" class="btn btn-outline-warning"><i class="material-icons">edit</i></a>
+                                                                    <a href="{{route('edit.area', $info->id)}}" class="btn btn-outline-success"><i class="material-icons">edit</i></a>
 
                                                                     <form action="{{route('destroy.area', $info->id)}}" class="form-eliminar" method="POST" style="display:inline-block">
                                                                         @csrf
                                                                         @method('DELETE')
-                                                                        <button class="btn btn-success" type="submit" rel="tooltip">
+                                                                        <button class="btn btn-danger" type="submit" rel="tooltip">
                                                                             <i class="material-icons">
                                                                                 delete
                                                                             </i>
